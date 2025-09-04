@@ -1,0 +1,399 @@
+{
+  "$schema": "https://raw.githubusercontent.com/biomejs/biome/refs/heads/main/packages/%40biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**/*",
+      /* antfu */
+      "!**/.eslint-config-inspector",
+      "!**/.node-modules-inspector",
+      "!**/.vite-inspect",
+      "!**/*typegen.d.ts",
+      /* astro */
+      "!**/.astro",
+      "!**/.astro_*",
+      "!**/.astro-*",
+      /* auth */
+      "!**/.auth",
+      /* backup */
+      "!**/*.*backup",
+      "!**/*.*bak",
+      "!**/*.*ori",
+      "!**/*.*orig",
+      "!**/*.*original",
+      "!**/*.backup",
+      "!**/*.backup.*",
+      "!**/*.bak",
+      "!**/*.bak.*",
+      "!**/*.ori",
+      "!**/*.ori.*",
+      "!**/*.orig",
+      "!**/*.orig.*",
+      "!**/*.original",
+      "!**/*.original.*",
+      "!**/*backup",
+      /* bundled */
+      "!**/*.bundled*.*",
+      /* cache */
+      "!**/*.*cache",
+      "!**/*.*cache*.*",
+      "!**/*.eslint*cache",
+      "!**/*.parcel*cache",
+      "!**/*.prettier*cache",
+      "!**/*.stylelint*cache",
+      "!**/*cache",
+      /* contentlayer */
+      "!**/.contentlayer",
+      /* coverage */
+      "!**/.nyc_output",
+      "!**/*.cov",
+      "!**/*.coverage.*",
+      "!**/*.coverage",
+      "!**/*.lcov",
+      "!**/coverage",
+      "!**/lib-cov",
+      /* dependencies */
+      "!**/bower_components",
+      "!**/jspm_packages",
+      "!**/node_modules",
+      "!**/web_modules",
+      /* diff */
+      "!**/*.diff",
+      "!**/*.patch",
+      /* docusaurus */
+      "!**/.docusaurus",
+      /* dynamodb */
+      "!**/.dynamodb",
+      /* environment */
+      "!**/.aws",
+      "!**/.direnv",
+      "!**/.env",
+      "!**/.env*.local",
+      "!**/.env*.prod*",
+      "!**/.envrc",
+      "!**/*.local",
+      /* fumadocs */
+      "!**/.source",
+      /* fusebox */
+      "!**/.fusebox",
+      /* git */
+      "!**/.git",
+      /* grunt */
+      "!**/.grunt",
+      /* history */
+      "!**/*.*history",
+      "!**/*.*history*.*",
+      "!**/*history",
+      /* husky */
+      "!_",
+      "!**/.husky/_",
+      /* keys */
+      "!**/*.ca",
+      "!**/*.cert",
+      "!**/*.crt",
+      "!**/*.csr",
+      "!**/*.der",
+      "!**/*.kdb",
+      "!**/*.key",
+      "!**/*.key-mrc",
+      "!**/*.key.json",
+      "!**/*.keys",
+      "!**/*.org",
+      "!**/*.p12",
+      "!**/*.pem",
+      "!**/*.priv",
+      "!**/*.rnd",
+      "!**/*.rsa",
+      "!**/*.smime",
+      "!**/*.ssh",
+      "!**/*.ssh-key",
+      "!**/*.ssleay",
+      /* local */
+      "!**/*.local",
+      "!**/*.local.*",
+      /* lock */
+      "!**/*.lock",
+      "!**/bun.lock",
+      "!**/bun.lockb",
+      "!**/deno.lock",
+      "!**/package-lock.json",
+      "!**/pnpm-lock.yaml",
+      "!**/yarn.lock",
+      /* logs */
+      "!**/.*-debug.log*",
+      "!**/.*-error.log*",
+      "!**/*-debug.log*",
+      "!**/*-error.log*",
+      "!**/*.log",
+      "!**/logs",
+      "!**/report.*.json",
+      /* macOS */
+      "!**/__MACOSX",
+      "!**/.DS_Store",
+      /* microbundle */
+      "!**/.rpt2_*",
+      "!**/.rpt2_cache",
+      "!**/.rts2_*",
+      "!**/.rts2_cache_cjs",
+      "!**/.rts2_cache_es",
+      "!**/.rts2_cache_umd",
+      /* next */
+      "!**/.next",
+      "!**/.next_*",
+      "!**/.next-*",
+      "!**/next-env.d.ts",
+      /* node */
+      "!**/.node_repl_history",
+      /* npm */
+      "!**/*.tgz",
+      "!**/.npm",
+      /* nuxt */
+      "!**/.nuxt",
+      "!**/.nuxt_*",
+      "!**/.nuxt-*",
+      /* output */
+      "!**/.*out",
+      "!**/.*output",
+      "!**/.bin",
+      "!**/build",
+      "!**/build_*",
+      "!**/build-*",
+      "!**/dist",
+      "!**/dist_*",
+      "!**/dist-*",
+      // "!**/lib",
+      "!**/out",
+      "!**/output",
+      /* playwright */
+      "!**/blob-report",
+      "!**/playwright-report",
+      "!**/test-results",
+      /* pnpm */
+      "!**/.pnpm",
+      "!**/.pnpm_*",
+      "!**/.pnpm-*",
+      /* profilers */
+      "!**/*.cpuprofile",
+      /* runtime */
+      "!**/pids",
+      "!**/*.pid",
+      "!**/*.seed",
+      "!**/*.pid.lock",
+      /* serverless */
+      "!**/.serverless",
+      /* storybook */
+      "!**/storybook-static",
+      /* svelte */
+      "!**/.svelte",
+      "!**/.svelte-kit",
+      "!**/.svelte_*",
+      "!**/.svelte-*",
+      /* temporary */
+      "!**/.temp*",
+      "!**/.tmp*",
+      "!**/*.*temp",
+      "!**/*.*tmp",
+      "!**/*.temp.*",
+      "!**/*.tmp.*",
+      "!**/*temp",
+      "!**/*tmp",
+      "!**/tmp*",
+      /* turbo */
+      "!**/.turbo",
+      /* typescript */
+      "!**/*.tsbuildinfo",
+      /* vercel */
+      "!**/.vercel",
+      /* vite */
+      "!**/.vite",
+      /* vitepress */
+      "!**/.vitepress",
+      /* vitest */
+      "!**/.vitest",
+      /* vscode */
+      "!**/.history",
+      "!**/.ionide",
+      "!**/.vs",
+      "!**/.vscode_*",
+      "!**/.vscode-*",
+      /* webpack */
+      "!**/.webpack",
+      /* yarn */
+      "!**/.pnp",
+      "!**/.pnp.*",
+      "!**/.yarn"
+    ]
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "recommended": true,
+        "organizeImports": "on",
+        "useSortedAttributes": "off",
+        "useSortedKeys": "off",
+        "useSortedProperties": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": false,
+    "formatWithErrors": false,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100,
+    "useEditorconfig": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "useLiteralKeys": {
+          "level": "info",
+          "fix": "none"
+        }
+      },
+      "correctness": {
+        "noUnusedImports": {
+          "level": "info",
+          "fix": "none"
+        },
+        "noUnusedVariables": {
+          "level": "info",
+          "fix": "none"
+        }
+      },
+      "suspicious": {
+        "noExplicitAny": {
+          "level": "info"
+        },
+        "noUnknownAtRules": {
+          "level": "info"
+        }
+      }
+    }
+  },
+  "css": {
+    "parser": {
+      "allowWrongLineComments": null,
+      "cssModules": null
+    },
+    "formatter": {
+      "enabled": false,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 100,
+      "quoteStyle": "single"
+    }
+  },
+  "graphql": {
+    "formatter": {
+      "enabled": false,
+      "bracketSpacing": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 100,
+      "quoteStyle": "single"
+    }
+  },
+  "grit": {
+    "formatter": {
+      "enabled": false,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 100
+    }
+  },
+  "html": {
+    "formatter": {
+      "enabled": false,
+      "attributePosition": "auto",
+      "bracketSameLine": false,
+      "indentScriptAndStyle": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 100,
+      "selfCloseVoidElements": "always",
+      "whitespaceSensitivity": "css"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": false,
+      "arrowParentheses": "always",
+      "attributePosition": "auto",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "expand": "auto",
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "jsxQuoteStyle": "double",
+      "lineEnding": "lf",
+      "lineWidth": 100,
+      "quoteProperties": "preserve",
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": false
+    },
+    "formatter": {
+      "enabled": false,
+      "bracketSpacing": true,
+      "expand": "auto",
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 100,
+      "trailingCommas": "none"
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.astro", "**/*.svelte", "**/*.vue"],
+      "formatter": {
+        "enabled": false,
+        "formatWithErrors": false,
+        "attributePosition": "auto",
+        "bracketSameLine": false,
+        "bracketSpacing": true,
+        "expand": "auto",
+        "indentStyle": "space",
+        "indentWidth": 2,
+        "lineEnding": "lf",
+        "lineWidth": 100
+      },
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          },
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ]
+}

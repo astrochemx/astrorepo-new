@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "ESNext.AsyncIterable"],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "tsBuildInfoFile": "${configDir}/node_modules/.tmp/tsconfig.next.tsbuildinfo"
+  },
+  "exclude": ["${configDir}/dist", "${configDir}/dist-*", "${configDir}/node_modules", "${configDir}/out", "${configDir}/storybook-static"],
+  "include": ["${configDir}/.next/types/**/*.ts", "${configDir}/.storybook/**/*", "${configDir}/**/*", "${configDir}/next-env.d.ts"]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+  "extends": "markdownlint/style/prettier",
+  "first-line-h1": false,
+  "line-length": false,
+  "list-marker-space": false,
+  "no-duplicate-heading": false,
+  "no-inline-html": false
+}

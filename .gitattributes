@@ -1,0 +1,351 @@
+###############################################################################
+### General normalization
+###############################################################################
+
+* text=auto eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### SVG files
+###############################################################################
+
+*.svg text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Delimiter Separated Values files
+###############################################################################
+
+*.csv text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.psv text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.scsv text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.ssv text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.tab text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.tsv text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### POSIX/UNIX scripting files
+###############################################################################
+
+*.bash text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.csh text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.fish text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.ksh text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.sh text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.zsh text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Windows scripting files
+###############################################################################
+
+*.bat text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.cmd text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.ps1 text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.psd1 text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.psm1 text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.wslconfig text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.wslgconfig text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### ASP.NET Web Page (Razor) files
+###############################################################################
+
+*.asp text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.aspx text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.cshtml text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.vbhtml text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.razor text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Visual Studio files
+###############################################################################
+
+*.xaml text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.vsconfig text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.vssettings text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.sln text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.slnf text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.slnx text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.filters text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.overridetasks text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.props text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.targets text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.tasks text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.vcxitems text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.vsprops text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.csproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.dbproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.esproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.fsproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.lsproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.modelproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.nodeproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.proj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.sqlproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.vbproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.vcproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.vcxproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.wixproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.wwaproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+*.xproj text eol=crlf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Python & Jupyter Notebook files
+###############################################################################
+
+*.ipynb text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Markdown and RST files
+###############################################################################
+
+*.md text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.mdx text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.qmd text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.rmd text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.Rmd text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.rst text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Config & Data files
+###############################################################################
+
+*.json text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.json5 text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.jsonc text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.toml text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.xml text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.yaml text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.yml text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.*ignore text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.all-contributorsrc text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.dockerignore text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.editorconfig text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.env text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.env.* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.gitattributes text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.gitconfig text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.gitignore text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.node-version text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.npmrc text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.nvmrc text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*browserslistrc* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*dockerfile* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*Dockerfile* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+.husky/** text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.*rc text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.cfg text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.cnf text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.conf text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.config text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.htaccess text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.nginx text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.nginxconf text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*makefile* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*Makefile* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*procfile* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*Procfile* text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### JavaScript generated files
+###############################################################################
+
+*.map text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.min.* text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Deno/Node.js `lock` files
+###############################################################################
+
+bun.lock text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+bun.lockb text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+deno.lock text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+package-lock.json text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+pnpm-lock.yaml text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+yarn.lock text -diff eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### R files
+###############################################################################
+
+*.[Rr][Pp]roj text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.[Rr]d text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.[Rr]md text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+*.R text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### Playlist files
+###############################################################################
+
+*.cue text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.m3u text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.m3u8 text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+*.pls text eol=lf encoding=UTF-8 working-tree-encoding=UTF-8
+
+###############################################################################
+### GitHub Linguist overrides
+###############################################################################
+
+### Exclude files from coding language stats
+*.editorconfig -linguist-detectable
+*.json -linguist-detectable
+*.json5 -linguist-detectable
+*.jsonc -linguist-detectable
+*.npmrc -linguist-detectable
+*.nvmrc -linguist-detectable
+*.toml -linguist-detectable
+*.xml -linguist-detectable
+*.yaml -linguist-detectable
+*.yml -linguist-detectable
+
+### Include `*.Rmd` files in coding language stats
+*.[Rr]md linguist-detectable
+
+### Treat files as `documentation` and exclude from coding language stats
+*.md linguist-documentation
+*.mdx linguist-documentation
+
+### Treat files as `vendored` and exclude from coding language stats
+bun.lock linguist-vendored
+bun.lockb linguist-vendored
+deno.lock linguist-vendored
+package-lock.json linguist-vendored
+pnpm-lock.yaml linguist-vendored
+yarn.lock linguist-vendored
+
+### Treat VS Code & Positron files as `JSON-with-Comments`
+**/.positron/**/*.json linguist-language=JSON-with-Comments
+**/.vscode/**/*.json linguist-language=JSON-with-Comments
+**/Positron/User/**/*.json linguist-language=JSON-with-Comments
+**/user-data/User/**/*.json linguist-language=JSON-with-Comments
+
+### Treat VS Code & Positron files as `JSON-with-Comments`
+defaultSettings.*.json linguist-language=JSON-with-Comments
+defaultSettings.json linguist-language=JSON-with-Comments
+extensions.*.json linguist-language=JSON-with-Comments
+extensions.json linguist-language=JSON-with-Comments
+keybindings.*.json linguist-language=JSON-with-Comments
+keybindings.json linguist-language=JSON-with-Comments
+launch.*.json linguist-language=JSON-with-Comments
+launch.json linguist-language=JSON-with-Comments
+settings.*.json linguist-language=JSON-with-Comments
+settings.json linguist-language=JSON-with-Comments
+tasks.*.json linguist-language=JSON-with-Comments
+tasks.json linguist-language=JSON-with-Comments
+
+### Treat `tsconfig` files as `JSON-with-Comments`
+**/ts-config*/**/*.json linguist-language=JSON-with-Comments
+**/tsconfig*/**/*.json linguist-language=JSON-with-Comments
+**/typescript-config*/**/*.json linguist-language=JSON-with-Comments
+tsconfig.json linguist-language=JSON-with-Comments
+tsconfig.*.json linguist-language=JSON-with-Comments
+
+### Treat `devcontainer` files as `JSON-with-Comments`
+.devcontainer.json linguist-language=JSON-with-Comments
+devcontainer.json linguist-language=JSON-with-Comments
+
+### Treat specific config files as `JSON-with-Comments`
+.all-contributors* linguist-language=JSON-with-Comments
+.allcontributors* linguist-language=JSON-with-Comments
+.biome*.json linguist-language=JSON-with-Comments
+.devcontainer.json linguist-language=JSON-with-Comments
+.oxlint*.json linguist-language=JSON-with-Comments
+biome*.json linguist-language=JSON-with-Comments
+oxlint*.json linguist-language=JSON-with-Comments
+plyconfig.json linguist-language=JSON-with-Comments
+
+### Treat Front Matter CMS files as `JSON-with-Comments`
+**/.frontmatter/config/*.json linguist-language=JSON-with-Comments
+frontmatter.json linguist-language=JSON-with-Comments
+
+### Explicitly mark shell scripts
+*.bash linguist-language=Shell
+*.csh linguist-language=Shell
+*.fish linguist-language=Shell
+*.ksh linguist-language=Shell
+*.sh linguist-language=Shell
+*.zsh linguist-language=Shell
+
+### Vendored Deno/Node.js/Web files
+**/.yarn/** linguist-vendored
+**/.yarn/patches/** linguist-vendored
+**/.yarn/plugins/** linguist-vendored
+**/.yarn/releases/** linguist-vendored
+**/.yarn/sdks/** linguist-vendored
+**/.yarn/versions/** linguist-vendored
+**/build/** linguist-vendored
+**/dist/** linguist-vendored
+# **/lib/** linguist-vendored
+**/libs/** linguist-vendored
+**/out/** linguist-vendored
+**/www/** linguist-vendored
+
+###############################################################################
+### Exclude files from exporting
+###############################################################################
+
+# .gitattributes export-ignore
+# .gitignore export-ignore
+# .gitkeep export-ignore
+# .placeholder export-ignore
+
+###############################################################################
+### Document files
+###############################################################################
+
+### LaTeX
+*.bibtex text diff=bibtex
+*.latex text diff=tex
+*.tex text diff=tex
+
+### Convertible documents
+*.doc diff=astextplain
+*.docm diff=astextplain
+*.docx diff=astextplain
+*.dot diff=astextplain
+*.dotm diff=astextplain
+*.dotx diff=astextplain
+*.odf diff=astextplain
+*.ods diff=astextplain
+*.odt diff=astextplain
+*.pdf diff=astextplain
+*.rtf diff=astextplain
+
+###############################################################################
+### Binary files (`binary` === `-text -diff`)
+###############################################################################
+
+### Vendored files
+**/.yarn/** binary
+**/.yarn/patches/** binary
+**/.yarn/plugins/** binary
+**/.yarn/releases/** binary
+**/.yarn/sdks/** binary
+**/.yarn/versions/** binary
+
+### R files
+*.[Rr][Dd]ata binary
+*.[Rr]da binary
+*.[Rr]db binary
+*.[Rr]ds binary
+*.[Rr]dx binary
+
+###############################################################################

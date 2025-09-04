@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+pnpx commitlint@latest --edit "$1"

@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: 🗣️ Discussion
+    url: https://github.com/astrochemx/astrorepo/discussions
+    about: Discuss with other community members
+  - name: 🙋 Question
+    url: https://github.com/astrochemx/astrorepo/discussions/new?category=q-a
+    about: Ask questions other community members
+  - name: 💡 Feature or documentation request
+    url: https://github.com/astrochemx/astrorepo/discussions/new?category=ideas
+    about: Open a feature or documentation request, or propose an idea

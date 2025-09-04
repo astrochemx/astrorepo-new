@@ -1,0 +1,113 @@
+### Workspaces
+packages:
+  - apps/*
+  - packages/*
+
+### Build Settings
+ignoredBuiltDependencies:
+  - core-js
+  - core-js-pure
+
+### Build Settings
+onlyBuiltDependencies:
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - oxc-resolver
+  - puppeteer
+  - sharp
+  - simple-git-hooks
+
+### Patched Dependencies
+patchedDependencies:
+  prettier-plugin-tailwindcss@0.6.14: patches/prettier-plugin-tailwindcss@0.6.14.patch
+  rehype-pretty-code@0.14.1: apps/docs/patches/rehype-pretty-code@0.14.1.patch
+
+### Dependency Resolution
+overrides:
+  puppeteer: 24.19.0
+
+### ----------------------------------------------------------------------------
+
+### Dependency Hoisting Settings
+hoist: true
+hoistPattern: ['*']
+hoistWorkspacePackages: true
+publicHoistPattern: []
+shamefullyHoist: false
+
+### Node-Modules Settings
+dlxCacheMaxAge: 1440
+enableGlobalVirtualStore: false
+enableModulesDir: true
+modulesCacheMaxAge: 10080
+nodeLinker: isolated
+packageImportMethod: auto
+symlink: true
+virtualStoreDirMaxLength: 60
+
+### Store Settings
+strictStorePkgContentCheck: true
+verifyStoreIntegrity: true
+
+### Lockfile Settings
+gitBranchLockfile: false
+lockfile: true
+preferFrozenLockfile: true
+
+### Peer Dependency Settings
+autoInstallPeers: true
+dedupePeerDependents: true
+resolvePeersFromWorkspaceRoot: true
+strictPeerDependencies: false
+
+### CLI Settings
+color: auto
+engineStrict: false
+loglevel: info
+managePackageManagerVersions: true
+packageManagerStrict: true
+packageManagerStrictVersion: false
+recursiveInstall: true
+useBetaCli: false
+
+### Build Settings
+childConcurrency: 5
+ignoreDepScripts: false
+ignoreScripts: false
+nodeOptions: '${NODE_OPTIONS:- } --experimental-strip-types --experimental-transform-types --experimental-vm-modules'
+sideEffectsCache: false
+sideEffectsCacheReadonly: false
+strictDepBuilds: false
+verifyDepsBeforeRun: warn
+
+### Workspace Settings
+dedupeInjectedDeps: true
+disallowWorkspaceCycles: false
+ignoreWorkspaceCycles: false
+includeWorkspaceRoot: false
+injectWorkspacePackages: false
+linkWorkspacePackages: false
+preferWorkspacePackages: false
+saveWorkspaceProtocol: rolling
+sharedWorkspaceLockfile: true
+
+### Patching Dependencies
+allowUnusedPatches: false
+ignorePatchFailures: false
+
+### Pnpmfile
+ignorePnpmfile: false
+pnpmfile: .pnpmfile.cjs
+
+### Other Settings
+catalogMode: manual
+cleanupUnusedCatalogs: false
+dedupeDirectDeps: false
+deployAllFiles: false
+enablePrePostScripts: false
+ignoreCompatibilityDb: false
+optimisticRepeatInstall: false
+resolutionMode: highest
+savePrefix: '^'
+shellEmulator: true

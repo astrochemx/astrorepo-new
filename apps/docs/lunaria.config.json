@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/lunariajs/lunaria/refs/heads/main/packages/core/config.schema.json",
+  "repository": {
+    "name": "astrochemx/astrorepo",
+    "rootDir": "apps/docs"
+  },
+  "defaultLocale": {
+    "label": "Українська",
+    "lang": "uk"
+  },
+  "locales": [
+    {
+      "label": "English",
+      "lang": "en"
+    }
+  ],
+  "files": [
+    {
+      "location": "src/content/docs/**/*.{md,mdx}",
+      "pattern": "src/content/docs/@lang/@path",
+      "type": "universal"
+    }
+  ],
+  "dashboard": {
+    "title": "Translation Status",
+    "description": "Translation progress tracker",
+    "favicon": {
+      "external": [
+        {
+          "link": "https://astrorepo-docs.vercel.app/favicon.svg",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    "customCss": ["./lunaria/styles.css"],
+    "basesToHide": ["src/content/docs/"]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "name": "@astrochemx/stylelint-config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "stylelint config for @astrochemx ✨",
+  "keywords": [
+    "config",
+    "stylelint",
+    "stylelint-config"
+  ],
+  "homepage": "https://github.com/astrochemx/astrorepo/packages/stylelint-config#readme",
+  "bugs": {
+    "url": "https://github.com/astrochemx/astrorepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astrochemx/astrorepo.git",
+    "directory": "packages/stylelint-config"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/astrochemx"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vladyslav Shevchenko",
+    "url": "https://github.com/astrochemx"
+  },
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@carlosjeurissen/stylelint-csstree-validator": "3.2.1",
+    "@stylistic/stylelint-plugin": "4.0.0",
+    "postcss": "8.5.6",
+    "postcss-html": "1.8.0",
+    "postcss-less": "6.0.0",
+    "postcss-markdown": "1.3.0",
+    "postcss-scss": "4.0.9",
+    "postcss-styl": "0.12.3",
+    "postcss-styled-syntax": "0.7.1",
+    "stylelint": "16.23.1",
+    "stylelint-config-recess-order": "7.2.0",
+    "stylelint-config-recommended-vue": "1.6.1",
+    "stylelint-config-sass-guidelines": "12.1.0",
+    "stylelint-config-standard": "39.0.0",
+    "stylelint-config-standard-scss": "15.0.1",
+    "stylelint-declaration-block-no-ignored-properties": "2.8.0",
+    "stylelint-high-performance-animation": "1.11.0",
+    "stylelint-less": "3.0.1",
+    "stylelint-no-unsupported-browser-features": "8.0.4",
+    "stylelint-order": "7.0.0",
+    "stylelint-prettier": "5.0.3",
+    "stylelint-scss": "6.12.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/core": "0.18.2",
+    "@astrochemx/tsdown-config": "workspace:*",
+    "@astrochemx/typescript-config": "workspace:*",
+    "@types/postcss-less": "4.0.6",
+    "publint": "0.3.12",
+    "stylelint": "16.23.1",
+    "tsdown": "0.14.2",
+    "tslib": "2.8.1",
+    "typescript": "5.9.2",
+    "unplugin-unused": "0.5.2"
+  },
+  "peerDependencies": {
+    "stylelint": "16.23.1"
+  },
+  "peerDependenciesMeta": {
+    "stylelint": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || ^23.11.1 || >= 24.7.0"
+  },
+  "publishConfig": {
+    "provenance": true
+  }
+}

@@ -1,0 +1,589 @@
+version: 2
+updates:
+  - package-ecosystem: cargo
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: devcontainers
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker-compose
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: dotnet-sdk
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: github-actions
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gitsubmodule
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: pip
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily
+
+  - package-ecosystem: uv
+    allow:
+      - dependency-type: all
+      - dependency-type: development
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-type: production
+    directory: /
+    groups:
+      cargo:
+        patterns:
+          - '*'
+      devcontainers:
+        patterns:
+          - '*'
+      docker:
+        patterns:
+          - '*'
+      docker-compose:
+        patterns:
+          - '*'
+      dotnet-sdk:
+        patterns:
+          - '*'
+      github-actions:
+        patterns:
+          - '*'
+      gitsubmodule:
+        patterns:
+          - '*'
+      gomod:
+        patterns:
+          - '*'
+      npm:
+        patterns:
+          - '*'
+      nuget:
+        patterns:
+          - '*'
+      pip:
+        patterns:
+          - '*'
+      uv:
+        patterns:
+          - '*'
+    open-pull-requests-limit: 10
+    schedule:
+      interval: daily

@@ -1,0 +1,623 @@
+##############################
+### VSCode
+##############################
+
+.history
+.ionide
+
+.vs
+.vscode_*
+.vscode-*
+.vscode-test
+
+**/.vscode/**/*
+**/.vscode/mise-tools
+
+!**/.vscode/*.code-snippets
+!**/.vscode/extensions*.json*
+!**/.vscode/keybindings*.json*
+!**/.vscode/launch*.json*
+!**/.vscode/settings*.json*
+!**/.vscode/tasks*.json*
+
+##############################
+### Linux
+##############################
+
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+*~
+
+##############################
+### MacOS
+##############################
+
+__MACOSX
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+*.icloud
+*.nib
+Icon
+Network Trash Folder
+Temporary Items
+
+##############################
+### Windows
+##############################
+
+.bash_history
+[Dd]esktop.ini
+*.appx
+*.appxbundle
+*.appxsym
+*.appxupload
+*.cab
+*.diagcab
+*.eappx
+*.eappxbundle
+*.eappxsym
+*.eappxupload
+*.emsix
+*.emsixbundle
+*.emsixsym
+*.emsixupload
+*.lnk
+*.msi
+*.msix
+*.msixbundle
+*.msixsym
+*.msixupload
+*.msm
+*.msp
+*.pf
+*.stackdump
+*.swap
+*.swp
+*.temp
+*.tmp
+$Recycle.Bin
+$RECYCLE.BIN
+ehthumbs_vista.db
+ehthumbs.db
+iconcache_*.db
+thumbcache_*.db
+Thumbs.db
+Thumbs.db:encryptable
+
+##############################
+### Backups
+##############################
+
+*.*backup
+*.*bak
+*.*ori
+*.*orig
+*.*original
+*.backup
+*.backup.*
+*.bak
+*.bak.*
+*.ori
+*.ori.*
+*.orig
+*.orig.*
+*.original
+*.original.*
+*backup
+
+##############################
+### Cache
+##############################
+
+*.*cache
+*.*cache*.*
+*cache
+
+##############################
+### History
+##############################
+
+*.*history
+*.*history*.*
+*history
+
+##############################
+### Temporary
+##############################
+
+.temp*
+.tmp*
+*.*temp
+*.*tmp
+*.temp.*
+*.tmp.*
+*temp
+*tmp
+tmp*
+
+##############################
+### Node.js
+##############################
+
+### antfu
+.eslint-config-inspector
+.node-modules-inspector
+.vite-inspect
+*typegen.d.ts
+
+### astro
+.astro
+.astro_*
+.astro-*
+
+### auth
+.auth
+
+### bundled
+*.bundled*.*
+
+### cache
+*.eslint*cache
+*.parcel*cache
+*.prettier*cache
+*.stylelint*cache
+
+### content-collections
+.content-collections
+
+### contentlayer
+.contentlayer
+
+### coverage
+.nyc_output
+*.cov
+*.coverage
+*.coverage.*
+*.lcov
+coverage
+lib-cov
+
+### dependencies
+bower_components
+jspm_packages
+node_modules
+web_modules
+
+### docusaurus
+.docusaurus
+
+### dynamodb
+.dynamodb
+
+### environment
+.aws
+.direnv
+.env
+.env*.local
+.env*.prod*
+.envrc
+
+### fumadocs
+.source
+
+### fusebox
+.fusebox
+
+### grunt
+.grunt
+
+### husky
+_
+**/.husky/_
+
+### keys
+*.ca
+*.cert
+*.crt
+*.csr
+*.der
+*.kdb
+*.key
+*.key-mrc
+*.key.json
+*.keys
+*.org
+*.p12
+*.pem
+*.priv
+*.rnd
+*.rsa
+*.smime
+*.ssh
+*.ssh-key
+*.ssleay
+
+### local
+*.local
+*.local.*
+
+### lock
+*.lock
+bun.lock
+bun.lockb
+deno.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+### logs
+.*-debug.log*
+.*-error.log*
+*-debug.log*
+*-error.log*
+*.log
+logs
+report.*.json
+
+### microbundle
+.rpt2_*
+.rpt2_cache
+.rts2_*
+.rts2_cache_cjs
+.rts2_cache_es
+.rts2_cache_umd
+
+### next
+.next
+.next_*
+.next-*
+next-env.d.ts
+
+### node
+.node_repl_history
+
+### npm
+*.tgz
+.npm
+
+### nuxt
+.nuxt
+.nuxt_*
+.nuxt-*
+
+### output
+.*out
+.*output
+.bin
+build
+build_*
+build-*
+dist
+dist_*
+dist-*
+# lib
+out
+output
+
+### playwright
+blob-report
+playwright-report
+test-results
+
+### pnpm
+.pnpm
+.pnpm_*
+.pnpm-*
+
+### profilers
+*.cpuprofile
+
+### runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+### serverless
+.serverless
+
+### storybook
+storybook-static
+
+### svelte
+.svelte
+.svelte-kit
+.svelte_*
+.svelte-*
+
+### turbo
+.turbo
+
+### typescript
+*.tsbuildinfo
+
+### vercel
+.vercel
+
+### vite
+.vite
+
+### vitepress
+.vitepress
+
+### vitest
+.vitest
+
+### webpack
+.webpack
+
+### yarn
+.pnp
+.pnp.*
+.yarn-integrity
+**/.yarn/*
+**/.yarn/build-state.yml
+**/.yarn/cache
+**/.yarn/install-state.gz
+**/.yarn/unplugged
+build-state.yml
+install-state.gz
+!.yarnrc
+!.yarnrc.yml
+# !**/.yarn/patches
+# !**/.yarn/plugins
+# !**/.yarn/releases
+# !**/.yarn/sdks
+# !**/.yarn/versions
+# !yarn.lock
+
+##############################
+### R
+##############################
+
+### bookdown
+*_files
+
+### environment
+.Renviron
+
+### examples
+*-Ex.R
+
+### history
+.Rhistory
+.Rapp.history
+
+### knitr
+*_cache
+cache
+
+### oauth2
+.httr-oauth
+
+### output
+*.tar.gz
+*.Rcheck
+
+### pkgdown
+# docs
+
+### rstudio
+rsconnect
+.Rproj.user
+
+### session
+.RData
+.RDataTmp
+
+### temp
+*.utf8.md
+*.knit.md
+
+### translations
+po/*~
+
+### user
+.Ruserdata
+
+### vignettes
+**/vignettes/*.html
+**/vignettes/*.pdf
+
+##############################
+### Rust
+##############################
+
+# cargo
+debug
+target
+
+# lock
+Cargo.lock
+
+# msvc
+*.pdb
+
+# rustfmt
+**/*.rs.bk
+
+##############################
+### Python
+##############################
+
+### cache
+__pycache__
+*.py[cod]
+*$py.class
+
+### celery
+celerybeat-schedule
+celerybeat.pid
+
+### cython
+cython_debug
+
+### distribution
+.eggs
+.installed.cfg
+.Python
+*.egg
+*.egg-info
+build
+develop-eggs
+dist
+downloads
+eggs
+# lib
+lib64
+MANIFEST
+parts
+sdist
+sharepython-wheels
+var
+wheels
+
+### django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+### environments
+.env
+.venv
+env
+ENV
+env.bak
+venv
+venv.bak
+
+### extensions
+*.so
+
+### flask
+instance
+.webassets-cache
+
+### history
+.python_history
+
+### ipython
+ipython_config.py
+profile_default
+
+### ipython
+ipython_config.py
+profile_default
+
+### jupyter
+.ipynb_checkpoints
+
+### jupyter
+.ipynb_checkpoints
+
+### logs
+pip-delete-this-directory.txt
+pip-log.txt
+
+### mkdocs
+site
+
+### mypy
+.dmypy.json
+.mypy_cache
+dmypy.json
+
+### pdm
+# pdm.lock
+.pdm.toml
+
+### pep-582
+__pypackages__
+
+### pipenv
+# Pipfile.lock
+
+### poetry
+# poetry.lock
+poetry.toml
+
+### pybuilder
+.pybuilder
+target
+
+### pyenv
+# .python-version
+
+### pyinstaller
+*.manifest
+*.spec
+
+### pyre
+.pyre
+
+### pyright
+pyrightconfig.json
+
+### pytype
+.pytype
+
+### rope
+.ropeproject
+
+### ruff
+.ruff_cache
+
+### sagemath
+*.sage.py
+
+### scrapy
+.scrapy
+
+### sphinx
+_build
+
+### spyder
+.spyderproject
+.spyproject
+
+### tests
+.cache
+.coverage
+.coverage.*
+.hypothesis
+.nox
+.pytest_cache
+.tox
+*.cover
+*.py,cover
+cover
+coverage.xml
+htmlcov
+nosetests.xml
+
+### translations
+*.mo
+*.pot
+
+##############################
+### User Defined
+##############################
+
+### dotfiles
+# !**/.vscode/data/tmp
+# !**/vscode/data/tmp
+
+Sidebar.astro
+TabbedContent.astro
+TabListItem.astro
+TabPanel.astro

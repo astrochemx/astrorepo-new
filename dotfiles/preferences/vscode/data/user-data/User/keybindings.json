@@ -1,0 +1,131 @@
+[
+  {
+    "key": "ctrl+left",
+    "command": "cursorWordPartLeft"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "cursorWordPartRight"
+  },
+  {
+    "key": "ctrl+shift+left",
+    "command": "cursorWordPartLeftSelect"
+  },
+  {
+    "key": "ctrl+shift+right",
+    "command": "cursorWordPartRightSelect"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "deleteWordPartLeft"
+  },
+  {
+    "key": "ctrl+delete",
+    "command": "deleteWordPartRight"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "editorScroll",
+    "when": "textInputFocus",
+    "args": {
+      "to": "down",
+      "by": "line",
+      "revealCursor": false,
+      "value": 10
+    }
+  },
+  {
+    "key": "ctrl+up",
+    "command": "editorScroll",
+    "when": "textInputFocus",
+    "args": {
+      "to": "up",
+      "by": "line",
+      "revealCursor": false,
+      "value": 10
+    }
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "editorScroll",
+    "when": "textInputFocus",
+    "args": {
+      "to": "down",
+      "by": "line",
+      "revealCursor": false,
+      "value": 1
+    }
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "editorScroll",
+    "when": "textInputFocus",
+    "args": {
+      "to": "up",
+      "by": "line",
+      "revealCursor": false,
+      "value": 1
+    }
+  },
+  {
+    "key": "up",
+    "command": "removeSecondaryCursors",
+    "when": "editorHasMultipleSelections && textInputFocus"
+  },
+  {
+    "key": "down",
+    "command": "removeSecondaryCursors",
+    "when": "editorHasMultipleSelections && textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "\n```{r <name>, cache = FALSE, echo = FALSE, eval = TRUE, include = FALSE, message = FALSE, tidy = TRUE, results = \"asis\", size = \"small\", warning = FALSE, ft.arraystretch = 1.5, ft.latex.float = \"none\", ft.tabcolsep = 0}\n$0\n```\n"
+    }
+  },
+  {
+    "key": "right",
+    "command": "-gifPlayer.nextFrame",
+    "when": "gifPlayerActive"
+  },
+  {
+    "key": "left",
+    "command": "-gifPlayer.previousFrame",
+    "when": "gifPlayerActive"
+  },
+  {
+    "key": "space",
+    "command": "-gifPlayer.togglePlay",
+    "when": "gifPlayerActive"
+  },
+  {
+    "key": "ctrl+d ctrl+b",
+    "command": "-dbcode.connections.view.focus"
+  },
+  {
+    "key": "alt+[",
+    "command": "-print-it.PrintIt"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "-zotex.addCitation",
+    "when": "editorTextFocus && editorLangId == 'latex' || editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+alt+z",
+    "command": "-zotex.addCiteBib",
+    "when": "editorTextFocus && editorLangId == 'latex' || editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "-zotex.addZoteroSelectedCitation",
+    "when": "editorTextFocus && editorLangId == 'latex' || editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "-zotex.addZoteroSelectedCitationAndBibliography",
+    "when": "editorTextFocus && editorLangId == 'latex' || editorTextFocus && editorLangId == 'markdown'"
+  }
+]

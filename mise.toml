@@ -1,0 +1,46 @@
+min_version = "2025.8.21"
+
+[env]
+_.path = ["{{config_root}}/node_modules/.bin"]
+BIN_PATH = "{{ config_root }}/node_modules/.bin"
+NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
+PROJECT_NAME = "{{ config_root | basename }}"
+
+[hooks]
+postinstall = "npx corepack enable pnpm"
+
+[settings]
+experimental = true
+idiomatic_version_file_enable_tools = ["node"]
+windows_shim_mode = "symlink"
+
+[tools]
+"node" = "{{ env['NODE_VERSION'] | default(value='latest') }}"
+# "npm" = "{{ env['NPM_VERSION'] | default(value='latest') }}"
+# "pnpm" = "{{ env['PNPM_VERSION'] | default(value='latest') }}"
+
+[tasks.install]
+alias = "i"
+description = "Install Dependencies"
+outputs = ["node_modules/.pnpm/lock.yaml"]
+run = "pnpm install"
+sources = ["package.json", "pnpm-lock.yaml", "mise.toml"]
+
+[tasks.dev]
+alias = "d"
+depends = ["install"]
+description = "Develop the Project"
+run = "pnpm run dev"
+
+[tasks.build]
+alias = "b"
+depends = ["install"]
+description = "Build the Project"
+run = "pnpm run build"
+
+[tasks.info]
+description = "Print Information"
+run = '''
+echo "PROJECT:  $PROJECT_NAME"
+echo "NODE_ENV: $NODE_ENV"
+'''

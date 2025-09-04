@@ -1,0 +1,429 @@
+{
+  "[astro]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json5]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.markdownlint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[quarto]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.markdownlint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "quarto.quarto"
+  },
+  "[rmd]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.markdownlint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "quarto.quarto"
+  },
+  "[scss]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svelte]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svg]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[tailwindcss]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[toml]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.organizeImports.biome",
+      "source.fixAll.markdownlint",
+      "source.fixAll.stylelint",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.biome",
+      "source.fixAll.oxc",
+      "source.fixAll.eslint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "astro.content-intellisense": true,
+  "biome.enabled": true,
+  "commitlint.config.file": "commitlint.config.ts",
+  "cSpell.autoFormatConfigFile": true,
+  "cSpell.enabled": true,
+  "cSpell.files": [
+    "**/*",
+    "**/.*",
+    "**/.*/**/*",
+    "**/.*/**/.*",
+    "**/.*/**/.*/**/*",
+    "**/.*/**/.*/**/.*",
+    "**/.git/COMMIT_EDITMSG"
+  ],
+  "cSpell.language": "en,en-GB,en-US,uk",
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "c:\\users\\vs\\appdata\\local\\mise\\shims\\node"
+  },
+  "editor.codeActionsOnSave": [
+    "source.formatDocument",
+    "source.organizeImports.biome",
+    "source.fixAll.markdownlint",
+    "source.fixAll.stylelint",
+    "source.fixAll.biome",
+    "source.fixAll.oxc",
+    "source.fixAll.eslint"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.rulers": [
+    80,
+    100,
+    120
+  ],
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "javascript": "javascriptreact",
+    "markdown": "html",
+    "typescript": "typescriptreact",
+    "vue-html": "html"
+  },
+  "eslint.lintTask.options": "--max-warnings 0 --no-warn-ignored --report-unused-disable-directives-severity warn",
+  "eslint.onIgnoredFiles": "off",
+  "eslint.probe": [
+    "astro",
+    "css",
+    "gql",
+    "graphql",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "less",
+    "markdown",
+    "pcss",
+    "postcss",
+    "scss",
+    "svelte",
+    "toml",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "xml",
+    "yaml"
+  ],
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "warn"
+    }
+  ],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "markdown.validate.duplicateLinkDefinitions.enabled": "warning",
+  "markdown.validate.enabled": true,
+  "markdown.validate.fileLinks.enabled": "ignore",
+  "markdown.validate.fileLinks.markdownFragmentLinks": "ignore",
+  "markdown.validate.fragmentLinks.enabled": "ignore",
+  "markdown.validate.referenceLinks.enabled": "ignore",
+  "markdown.validate.unusedLinkDefinitions.enabled": "hint",
+  "oxc.enable": true,
+  "oxc.flags": {
+    "disable_nested_config": false,
+    "fix_kind": "all"
+  },
+  "oxc.lint.run": "onType",
+  "oxc.unusedDisableDirectives": "allow",
+  "prettier.documentSelectors": [
+    "**/*.astro",
+    "**/*.cjs",
+    "**/*.cjsx",
+    "**/*.css",
+    "**/*.cts",
+    "**/*.ctsx",
+    "**/*.gjs",
+    "**/*.gts",
+    "**/*.hbs",
+    "**/*.html",
+    "**/*.js",
+    "**/*.json",
+    "**/*.json5",
+    "**/*.jsonc",
+    "**/*.jsx",
+    "**/*.less",
+    "**/*.md",
+    "**/*.mdx",
+    "**/*.mjs",
+    "**/*.mjsx",
+    "**/*.mts",
+    "**/*.mtsx",
+    "**/*.pcss",
+    "**/*.postcss",
+    "**/*.qmd",
+    "**/*.qmd",
+    "**/*.rmd",
+    "**/*.scss",
+    "**/*.svelte",
+    "**/*.svg",
+    "**/*.svg",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.vue",
+    "**/*.xaml",
+    "**/*.xml",
+    "**/*.yaml",
+    "**/*.yml"
+  ],
+  "prettier.enable": true,
+  "python.defaultInterpreterPath": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\python\\3.13.7\\python.exe",
+  "ruff.interpreter": [
+    "c:\\users\\vs\\appdata\\local\\mise\\shims\\python.exe"
+  ],
+  "ruff.path": [
+    "c:\\users\\vs\\appdata\\local\\mise\\shims\\ruff.exe"
+  ],
+  "tailwindCSS.classAttributes": [
+    "class:list",
+    "class",
+    "classes",
+    "classList",
+    "className",
+    "classNames",
+    "ngClass",
+    "style:list",
+    "style",
+    "styleList",
+    "styleName",
+    "styleNames",
+    "styles"
+  ],
+  "tailwindCSS.classFunctions": [
+    "cc",
+    "classList",
+    "classNames",
+    "clb",
+    "clsx",
+    "cn",
+    "cnb",
+    "ctl",
+    "cva",
+    "cx",
+    "dcnb",
+    "objstr",
+    "tv",
+    "tw.color",
+    "tw.style",
+    "tw",
+    "twc",
+    "twJoin",
+    "twMerge"
+  ],
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "markdown": "html",
+    "mustache": "html",
+    "plaintext": "html"
+  },
+  "tailwindCSS.validate": true,
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

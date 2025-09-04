@@ -1,0 +1,68 @@
+{
+  "name": "@astrochemx/typescript-config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "typescript config for @astrochemx ✨",
+  "keywords": [
+    "config",
+    "typescript",
+    "typescript-config"
+  ],
+  "homepage": "https://github.com/astrochemx/astrorepo/packages/typescript-config#readme",
+  "bugs": {
+    "url": "https://github.com/astrochemx/astrorepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astrochemx/astrorepo.git",
+    "directory": "packages/typescript-config"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/astrochemx"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vladyslav Shevchenko",
+    "url": "https://github.com/astrochemx"
+  },
+  "type": "module",
+  "files": [
+    "astro.json",
+    "base.json",
+    "next.json",
+    "node.json",
+    "lib.json",
+    "vue.json",
+    "package.json",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@astrojs/ts-plugin": "1.10.4",
+    "react": "19.1.1",
+    "tslib": "2.8.1",
+    "typescript": "5.9.2"
+  },
+  "peerDependenciesMeta": {
+    "@astrojs/ts-plugin": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "tslib": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || ^23.11.1 || >= 24.7.0",
+    "typescript": "^5.9.2 || >= 5.9.2"
+  },
+  "publishConfig": {
+    "provenance": true
+  }
+}

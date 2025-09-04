@@ -1,0 +1,35 @@
+# https://github.com/behaviorbot/welcome
+# https://github.com/behaviorbot/request-info
+
+newIssueWelcomeComment: |
+  Thanks for opening your first issue here! 💖
+  Be sure to follow the issue template 👌.
+
+newPRWelcomeComment: |
+  Thanks for opening this pull request! 😍
+  Please be patient and we will get back to you as soon as we can. 🤝
+  In the meantime, please check out our [Contributing Guidelines](./.github/CONTRIBUTING.md).
+
+firstPRMergeComment: |
+  Congrats on merging your first pull request! 🎉
+  We are proud of you! 🫶
+
+requestInfoReplyComment: >
+  We would appreciate it if you could provide us with more info about this issue/pr!
+
+requestInfoDefaultTitles:
+  - update
+  - updates
+
+requestInfoLabelToAdd: needs-more-info
+
+checkIssueTemplate: true
+
+checkPullRequestTemplate: true
+
+requestInfoOn:
+  issue: true
+  pullRequest: true
+
+requestInfoUserstoExclude:
+  - astrochemx

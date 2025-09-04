@@ -1,0 +1,103 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 100
+tab_width = 2
+trim_trailing_whitespace = true
+
+[*.{astro,cjs,cjsx,cts,ctsx,js,jsx,mjs,mjsx,mts,mtsx,svelte,ts,tsx,vue}]
+end_of_line = lf
+indent_style = space
+
+[*.{c,cpp,cs,py,r,R,rs,vb}]
+end_of_line = lf
+indent_style = space
+
+[*.{html,svg,xml}]
+end_of_line = lf
+indent_style = space
+
+[*.{md,mdx,qmd,rmd,Rmd}]
+end_of_line = lf
+indent_style = space
+
+[*.rst]
+end_of_line = lf
+indent_style = space
+
+[*.ipynb]
+end_of_line = lf
+indent_style = space
+
+[*.{json,json5,jsonc}]
+end_of_line = lf
+indent_style = space
+
+[*.{yaml,yml}]
+end_of_line = lf
+indent_style = space
+
+[*.toml]
+end_of_line = lf
+indent_style = space
+
+[*.{*ignore,browserslistrc,editorconfig,gitattributes,gitconfig,node-version,npmrc,nvmrc}]
+end_of_line = lf
+indent_style = space
+
+[*.{direnv,env,envrc}.*]
+end_of_line = lf
+indent_style = space
+
+[.husky/**]
+end_of_line = lf
+indent_style = space
+
+[*.{*rc,cfg,cnf,conf,config,htaccess,nginx,nginxconf}]
+end_of_line = lf
+indent_style = space
+
+[*.{bash,csh,fish,ksh,sh,zsh}]
+end_of_line = lf
+indent_style = space
+
+[*.{bat,cmd,ps1,psm1,psd1,wslconfig,wslgconfig}]
+end_of_line = crlf
+indent_style = space
+
+[*.{csv,psv,scsv,ssv}]
+end_of_line = crlf
+indent_style = space
+
+[*.{tab,tsv}]
+end_of_line = crlf
+indent_style = tab
+
+[*.{makefile,Makefile}]
+end_of_line = lf
+indent_style = tab
+
+[*.{asp,aspx,cshtml,razor,vbhtml}]
+end_of_line = crlf
+indent_style = space
+
+[*.xaml]
+end_of_line = crlf
+indent_style = space
+
+[*.sln]
+end_of_line = crlf
+indent_style = tab
+
+[*.{csproj,dbproj,esproj,fsproj,lsproj,modelproj,nodeproj,proj,sqlproj,vbproj,vcproj,vcxproj,wixproj,wwaproj,xproj}]
+end_of_line = crlf
+indent_style = space
+
+[*.{filters,overridetasks,props,slnf,slnx,targets,tasks,vcxitems,vsconfig,vsprops,vssettings}]
+end_of_line = crlf
+indent_style = space

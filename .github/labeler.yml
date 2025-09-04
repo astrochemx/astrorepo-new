@@ -1,0 +1,28 @@
+# See: https://github.com/actions/labeler
+
+'🚨: workflows':
+  - .github/workflows/**
+
+'📦: biome-config':
+  - packages/biome-config/**
+
+'📦: commitlint-config':
+  - packages/commitlint-config/**
+
+'📦: eslint-config':
+  - packages/eslint-config/**
+
+'📦: markdownlint-config':
+  - packages/markdownlint-config/**
+
+'📦: oxlint-config':
+  - packages/oxlint-config/**
+
+'📦: prettier-config':
+  - packages/prettier-config/**
+
+'📦: tsdown-config':
+  - packages/tsdown-config/**
+
+'📦: typescript-config':
+  - packages/typescript-config/**

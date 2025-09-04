@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json.schemastore.org/all-contributors.json",
+  "badgeTemplate": "  [contributors]: <#contributors> \"👪 Contributors: <%= contributors.length %> 🤩\"\n [contributors-bg]: <https://img.shields.io/badge/%F0%9F%91%AA_Contributors-<%= contributors.length %>_%F0%9F%A4%A9-21bb42.svg?style=flat> \"👪 Contributors: <%= contributors.length %> 🤩\"",
+  "commit": false,
+  "commitConvention": "angular",
+  "commitType": "docs",
+  "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": true,
+  "files": ["README.md"],
+  "imageSize": 100,
+  "linkToUsage": false,
+  "projectName": "astrorepo",
+  "projectOwner": "astrochemx",
+  "repoHost": "https://github.com",
+  "repoType": "github",
+  "skipCi": true,
+  "types": {
+    "custom": {
+      "symbol": "🔭",
+      "description": "A custom contribution type.",
+      "link": "[<%= symbol %>](<%= url %> \"<%= description %>\"),"
+    }
+  },
+  "contributors": [
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/105541001?v=4",
+      "contributions": [
+        "blog",
+        "bug",
+        "code",
+        "content",
+        "design",
+        "doc",
+        "example",
+        "ideas",
+        "infra",
+        "maintenance",
+        "review",
+        "security",
+        "test",
+        "tool"
+      ],
+      "login": "astrochemx",
+      "name": "Vladyslav Shevchenko",
+      "profile": "https://github.com/astrochemx"
+    }
+  ]
+}

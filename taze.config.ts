@@ -1,0 +1,40 @@
+import type { TazeCheckOptions } from './packages/common/src/types/taze';
+
+export const baseConfig = {
+  all: false,
+  concurrency: 10,
+  cwd: '.',
+  depFields: {
+    'dependencies': true,
+    'devDependencies': true,
+    'optionalDependencies': true,
+    'overrides': true,
+    'packageManager': true,
+    'peerDependencies': true,
+    'pnpm-workspace': true,
+    'pnpm.overrides': true,
+    'resolutions': true,
+  },
+  failOnOutdated: false,
+  force: true,
+  global: false,
+  group: true,
+  ignoreOtherWorkspaces: false,
+  ignorePaths: ['node_modules'],
+  includeLocked: true,
+  install: false,
+  interactive: false,
+  loglevel: 'debug',
+  mode: 'latest',
+  nodecompat: true,
+  packageMode: {},
+  peer: true,
+  recursive: true,
+  silent: false,
+  sort: 'diff-asc',
+  timediff: true,
+  update: false,
+  write: true,
+} as const satisfies TazeCheckOptions;
+
+export default baseConfig;
