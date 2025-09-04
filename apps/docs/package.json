@@ -67,14 +67,14 @@
     "@astrojs/starlight-tailwind": "4.0.1",
     "@fontsource-variable/exo-2": "5.2.6",
     "@fontsource-variable/jetbrains-mono": "5.2.6",
-    "@tailwindcss/vite": "4.1.12",
+    "@tailwindcss/vite": "4.1.13",
     "astro": "5.13.5",
     "astro-vtbot": "2.1.8",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "sharp": "0.34.3",
     "starlight-theme-rapide": "0.5.1",
-    "tailwindcss": "4.1.12"
+    "tailwindcss": "4.1.13"
   },
   "devDependencies": {
     "@ascorbic/feed-loader": "2.0.1",
