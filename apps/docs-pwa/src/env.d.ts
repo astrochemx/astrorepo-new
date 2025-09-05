@@ -4,7 +4,8 @@
 /// <reference types="vite-plugin-pwa/pwa-assets" />
 /// <reference types="vite-plugin-pwa/react" />
 /// <reference types="vite-plugin-pwa/vanillajs" />
-/// <reference types="../.astro/types.d.ts" />
+
+import type {} from '../.astro/types.d.ts';
 
 declare namespace App {
   type StarlightLocals = import('@astrojs/starlight').StarlightLocals;

@@ -8,6 +8,9 @@ import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
 import AstroPWA from '@vite-pwa/astro';
 import { defineConfig } from 'astro/config';
+import type { ManifestOptions } from 'vite-plugin-pwa';
+
+import manifest from './webmanifest.json' with { type: 'json' };
 
 const usePwaPrompt = true;
 const usePwaAssetsGenerator = false;
@@ -47,6 +50,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg'],
       injectRegister: 'auto',
       manifest: {
+        ...(manifest as Partial<ManifestOptions>),
         ...(!usePwaAssetsGenerator && !usePwaAssetsSsr
           ? {
               icons: [
@@ -69,9 +73,6 @@ export default defineConfig({
               ],
             }
           : {}),
-        name: 'Astro Starlight PWA',
-        short_name: 'Astro Starlight PWA',
-        theme_color: '#ffffff',
       },
       mode: 'development',
       // Mode for the virtual register.
@@ -79,8 +80,13 @@ export default defineConfig({
       registerType: usePwaPrompt ? 'prompt' : 'autoUpdate',
       scope: '/',
       workbox: {
-        globPatterns: ['**/*.{css,html,ico,js,png,svg,txt}'],
+        clientsClaim: false,
+        globPatterns: [
+          '**/*.{css,html,ico,js,json,otf,pagefind,pf_fragment,pf_index,pf_meta,png,svg,ttf,txt,wasm,woff,woff2}',
+        ],
+        ignoreURLParametersMatching: [/./],
         navigateFallback: '/',
+        skipWaiting: false,
         ...(usePwaAssetsSsr && !usePwaPrompt
           ? {
               // An optional array of regular expressions that restricts which
