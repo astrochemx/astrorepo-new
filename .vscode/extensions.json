@@ -201,6 +201,7 @@
     "ms-dotnettools.vscodeintellicode-csharp",
     "ms-edgedevtools.vscode-edge-devtools",
     "ms-ossdata.vscode-pgsql",
+    "ms-playwright.playwright",
     "ms-pyright.pyright",
     "ms-python.black-formatter",
     "ms-python.debugpy",

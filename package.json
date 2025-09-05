@@ -151,7 +151,7 @@
     "@astrochemx/prettier-config": "workspace:*",
     "@astrochemx/stylelint-config": "workspace:*",
     "@astrochemx/typescript-config": "workspace:*",
-    "@biomejs/biome": "2.2.2",
+    "@biomejs/biome": "2.2.3",
     "@carlosjeurissen/stylelint-csstree-validator": "3.2.1",
     "@changesets/changelog-github": "0.5.1",
     "@changesets/cli": "2.29.6",
@@ -226,7 +226,7 @@
     "tsx": "4.20.5",
     "turbo": "2.5.6",
     "typescript": "5.9.2",
-    "vercel": "47.0.4",
+    "vercel": "47.0.5",
     "vitest": "3.2.4",
     "yaml": "2.8.1"
   },

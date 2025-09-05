@@ -18,6 +18,7 @@
   "[astro]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.markdownlint",
@@ -26,8 +27,8 @@
       // "source.fixAll.oxc",
       // "source.fixAll.eslint"
     ],
-    // "editor.defaultFormatter": "astro-build.astro-vscode"
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[autoit]": {
     "editor.defaultFormatter": "Damien.autoit"
@@ -168,6 +169,7 @@
     "djlint.profile": "",
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.stylelint",
@@ -186,6 +188,7 @@
   "[javascript]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.markdownlint",
@@ -201,6 +204,7 @@
   "[javascriptreact]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.markdownlint",
@@ -329,6 +333,7 @@
     "diffEditor.wordWrap": "on",
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.organizeLinkDefinitions",
@@ -547,6 +552,7 @@
   "[svelte]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.markdownlint",
@@ -604,6 +610,7 @@
   "[typescript]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.markdownlint",
@@ -618,6 +625,7 @@
   "[typescriptreact]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.markdownlint",
@@ -632,6 +640,7 @@
   "[vue]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",
+      // "source.sortImports",
       // "source.organizeImports",
       // "source.organizeImports.biome",
       // "source.fixAll.markdownlint",

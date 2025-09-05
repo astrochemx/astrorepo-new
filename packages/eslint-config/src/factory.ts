@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/suspicious/noExplicitAny: noExplicitAny */
-
 import type { Linter } from 'eslint';
 import { type Arrayable, type Awaitable, FlatConfigComposer } from 'eslint-flat-config-utils';
 import { astro, command, common, ignore, javascript, typescript } from './configs';

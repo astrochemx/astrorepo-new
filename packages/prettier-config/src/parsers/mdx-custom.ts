@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/suspicious/noExplicitAny: noExplicitAny */
 /**
  * (c) Clerk (Brad Cornes)
  * https://github.com/clerk/clerk-docs/blob/main/prettier-mdx.mjs

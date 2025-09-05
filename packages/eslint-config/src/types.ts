@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/suspicious/noExplicitAny: noExplicitAny */
 /** biome-ignore-all lint/complexity/noBannedTypes: noBannedTypes */
 
 import type { StylisticCustomizeOptions } from '@stylistic/eslint-plugin';

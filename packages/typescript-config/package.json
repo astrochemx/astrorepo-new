@@ -40,7 +40,11 @@
   ],
   "peerDependencies": {
     "@astrojs/ts-plugin": "1.10.4",
+    "@mdx-js/typescript-plugin": "0.1.2",
+    "@vue/typescript-plugin": "3.0.6",
     "react": "19.1.1",
+    "remark-frontmatter": "5.0.0",
+    "remark-gfm": "4.0.1",
     "tslib": "2.8.1",
     "typescript": "5.9.2"
   },
@@ -49,6 +53,12 @@
       "optional": true
     },
     "react": {
+      "optional": true
+    },
+    "remark-frontmatter": {
+      "optional": true
+    },
+    "remark-gfm": {
       "optional": true
     },
     "tslib": {

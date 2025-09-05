@@ -41,7 +41,7 @@ export const prettierConfig: Config = {
    * const require = createRequire(import.meta.dirname); // 1-2
    * const config: Config = {
    *   plugins: [
-   *     require.resolve('@prettier/plugin-xml'), // 1, this method works with VSCode Prettier
+   *     require.resolve('@prettier/plugin-xml'), // 1, this method works with VSCode Prettier (CJS)
    *     require('@prettier/plugin-xml'), // 2
    *     import.meta.resolve('@prettier/plugin-xml'), // 3
    *     await import('@prettier/plugin-xml'), // 4

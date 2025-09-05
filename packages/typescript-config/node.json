@@ -40,5 +40,10 @@
     "${configDir}/out",
     "${configDir}/storybook-static"
   ],
-  "include": ["${configDir}/.*", "${configDir}/.*/**/*", "${configDir}/.storybook/**/*", "${configDir}/**/*"]
+  "include": [
+    "${configDir}/.*",
+    "${configDir}/.*/**/*",
+    "${configDir}/.storybook/**/*",
+    "${configDir}/**/*"
+  ]
 }

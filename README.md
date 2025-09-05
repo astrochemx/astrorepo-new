@@ -2,11 +2,15 @@
 
 <div id="top" align="center">
 
+<!-- prettier-ignore-start -->
+
 ☆.。.:*・°☆.。.:*・°☆.。.:*・°☆.。.:*・°☆.。.:*・°☆.。.:*・°☆
 
 # 🧑‍🚀🪐 [astrochemx](https://github.com/astrochemx/astrorepo) 🧬⚗️
 
 ☆.。.:*・°☆.。.:*・°☆.。.:*・°☆.。.:*・°☆.。.:*・°☆.。.:*・°☆
+
+<!-- prettier-ignore-end -->
 
 </div>
 
@@ -26,7 +30,7 @@
 
 ---
 
-<a id="#requirements"></a>
+<a id="requirements"></a>
 
 ## 🛠️ Requirements
 
@@ -34,14 +38,14 @@
 
 - **Git**[<sup>(?)</sup>](https://git-scm.com): [`>= 2.50.0`](https://git-scm.com/downloads)
 - **Node.js**[<sup>(?)</sup>](https://nodejs.org): [`^22.17.0 (LTS)`](https://nodejs.org/en/download) || [`>= 24.3.0 (current)`](https://nodejs.org/en/download/current)
-- **corepack**[<sup>(?)</sup>](https://nodejs.org/api/corepack.html): [`>= 0.33.0`](https://github.com/nodejs/corepack/releases) (*included with **Node.js***)
+- **corepack**[<sup>(?)</sup>](https://nodejs.org/api/corepack.html): [`>= 0.33.0`](https://github.com/nodejs/corepack/releases) (_included with **Node.js**_)
 - **pnpm**[<sup>(?)</sup>](https://pnpm.io): [`>= 10.13.1`](https://github.com/pnpm/pnpm/releases)
 - **Visual Studio Code**[<sup>(?)</sup>](https://code.visualstudio.com): [`>= 1.102.0`](https://code.visualstudio.com/Download)
-- **Docker**[<sup>(?)</sup>](https://www.docker.com): [`>= 4.42.1`](https://docs.docker.com/desktop/release-notes) (*optional*)
+- **Docker**[<sup>(?)</sup>](https://www.docker.com): [`>= 4.42.1`](https://docs.docker.com/desktop/release-notes) (_optional_)
 
 ---
 
-<a id="#integration"></a>
+<a id="integration"></a>
 
 ## 💻 Integration
 
@@ -66,7 +70,7 @@
 
 ---
 
-<a id="#contribution"></a>
+<a id="contribution"></a>
 
 ## 🎁 Contribution
 
@@ -76,8 +80,8 @@ We welcome contributions! 🎉
 
 If you notice any issues or have ideas for improvements, please:
 
-- Open an [***Issue***](https://github.com/astrochemx/astrorepo/issues) to report bugs or suggest enhancements
-- Submit a [***Pull Request***](https://github.com/astrochemx/astrorepo/pulls) to propose changes directly
+- Open an [**_Issue_**](https://github.com/astrochemx/astrorepo/issues) to report bugs or suggest enhancements
+- Submit a [**_Pull Request_**](https://github.com/astrochemx/astrorepo/pulls) to propose changes directly
 
 > [!TIP]
 > Before contributing, please take a moment to review our guidelines:
@@ -91,7 +95,7 @@ Thanks you for the support & contributions! 🏆
 
 ---
 
-<a id="#contributors"></a>
+<a id="contributors"></a>
 
 ## ✨ Contributors
 
@@ -119,7 +123,7 @@ Thanks you for the support & contributions! 🏆
 
 ---
 
-<a id="#authors"></a>
+<a id="authors"></a>
 
 ## 🧑‍💻 Authors
 
@@ -143,7 +147,7 @@ Want more 🔥 content 😏 from the author? 🤫
 
 ---
 
-<a id="#donation"></a>
+<a id="donation"></a>
 
 ## 💝 Donation
 
@@ -151,7 +155,7 @@ If you find this or my other projects helpful, please consider supporting me by 
 
 ---
 
-<a id="#license"></a>
+<a id="license"></a>
 
 ## ©️ License
 
@@ -165,7 +169,7 @@ The author's content (words, images, videos, audios, etc.) is licensed under the
 
 ---
 
-<a id="#credits"></a>
+<a id="credits"></a>
 
 ## 🔥 Credits
 
@@ -230,7 +234,7 @@ Thanks to the following projects for inspiration and references 😍
 
 ---
 
-<a id="#technologies"></a>
+<a id="technologies"></a>
 
 ## 🚀 Technologies
 
@@ -376,17 +380,16 @@ Awesome Technologies and Projects that could be used in this repo 📋
 
 </samp>
 
-[typescript]: <https://www.typescriptlang.org> "🧙‍♂️ TypeScript: strict 💪"
-[typescript-bg]: <https://img.shields.io/badge/TypeScript-strict_%F0%9F%92%AA-0099FF?style=flat&logo=typescript&logoColor=0099FF> "🧙‍♂️ TypeScript: strict 💪"
-[license-mit]: <https://github.com/astrochemx/astrorepo/blob/main/LICENSE-MIT.md> "📜 License: MIT 💻"
-[license-mit-bg]: <https://img.shields.io/badge/%F0%9F%93%9C_License-MIT_%F0%9F%92%BB-21bb42.svg?style=flat> "📜 License: MIT 💻"
-[license-cc]: <https://github.com/astrochemx/astrorepo/blob/main/LICENSE-CC.md> "📝 License: CC BY-NC-SA 4.0 🖊️"
-[license-cc-bg]: <https://img.shields.io/badge/%F0%9F%93%9D_License-CC_BY--NC--SA_4.0_%F0%9F%96%8A%EF%B8%8F-21bb42.svg?style=flat> "📝 License: CC BY-NC-SA 4.0 🖊️"
-[conventionalcommits]: <https://conventionalcommits.org> "⭕ Conventional Commits: 1.0.0 📔"
-[conventionalcommits-bg]: <https://img.shields.io/badge/Conventional_Commits-1.0.0_%F0%9F%93%94-21bb42?style=flat&logo=conventional-commits> "⭕ Conventional Commits: 1.0.0 📔"
-
-[onlyfans]: <https://www.youtube.com/watch?v=dQw4w9WgXcQ> "🍓 OnlyFans: @astrochemx ❤️‍🔥"
-[onlyfans-bg]: <https://img.shields.io/badge/%F0%9F%8D%93_OnlyFans-@astrochemx_%E2%9D%A4%EF%B8%8F%E2%80%8D%F0%9F%94%A5-0099FF?style=flat> "🍓 OnlyFans: @astrochemx ❤️‍🔥"
+[typescript]: https://www.typescriptlang.org '🧙‍♂️ TypeScript: strict 💪'
+[typescript-bg]: https://img.shields.io/badge/TypeScript-strict_%F0%9F%92%AA-0099FF?style=flat&logo=typescript&logoColor=0099FF '🧙‍♂️ TypeScript: strict 💪'
+[license-mit]: https://github.com/astrochemx/astrorepo/blob/main/LICENSE-MIT.md '📜 License: MIT 💻'
+[license-mit-bg]: https://img.shields.io/badge/%F0%9F%93%9C_License-MIT_%F0%9F%92%BB-21bb42.svg?style=flat '📜 License: MIT 💻'
+[license-cc]: https://github.com/astrochemx/astrorepo/blob/main/LICENSE-CC.md '📝 License: CC BY-NC-SA 4.0 🖊️'
+[license-cc-bg]: https://img.shields.io/badge/%F0%9F%93%9D_License-CC_BY--NC--SA_4.0_%F0%9F%96%8A%EF%B8%8F-21bb42.svg?style=flat '📝 License: CC BY-NC-SA 4.0 🖊️'
+[conventionalcommits]: https://conventionalcommits.org '⭕ Conventional Commits: 1.0.0 📔'
+[conventionalcommits-bg]: https://img.shields.io/badge/Conventional_Commits-1.0.0_%F0%9F%93%94-21bb42?style=flat&logo=conventional-commits '⭕ Conventional Commits: 1.0.0 📔'
+[onlyfans]: https://www.youtube.com/watch?v=dQw4w9WgXcQ '🍓 OnlyFans: @astrochemx ❤️‍🔥'
+[onlyfans-bg]: https://img.shields.io/badge/%F0%9F%8D%93_OnlyFans-@astrochemx_%E2%9D%A4%EF%B8%8F%E2%80%8D%F0%9F%94%A5-0099FF?style=flat '🍓 OnlyFans: @astrochemx ❤️‍🔥'
 
 <!-- prettier-ignore-start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->

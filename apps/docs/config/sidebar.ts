@@ -1,5 +1,4 @@
 // https://github.com/withastro/docs/blob/main/config/sidebar.ts
-/** biome-ignore-all lint/suspicious/noExplicitAny: noExplicitAny */
 
 import type starlight from '@astrojs/starlight';
 import enLabels from '../src/content/nav/en';

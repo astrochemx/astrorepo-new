@@ -78,12 +78,13 @@
   },
   "devDependencies": {
     "@ascorbic/feed-loader": "2.0.1",
-    "@astro-community/astro-embed-youtube": "0.5.6",
+    "@astro-community/astro-embed-youtube": "0.5.7",
     "@astrochemx/typescript-config": "workspace:*",
     "@astrojs/check": "0.9.4",
     "@astrojs/db": "0.17.1",
     "@astrojs/markdown-remark": "6.3.6",
     "@astrojs/mdx": "4.3.4",
+    "@astrojs/node": "9.4.3",
     "@astrojs/react": "4.3.0",
     "@astrojs/rss": "4.0.12",
     "@astrojs/sitemap": "3.5.1",
@@ -116,7 +117,9 @@
     "@types/react-dom": "19.1.9",
     "@types/unist": "3.0.3",
     "@unocss/reset": "66.5.0",
+    "@vite-pwa/assets-generator": "1.0.0",
     "@vite-pwa/astro": "1.1.0",
+    "@vite-pwa/workbox-window": "8.0.0",
     "astro-d2": "0.8.0",
     "astro-expressive-code": "0.41.3",
     "astro-icon": "1.1.5",
@@ -201,10 +204,11 @@
     "unist-builder": "4.0.0",
     "unist-util-visit": "5.0.0",
     "unocss": "66.5.0",
-    "vercel": "47.0.4",
+    "vercel": "47.0.5",
     "viewerjs": "1.11.7",
     "vite": "7.1.4",
     "vite-plugin-pwa": "1.0.3",
+    "workbox-precaching": "7.3.0",
     "workbox-window": "7.3.0"
   }
 }

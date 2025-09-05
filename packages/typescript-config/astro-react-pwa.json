@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./astro-react.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "${configDir}/node_modules/.tmp/tsconfig.astro-react-pwa.tsbuildinfo",
+    "types": [
+      "astro/client",
+      "vite-plugin-pwa/client",
+      "vite-plugin-pwa/info",
+      "vite-plugin-pwa/pwa-assets",
+      "vite-plugin-pwa/react",
+      "vite-plugin-pwa/vanillajs"
+    ]
+  }
+}

@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/suspicious/noExplicitAny: noExplicitAny */
-
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { FlatCompat } from '@eslint/eslintrc';

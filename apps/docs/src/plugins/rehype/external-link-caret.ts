@@ -1,7 +1,7 @@
 // https://github.com/trueberryless-org/blog/blob/main/starlight/src/plugins/rehype/external-link-caret.ts
 
 import { visit } from 'unist-util-visit';
-import astroConfig from '../../../astro.config'
+import astroConfig from '../../../astro.config';
 
 /** Rehype plugin to append "^" to all external links */
 export function rehypeExternalLinkCaret() {

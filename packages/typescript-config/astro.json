@@ -10,6 +10,12 @@
     ],
     "tsBuildInfoFile": "${configDir}/node_modules/.tmp/tsconfig.astro.tsbuildinfo"
   },
-  "exclude": ["${configDir}/dist", "${configDir}/dist-*", "${configDir}/node_modules", "${configDir}/out", "${configDir}/storybook-static"],
+  "exclude": [
+    "${configDir}/dist",
+    "${configDir}/dist-*",
+    "${configDir}/node_modules",
+    "${configDir}/out",
+    "${configDir}/storybook-static"
+  ],
   "include": ["${configDir}/.astro/types.d.ts", "${configDir}/.storybook/**/*", "${configDir}/**/*"]
 }

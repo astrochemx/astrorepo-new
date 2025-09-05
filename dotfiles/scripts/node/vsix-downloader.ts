@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/style/noNonNullAssertion: noNonNullAssertion */
-
 import fs from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import type { OutgoingHttpHeaders } from 'node:http2';

@@ -2,6 +2,7 @@
   "[astro]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -24,6 +25,7 @@
   "[html]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -36,6 +38,7 @@
   "[javascript]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -48,6 +51,7 @@
   "[javascriptreact]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -107,6 +111,7 @@
   "[mdx]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -114,7 +119,7 @@
       "source.fixAll.oxc",
       "source.fixAll.eslint"
     ],
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
   },
   "[quarto]": {
     "editor.codeActionsOnSave": [
@@ -149,6 +154,7 @@
   "[svelte]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -189,6 +195,7 @@
   "[typescript]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -201,6 +208,7 @@
   "[typescriptreact]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",
@@ -213,6 +221,7 @@
   "[vue]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
+      // "source.sortImports",
       "source.organizeImports.biome",
       "source.fixAll.markdownlint",
       "source.fixAll.stylelint",

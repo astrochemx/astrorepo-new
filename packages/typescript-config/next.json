@@ -11,6 +11,17 @@
     ],
     "tsBuildInfoFile": "${configDir}/node_modules/.tmp/tsconfig.next.tsbuildinfo"
   },
-  "exclude": ["${configDir}/dist", "${configDir}/dist-*", "${configDir}/node_modules", "${configDir}/out", "${configDir}/storybook-static"],
-  "include": ["${configDir}/.next/types/**/*.ts", "${configDir}/.storybook/**/*", "${configDir}/**/*", "${configDir}/next-env.d.ts"]
+  "exclude": [
+    "${configDir}/dist",
+    "${configDir}/dist-*",
+    "${configDir}/node_modules",
+    "${configDir}/out",
+    "${configDir}/storybook-static"
+  ],
+  "include": [
+    "${configDir}/.next/types/**/*.ts",
+    "${configDir}/.storybook/**/*",
+    "${configDir}/**/*",
+    "${configDir}/next-env.d.ts"
+  ]
 }
