@@ -1,0 +1,12 @@
+{
+  "name": "bluwy-giget-core",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "@astrochemx/typescript-config": "workspace:*",
+    "@bluwy/giget-core": "0.1.3",
+    "create-astro": "4.13.1"
+  }
+}

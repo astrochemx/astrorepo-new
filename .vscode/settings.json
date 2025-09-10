@@ -345,8 +345,11 @@
   "oxc.unusedDisableDirectives": "allow",
   "prettier.documentSelectors": [
     "**/*.astro",
+    "**/*.bash",
+    "**/*.bat",
     "**/*.cjs",
     "**/*.cjsx",
+    "**/*.cmd",
     "**/*.css",
     "**/*.cts",
     "**/*.ctsx",
@@ -354,6 +357,7 @@
     "**/*.gts",
     "**/*.hbs",
     "**/*.html",
+    "**/*.ini",
     "**/*.js",
     "**/*.json",
     "**/*.json5",
@@ -368,20 +372,22 @@
     "**/*.mtsx",
     "**/*.pcss",
     "**/*.postcss",
-    "**/*.qmd",
+    "**/*.ps1",
     "**/*.qmd",
     "**/*.rmd",
     "**/*.scss",
+    "**/*.sh",
     "**/*.svelte",
     "**/*.svg",
-    "**/*.svg",
+    "**/*.toml",
     "**/*.ts",
     "**/*.tsx",
     "**/*.vue",
     "**/*.xaml",
     "**/*.xml",
     "**/*.yaml",
-    "**/*.yml"
+    "**/*.yml",
+    "**/*.zsh"
   ],
   "prettier.enable": true,
   "python.defaultInterpreterPath": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\python\\3.13.7\\python.exe",
@@ -391,6 +397,7 @@
   "ruff.path": [
     "c:\\users\\vs\\appdata\\local\\mise\\shims\\ruff.exe"
   ],
+  "svg.preview.background": "dark-transparent",
   "tailwindCSS.classAttributes": [
     "class:list",
     "class",

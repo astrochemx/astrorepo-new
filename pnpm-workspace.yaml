@@ -2,6 +2,7 @@
 packages:
   - apps/*
   - packages/*
+  - playground/*
 
 ### Build Settings
 ignoredBuiltDependencies:
@@ -26,13 +27,14 @@ patchedDependencies:
 
 ### Dependency Resolution
 overrides:
-  puppeteer: 24.19.0
+  '@astrojs/starlight': 0.35.2
+  'puppeteer': 24.20.0
 
 ### ----------------------------------------------------------------------------
 
 ### Dependency Hoisting Settings
 hoist: true
-hoistPattern: ['*']
+hoistPattern: [ '*' ]
 hoistWorkspacePackages: true
 publicHoistPattern: []
 shamefullyHoist: false
@@ -76,7 +78,8 @@ useBetaCli: false
 childConcurrency: 5
 ignoreDepScripts: false
 ignoreScripts: false
-nodeOptions: '${NODE_OPTIONS:- } --experimental-strip-types --experimental-transform-types --experimental-vm-modules'
+nodeOptions: '${NODE_OPTIONS:- } --experimental-strip-types
+  --experimental-transform-types --experimental-vm-modules'
 sideEffectsCache: false
 sideEffectsCacheReadonly: false
 strictDepBuilds: false

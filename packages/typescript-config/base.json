@@ -3,6 +3,7 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "baseUrl": "${configDir}",
@@ -63,9 +64,10 @@
     "${configDir}/.vercel*",
     "${configDir}/.vite*",
     "${configDir}/.vscode*",
+    "${configDir}/*-dist",
     "${configDir}/build",
-    "${configDir}/dist",
     "${configDir}/dist-*",
+    "${configDir}/dist",
     "${configDir}/node_modules",
     "${configDir}/out",
     "${configDir}/storybook-static"

@@ -22,8 +22,9 @@
     "tsBuildInfoFile": "${configDir}/node_modules/.tmp/tsconfig.lib.tsbuildinfo"
   },
   "exclude": [
-    "${configDir}/dist",
+    "${configDir}/*-dist",
     "${configDir}/dist-*",
+    "${configDir}/dist",
     "${configDir}/node_modules",
     "${configDir}/out",
     "${configDir}/storybook-static"

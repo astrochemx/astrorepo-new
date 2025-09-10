@@ -17,6 +17,7 @@
   "exclude": [
     "${configDir}/apps",
     "${configDir}/packages",
+    "${configDir}/playground",
     "${configDir}/src",
     "${configDir}/.*cache*",
     "${configDir}/.astro*",
@@ -31,11 +32,12 @@
     "${configDir}/.turbo*",
     "${configDir}/.vercel*",
     "${configDir}/.vite*",
-    "${configDir}/.vscode*",
     "${configDir}/.vscode-*",
+    "${configDir}/.vscode*",
+    "${configDir}/*-dist",
     "${configDir}/build",
-    "${configDir}/dist",
     "${configDir}/dist-*",
+    "${configDir}/dist",
     "${configDir}/node_modules",
     "${configDir}/out",
     "${configDir}/storybook-static"

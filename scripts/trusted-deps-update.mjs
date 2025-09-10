@@ -28,7 +28,7 @@ async function fetchToJson(
   console.log(`✅  Saved ${entries.length} items to ${outPath}`);
 }
 
-fetchToJson().catch((err) => {
-  console.error(`❌  ${err.message}`);
+fetchToJson().catch((error) => {
+  console.error(`❌  ${error.message}`);
   process.exitCode = 1;
 });

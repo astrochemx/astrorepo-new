@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "id": "starlight-pwa",
+  "name": "Starlight PWA",
+  "short_name": "Starlight PWA",
+  "description": "Example Starlight PWA using Vite PWA",
+  "orientation": "any",
+  "display": "fullscreen",
+  "theme_color": "#ffeedd",
+  "background_color": "#111111",
+  "icons": [
+    {
+      "src": "pwa-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Guides",
+      "url": "/guides/example",
+      "description": "Your Starlight Guides"
+    },
+    {
+      "name": "Reference Pages",
+      "url": "/reference/example",
+      "description": "Your Reference Pages"
+    }
+  ]
+}

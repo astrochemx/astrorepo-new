@@ -58,18 +58,18 @@
     "@pnpm/pnpmfile": "1002.0.2",
     "@pnpm/store-controller-types": "1004.0.1",
     "@pnpm/types": "1000.7.0",
-    "npm-check-updates": "18.0.3",
-    "taze": "19.5.0"
+    "npm-check-updates": "18.1.0",
+    "taze": "19.6.0"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.2",
     "@astrochemx/tsdown-config": "workspace:*",
     "@astrochemx/typescript-config": "workspace:*",
     "publint": "0.3.12",
-    "tsdown": "0.14.2",
+    "tsdown": "0.15.0",
     "tslib": "2.8.1",
     "typescript": "5.9.2",
-    "unplugin-unused": "0.5.2"
+    "unplugin-unused": "0.5.3"
   },
   "engines": {
     "node": "^22.19.0 || ^23.11.1 || >= 24.7.0"

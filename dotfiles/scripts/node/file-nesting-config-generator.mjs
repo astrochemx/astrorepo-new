@@ -87,6 +87,17 @@ function addLowerCaseVariants(arr) {
 */
 
 // @keep-sorted
+const agents = [
+  '.clinerules',
+  '.cursorrules',
+  '.replit.md',
+  '.windsurfrules',
+  'AGENT.md',
+  'CLAUDE.md',
+  'GEMINI.md',
+];
+
+// @keep-sorted
 const buildTools = [
   //
   'build.config.*',
@@ -140,6 +151,7 @@ const linters = [
   '.textlint*',
   '.xo-config*',
   '.yamllint*',
+  'alejandra.toml',
   'biome.json*',
   'commitlint*',
   'cspell.*',
@@ -165,6 +177,17 @@ const linters = [
   'stylelint*',
   'tslint*',
   'xo.config.*',
+];
+
+// @keep-sorted
+const mise = [
+  '.node-version',
+  '.node-versions',
+  '.nvmrc',
+  '.python-version',
+  '.python-versions',
+  '.tool-version',
+  '.tool-versions',
 ];
 
 // @keep-sorted
@@ -228,9 +251,14 @@ const testingTools = [
 const tsconfigJSON = [
   //
   'api-extractor.json',
-  'jsconfig.*',
-  'tsconfig.*',
-  'tsdoc.*',
+  'jsconfig.*.json',
+  'jsconfig.json',
+  'jsconfig*.json',
+  'tsconfig.*.json',
+  'tsconfig*.json',
+  'tsdoc.*.json',
+  'tsdoc.json',
+  'tsdoc*.json',
 ];
 
 // @keep-sorted
@@ -240,9 +268,7 @@ const workspaces = [
   '.allcontributors*',
   '.gitmojirc.json',
   '.huskyrc*',
-  '.node-version',
   '.npm*',
-  '.nvmrc',
   '.pnp.*',
   '.pnpm*',
   '.release-it.*',
@@ -250,7 +276,6 @@ const workspaces = [
   '.releaserc*',
   '.simple-git-hooks*',
   '.tazerc*',
-  '.tool-versions',
   '.yarnrc*',
   '*.code-workspace',
   'bower.json',
@@ -271,6 +296,7 @@ const workspaces = [
   'turbo*',
   'workspace.json',
   'yarn*',
+  ...mise,
 ];
 
 /*
@@ -507,6 +533,7 @@ const dartFiles = [
   //
   '$(capture).freezed.dart',
   '$(capture).g.dart',
+  '$(capture).mapper.dart',
 ];
 
 // @keep-sorted
@@ -573,7 +600,9 @@ const exFiles = [
 // @keep-sorted
 const flakeNIX = [
   //
+  'default.nix',
   'flake.lock',
+  'shell.nix',
 ];
 
 // @keep-sorted
@@ -1109,6 +1138,7 @@ const artisan = [
 /** @type {string[]} */
 const astro = [
   //
+  'astro.sidebar.*',
 ];
 
 // @keep-sorted
@@ -1226,6 +1256,7 @@ const libraries = [
   'htmlnanorc.*',
   'i18n.config.*',
   'ionic.config.*',
+  'lunaria.config.*',
   'panda.config.*',
   'postcss.config.*',
   'react-router.config.*',
@@ -1246,6 +1277,7 @@ const libraries = [
 // @keep-sorted
 const packageJSON = [
   //
+  '.attw.json*',
   '.browserslist*',
   '.changelogithub*',
   '.cz-config.js',
@@ -1258,17 +1290,24 @@ const packageJSON = [
   '.vscode*',
   '.watchman*',
   'apollo.config.*',
+  'attw.json*',
   'changelogithub.config.*',
   'cspell*.txt',
+  'lefthook.*',
+  'manifest.json',
+  'manifest.webmanifest',
   'nest-cli.*',
   'nodemon*',
   'pm2.*',
   'project-words.txt',
+  'pwa-assets.config.*',
+  'pwa.config.*',
   'spell.txt',
   'spelling.txt',
   'taze.config.*',
   'typedoc*',
   'vetur.config.*',
+  'webmanifest.json',
   'words.txt',
   ...buildTools,
   ...dependencyAnalysis,
@@ -1381,6 +1420,7 @@ const basePatterns = {
   '*.xaml': xamlFiles,
   '+layout.svelte': layoutSVELTE,
   '+page.svelte': pageSVELTE,
+  'AGENTS.md': agents,
   'ansible.cfg': ansibleCFG,
   'app.tsx': appTSX,
   'application.properties': applicationPROPERTIES,

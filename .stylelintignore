@@ -298,12 +298,16 @@ next-env.d.ts
 .*out
 .*output
 .bin
+*_dist
+*-dist
 build
 build_*
 build-*
+dev-dist
 dist
 dist_*
 dist-*
+dist-ssr
 # lib
 out
 output

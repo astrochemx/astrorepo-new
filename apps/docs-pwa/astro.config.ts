@@ -1,4 +1,6 @@
 // @ts-check
+
+import path from 'node:path';
 import db from '@astrojs/db';
 import mdx from '@astrojs/mdx';
 import node from '@astrojs/node';
@@ -8,35 +10,27 @@ import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
 import AstroPWA from '@vite-pwa/astro';
 import { defineConfig } from 'astro/config';
+import vtbot from 'astro-vtbot';
+import { remarkEndOfMarkdown, viewTransitions } from 'astro-vtbot/starlight-view-transitions';
+import rehypePrettyCode from 'rehype-pretty-code';
+import starlightImageZoom from 'starlight-image-zoom';
+import starlightLinksValidator from 'starlight-links-validator';
+import starlightScrollToTop from 'starlight-scroll-to-top';
 import type { ManifestOptions } from 'vite-plugin-pwa';
-
+import { sidebar } from './astro.sidebar';
 import manifest from './webmanifest.json' with { type: 'json' };
 
-const usePwaPrompt = true;
-const usePwaAssetsGenerator = false;
-const usePwaAssetsSsr = false;
-
-if (usePwaPrompt) {
-  if (usePwaAssetsGenerator) {
-    console.warn("You can't define `usePwaAssetsGenerator` together with `usePwaPrompt`!");
-    console.warn('`usePwaPrompt` will take precedence over `usePwaAssetsGenerator`!');
-  }
-  if (usePwaAssetsSsr) {
-    console.warn("You can't define `usePwaAssetsSsr` together with `usePwaPrompt`!");
-    console.warn('`usePwaPrompt` will take precedence over `usePwaAssetsSsr`!');
-  }
-}
+export const usePwaPrompt = true;
+export const usePwaAssetsGenerator = true;
+export const usePwaAssetsSsr = false;
 
 // https://astro.build/config
 export default defineConfig({
-  ...(usePwaAssetsSsr && !usePwaPrompt
+  ...(usePwaAssetsSsr
     ? {
-        // Specifies the build adapter to deploy with.
         adapter: node({
-          // Specifies the mode that the adapter builds to.
           mode: 'standalone',
         }),
-        // Specifies the output target for builds.
         output: 'server',
       }
     : {}),
@@ -46,14 +40,24 @@ export default defineConfig({
       devOptions: {
         enabled: true,
         navigateFallbackAllowlist: [/^\/$/],
+        resolveTempFolder: () => path.resolve(process.cwd(), 'dev-dist'),
       },
+      experimental: {
+        directoryAndTrailingSlashHandler: true,
+      },
+      filename: 'sw.js',
       includeAssets: ['favicon.svg'],
       injectRegister: 'auto',
       manifest: {
         ...(manifest as Partial<ManifestOptions>),
-        ...(!usePwaAssetsGenerator && !usePwaAssetsSsr
+        ...(!usePwaAssetsGenerator
           ? {
               icons: [
+                {
+                  src: 'pwa-64x64.png',
+                  sizes: '64x64',
+                  type: 'image/png',
+                },
                 {
                   sizes: '192x192',
                   src: 'pwa-192x192.png',
@@ -67,33 +71,32 @@ export default defineConfig({
                 {
                   purpose: 'any maskable',
                   sizes: '512x512',
-                  src: 'pwa-512x512.png',
+                  src: 'maskable-icon-512x512.png',
                   type: 'image/png',
                 },
               ],
             }
           : {}),
       },
+      manifestFilename: 'webmanifest.json',
+      minify: true,
       mode: 'development',
-      // Mode for the virtual register.
-      // Does NOT available for `injectRegister` set to `inline` or `script`.
+      outDir: 'dist',
       registerType: usePwaPrompt ? 'prompt' : 'autoUpdate',
       scope: '/',
+      srcDir: 'public',
+      strategies: 'generateSW',
       workbox: {
         clientsClaim: false,
         globPatterns: [
-          '**/*.{css,html,ico,js,json,otf,pagefind,pf_fragment,pf_index,pf_meta,png,svg,ttf,txt,wasm,woff,woff2}',
+          '**/*.{css,html,ico,js,json,less,otf,pagefind,pf_fragment,pf_index,pf_meta,png,scss,svg,ttf,txt,wasm,woff,woff2}',
         ],
-        ignoreURLParametersMatching: [/./],
+        ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
         navigateFallback: '/',
         skipWaiting: false,
-        ...(usePwaAssetsSsr && !usePwaPrompt
+        ...(usePwaAssetsSsr
           ? {
-              // An optional array of regular expressions that restricts which
-              // URLs the configured `navigateFallback` behavior applies to.
               navigateFallbackAllowlist: [/^\/$/],
-              // Fix `workbox-build` error when using v7.3.0: missing `;` errors
-              // when building the service worker from the template.
               runtimeCaching: [
                 {
                   handler: 'NetworkFirst',
@@ -105,18 +108,13 @@ export default defineConfig({
                     expiration: {
                       maxEntries: 100,
                     },
-                    // Check the options in the `workbox-build` docs.
                     matchOptions: {
-                      ignoreVary: true,
                       ignoreSearch: true,
+                      ignoreVary: true,
                     },
                     plugins: [
                       {
                         cachedResponseWillBeUsed: async (params) => {
-                          // When `handlerDidError` is invoked, then we can prevent
-                          // redirecting if there is an entry in the cache.
-                          // To check the behavior, navigate to a product page,
-                          // then disable the network and refresh the page.
                           params.state ??= {};
                           params.state.dontRedirect = params.cachedResponse;
                           console.log(
@@ -124,9 +122,6 @@ export default defineConfig({
                               `${params.state ? JSON.stringify(params.state) : ''}`,
                           );
                         },
-                        // This callback will be called when the fetch call fails.
-                        // Beware of the logic.
-                        // Will be also invoked if the server is down.
                         handlerDidError: async ({ request, state, error }) => {
                           if (state?.dontRedirect) {
                             return state.dontRedirect;
@@ -149,43 +144,57 @@ export default defineConfig({
             }
           : {}),
       },
-      ...((usePwaAssetsGenerator || usePwaAssetsSsr) && !usePwaPrompt
+      ...(usePwaAssetsGenerator
         ? {
             pwaAssets: {
-              // PWA assets generation and injection.
               config: true,
-            },
-          }
-        : {}),
-      ...(!usePwaPrompt
-        ? {
-            experimental: {
-              // When using `generateSW` strategy,
-              // include custom directory and trailing slash handler.
-              directoryAndTrailingSlashHandler: true,
+              htmlPreset: '2023',
+              preset: 'minimal-2023',
             },
           }
         : {}),
     }),
-    db(),
-    mdx(),
-    react(),
-    sitemap(),
     starlight({
+      components: {
+        Head: './src/components/starlight/Head.astro',
+        Header: './src/components/starlight/Header.astro',
+        PageFrame: './src/components/starlight/PageFrame.astro',
+      },
       customCss: ['./src/styles/global.css'],
-      sidebar: [
-        {
-          label: 'Guides',
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: 'Example Guide', slug: 'guides/example' },
-          ],
+      defaultLocale: 'root',
+      editLink: {
+        baseUrl: 'https://github.com/astrochemx/astrorepo/edit/main/apps/docs/',
+      },
+      lastUpdated: true,
+      locales: {
+        root: {
+          label: 'English',
+          lang: 'en',
         },
-        {
-          label: 'Reference',
-          autogenerate: { directory: 'reference' },
-        },
+      },
+      markdown: {
+        headingLinks: true,
+      },
+      pagination: true,
+      plugins: [
+        starlightImageZoom(),
+        starlightLinksValidator(),
+        starlightScrollToTop({
+          borderRadius: '50',
+          position: 'right',
+          progressRingColor: 'yellow',
+          showProgressRing: true,
+          showTooltip: true,
+          smoothScroll: true,
+          svgPath: 'M12 4L6 10H9V16H15V10H18L12 4M9 16L12 20L15 16',
+          svgStrokeWidth: 1,
+          threshold: 25,
+          tooltipText: 'Back to top',
+        }),
+        viewTransitions(),
       ],
+      routeMiddleware: [],
+      sidebar: sidebar,
       social: [
         {
           icon: 'github',
@@ -193,12 +202,35 @@ export default defineConfig({
           href: 'https://github.com/withastro/starlight',
         },
       ],
-      title: 'Astro Starlight PWA with Tailwind',
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4,
+      },
+      title: {
+        en: 'Astro Starlight with Tailwind CSS and Vite PWA',
+      },
     }),
+    db(),
+    mdx(),
+    react(),
+    sitemap(),
+    vtbot(),
   ],
+  markdown: {
+    rehypePlugins: [rehypePrettyCode],
+    remarkPlugins: [remarkEndOfMarkdown],
+  },
+  redirects: {},
+  server: {
+    host: false,
+    open: false,
+    port: 4321,
+  },
+  trailingSlash: 'ignore',
   vite: {
-    define: {
-      __DATE__: `'${new Date().toISOString()}'`,
+    build: {
+      minify: 'esbuild',
+      cssMinify: 'esbuild',
     },
     logLevel: 'info',
     // @ts-expect-error: types

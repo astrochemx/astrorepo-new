@@ -10,8 +10,12 @@ window.addEventListener('load', () => {
   let refreshSW: ((reloadPage?: boolean) => Promise<void>) | undefined;
 
   const refreshCallback = () => {
-    refreshSW?.(true).catch((err) => {
-      console.error('Error refreshing SW:', err);
+    refreshSW?.(true).catch((error) => {
+      if (error instanceof Error) {
+        console.error('Error refreshing SW:', error.message);
+      } else {
+        console.error('Error refreshing SW:', error);
+      }
     });
   };
 
@@ -44,10 +48,12 @@ window.addEventListener('load', () => {
   refreshSW = registerSW({
     immediate: true,
     onOfflineReady() {
+      console.info('App ready to work offline');
       pwaToastMessage.innerHTML = 'App ready to work offline';
       showPwaToast(true);
     },
     onNeedRefresh() {
+      console.info('New content available, click on reload button to update');
       pwaToastMessage.innerHTML = 'New content available, click on reload button to update';
       showPwaToast(false);
     },

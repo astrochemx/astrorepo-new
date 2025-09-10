@@ -2,12 +2,14 @@
 import { pwaAssetsHead } from 'virtual:pwa-assets/head';
 import { pwaInfo } from 'virtual:pwa-info';
 
+import { usePwaAssetsGenerator, usePwaPrompt } from '../../../astro.config.ts';
+
 export interface Props {
-  autoUpdateScript: boolean;
-  pwaAssets: boolean;
+  autoUpdateScript?: boolean;
+  pwaAssets?: boolean;
 }
 
-const { autoUpdateScript, pwaAssets } = Astro.props;
+const { autoUpdateScript = !usePwaPrompt, pwaAssets = usePwaAssetsGenerator } = Astro.props;
 ---
 
 {
@@ -17,5 +19,4 @@ const { autoUpdateScript, pwaAssets } = Astro.props;
 }
 {pwaAssets && pwaAssetsHead && pwaAssetsHead.links.map((link) => <link {...link} />)}
 {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
-
-{autoUpdateScript && <script src="../../pwa.ts" />}
+{autoUpdateScript && <script src="../../pwa-astro.ts" />}

@@ -1,11 +1,10 @@
 ---
-import StarlightHead from '@astrojs/starlight/components/Head.astro';
+import Default from '@astrojs/starlight/components/Head.astro';
 import Linter from 'astro-vtbot/components/Linter.astro';
 import LoadingIndicator from 'astro-vtbot/components/LoadingIndicator.astro';
 import ProgressBar from 'astro-vtbot/components/ProgressBar.astro';
 import VtbotStarlight from 'astro-vtbot/components/starlight/Base.astro';
 
-import ReloadPrompt from '../custom/ReloadPrompt/ReloadPrompt.astro';
 import PWAHead from '../custom/PWAHead.astro';
 ---
 
@@ -13,7 +12,6 @@ import PWAHead from '../custom/PWAHead.astro';
   <Linter />
   <LoadingIndicator />
   <ProgressBar />
-  <PWAHead autoUpdateScript={false} pwaAssets={true} />
-  <StarlightHead><slot /></StarlightHead>
-  <ReloadPrompt />
+  <PWAHead />
+  <Default><slot /></Default>
 </VtbotStarlight>

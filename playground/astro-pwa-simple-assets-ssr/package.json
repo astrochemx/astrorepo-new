@@ -1,0 +1,26 @@
+{
+  "name": "astro-pwa-simple-assets-ssr",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "build:check": "astro check && astro build",
+    "check": "astro check",
+    "dev": "astro dev",
+    "generate-pwa-assets": "pwa-assets-generator",
+    "generate-pwa-assets:dlx": "pnpx @vite-pwa/assets-generator",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "devDependencies": {
+    "@astrojs/node": "9.4.3",
+    "@vite-pwa/assets-generator": "1.0.1",
+    "@vite-pwa/astro": "1.1.0",
+    "astro": "5.13.7",
+    "typescript": "5.9.2",
+    "vite-plugin-pwa": "1.0.3",
+    "workbox-window": "7.3.0"
+  }
+}

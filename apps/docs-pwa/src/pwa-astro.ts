@@ -1,9 +1,14 @@
-import { registerSW } from 'virtual:pwa-register';
+import { type RegisterSWOptions, registerSW } from 'virtual:pwa-register';
 
-// update interval: 10 minutes (10 min * 60 sec * 1000 ms)
+/**
+ * Interval in milliseconds.
+ *
+ * @default
+ * 10 * 60 * 1000 // 10 minutes in milliseconds = 10 min * 60 sec * 1000 ms
+ */
 const updateIntervalMS = 10 * 60 * 1000;
 
-registerSW({
+export const registerSWOptions: RegisterSWOptions = {
   immediate: true,
   onRegisteredSW(swScriptUrl, registration) {
     console.log('SW registered: ', swScriptUrl);
@@ -46,4 +51,6 @@ registerSW({
   onOfflineReady() {
     console.log('PWA application ready to work offline');
   },
-});
+};
+
+registerSW(registerSWOptions);
