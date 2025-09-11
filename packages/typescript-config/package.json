@@ -28,12 +28,7 @@
   },
   "type": "module",
   "files": [
-    "astro.json",
-    "base.json",
-    "next.json",
-    "node.json",
-    "lib.json",
-    "vue.json",
+    "bases",
     "package.json",
     "LICENSE.md",
     "README.md"

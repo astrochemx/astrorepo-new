@@ -34,7 +34,7 @@ overrides:
 
 ### Dependency Hoisting Settings
 hoist: true
-hoistPattern: [ '*' ]
+hoistPattern: ['*']
 hoistWorkspacePackages: true
 publicHoistPattern: []
 shamefullyHoist: false

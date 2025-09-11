@@ -2018,6 +2018,7 @@
   "markdown.validate.referenceLinks.enabled": "warning",
   "markdown.validate.unusedLinkDefinitions.enabled": "warning",
   "markdownlint.focusMode": true,
+  "mise.binPath": "C:\\Users\\VS\\AppData\\Local\\Microsoft\\WinGet\\Links\\mise.exe",
   "mise.configureExtensionsAutomatically": true,
   "mise.configureExtensionsUseShims": true,
   "mise.configureExtensionsUseSymLinks": false,

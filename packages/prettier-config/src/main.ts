@@ -2,7 +2,30 @@ import { createRequire } from 'node:module';
 import type { Config } from 'prettier';
 import * as mdxCustom from './parsers/mdx-custom.ts';
 
+const sortImports = false;
+const sortTypesFirst = false;
+const jtsMultilineArrays = false;
+
 const require = createRequire(import.meta.dirname);
+
+const importOrderPluginOptions = {
+  importOrder: [
+    '',
+    '(client-only|server-only)',
+    '(@abraham/reflection|reflect-metadata)',
+    '',
+    ...(sortTypesFirst ? ['<TYPES>^(node:)', '<TYPES>', '<TYPES>^[.]'] : []),
+    '<BUILTIN_MODULES>',
+    '<THIRD_PARTY_MODULES>',
+    '^(?!.*[.](c|le|pc|postc|sa|sc)ss$)[./].*$',
+    '',
+    '^.*[.](c|le|pc|postc|sa|sc|)ss$',
+  ],
+  importOrderCaseSensitive: false,
+  importOrderParserPlugins: ['typescript', 'jsx'],
+  importOrderSafeSideEffects: ['^.*$'],
+  importOrderTypeScriptVersion: '5.9.2',
+};
 
 // @ts-expect-error: types
 export const prettierConfig: Config = {
@@ -38,6 +61,7 @@ export const prettierConfig: Config = {
    * ```typescript
    * import { createRequire } from 'node:module'; // 1-2
    * import type { Config } from 'prettier';
+   *
    * const require = createRequire(import.meta.dirname); // 1-2
    * const config: Config = {
    *   plugins: [
@@ -56,6 +80,8 @@ export const prettierConfig: Config = {
     require.resolve('prettier-plugin-sh'),
     require.resolve('prettier-plugin-sql'),
     require.resolve('prettier-plugin-svelte'),
+    ...(jtsMultilineArrays ? [require.resolve('prettier-plugin-multiline-arrays')] : []),
+    ...(sortImports ? [require.resolve('@ianvs/prettier-plugin-sort-imports')] : []),
     require.resolve('prettier-plugin-jsdoc'),
     require.resolve('prettier-plugin-tailwindcss'),
   ],
@@ -80,6 +106,7 @@ export const prettierConfig: Config = {
         '**/*.vue',
       ],
       options: {
+        ...(sortImports ? importOrderPluginOptions : {}),
         jsdocAddDefaultToDescription: true,
         jsdocCapitalizeDescription: false,
         jsdocKeepUnParseAbleExampleIndent: true,

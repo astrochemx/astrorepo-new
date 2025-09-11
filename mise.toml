@@ -1,4 +1,4 @@
-min_version = "2025.9.7"
+min_version = "2025.9.8"
 
 [env]
 _.path = ["{{config_root}}/node_modules/.bin"]

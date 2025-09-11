@@ -1,9 +1,30 @@
 {
   "$schema": "https://raw.githubusercontent.com/biomejs/biome/refs/heads/main/packages/%40biomejs/biome/configuration_schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": true
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "recommended": true,
+        "organizeImports": "off",
+        "useSortedAttributes": "off",
+        "useSortedKeys": "off",
+        "useSortedProperties": "off"
+      }
+    }
+  },
+  "css": {
+    "parser": {
+      "allowWrongLineComments": null,
+      "cssModules": null
+    },
+    "formatter": {
+      "enabled": false,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 100,
+      "quoteStyle": "single"
+    }
   },
   "files": {
     "experimentalScannerIgnores": [],
@@ -234,18 +255,6 @@
       "!**/.yarn"
     ]
   },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "recommended": true,
-        "organizeImports": "on",
-        "useSortedAttributes": "off",
-        "useSortedKeys": "off",
-        "useSortedProperties": "off"
-      }
-    }
-  },
   "formatter": {
     "enabled": false,
     "formatWithErrors": false,
@@ -258,56 +267,6 @@
     "lineEnding": "lf",
     "lineWidth": 100,
     "useEditorconfig": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "complexity": {
-        "useLiteralKeys": {
-          "level": "info",
-          "fix": "none"
-        }
-      },
-      "correctness": {
-        "noUnusedImports": {
-          "level": "info",
-          "fix": "none"
-        },
-        "noUnusedVariables": {
-          "level": "info",
-          "fix": "none"
-        }
-      },
-      "style": {
-        "noNonNullAssertion": {
-          "level": "info",
-          "fix": "none"
-        }
-      },
-      "suspicious": {
-        "noExplicitAny": {
-          "level": "info"
-        },
-        "noUnknownAtRules": {
-          "level": "info"
-        }
-      }
-    }
-  },
-  "css": {
-    "parser": {
-      "allowWrongLineComments": null,
-      "cssModules": null
-    },
-    "formatter": {
-      "enabled": false,
-      "indentStyle": "space",
-      "indentWidth": 2,
-      "lineEnding": "lf",
-      "lineWidth": 100,
-      "quoteStyle": "single"
-    }
   },
   "graphql": {
     "formatter": {
@@ -356,6 +315,7 @@
       "jsxQuoteStyle": "double",
       "lineEnding": "lf",
       "lineWidth": 100,
+      "operatorLinebreak": "after",
       "quoteProperties": "preserve",
       "quoteStyle": "single",
       "semicolons": "always",
@@ -376,6 +336,42 @@
       "lineEnding": "lf",
       "lineWidth": 100,
       "trailingCommas": "none"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "useLiteralKeys": {
+          "level": "info",
+          "fix": "none"
+        }
+      },
+      "correctness": {
+        "noUnusedImports": {
+          "level": "info",
+          "fix": "none"
+        },
+        "noUnusedVariables": {
+          "level": "info",
+          "fix": "none"
+        }
+      },
+      "style": {
+        "noNonNullAssertion": {
+          "level": "info",
+          "fix": "none"
+        }
+      },
+      "suspicious": {
+        "noExplicitAny": {
+          "level": "info"
+        },
+        "noUnknownAtRules": {
+          "level": "info"
+        }
+      }
     }
   },
   "overrides": [
@@ -406,5 +402,10 @@
         }
       }
     }
-  ]
+  ],
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  }
 }

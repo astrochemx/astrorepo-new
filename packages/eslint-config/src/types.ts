@@ -41,7 +41,9 @@ export interface Options {
   astro?: boolean;
   command?: boolean;
   ignores?: string[];
+  perfectionist?: boolean;
   typescript?: boolean;
+  warnings?: boolean;
 }
 
 export interface OptionsExtraFileExtension {

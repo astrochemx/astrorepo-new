@@ -1,11 +1,15 @@
 import type { Linter } from 'eslint';
+
 import { type Arrayable, type Awaitable, FlatConfigComposer } from 'eslint-flat-config-utils';
-import { astro, command, common, ignore, javascript, typescript } from './configs';
-import { hasAstro, hasTypeScript } from './env';
+
 import type { TSConfig } from './modules';
 import type { ConfigNames, FlatConfigItem, Options } from './types';
 
-export function defineConfig(
+import { astro, command, common, ignore, javascript, typescript } from './configs';
+import { perfectionist } from './configs/perfectionist';
+import { hasAstro, hasTypeScript } from './env';
+
+export async function defineConfig(
   options: Options = {},
   ...userConfigs: Awaitable<
     | Arrayable<FlatConfigItem>
@@ -13,13 +17,20 @@ export function defineConfig(
     | Arrayable<TSConfig[number]>
     | FlatConfigComposer<any, any>
   >[]
-): FlatConfigComposer<FlatConfigItem, ConfigNames> {
+): Promise<FlatConfigComposer<FlatConfigItem, ConfigNames>> {
   const {
     astro: enableAstro = hasAstro(),
     command: enableCommand = true,
     ignores: userIgnores = [],
+    perfectionist: enablePerfectionist = true,
     typescript: enableTypeScript = hasTypeScript(),
+    warnings: onlyWarnings = true,
   } = options;
+  if (onlyWarnings) {
+    // @ts-expect-error: types
+    await import('eslint-plugin-only-warn');
+  }
+
   const configs: Awaitable<FlatConfigItem[]>[] = [common(), javascript()];
 
   if (enableAstro) {
@@ -28,6 +39,10 @@ export function defineConfig(
 
   if (enableTypeScript) {
     configs.push(typescript());
+  }
+
+  if (enablePerfectionist) {
+    configs.push(perfectionist());
   }
 
   if (enableCommand) {
