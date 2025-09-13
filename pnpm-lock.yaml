@@ -9,7 +9,7 @@ overrides:
   '@types/eslint': npm:eslint@9.35.0
   puppeteer: 24.20.0
 
-pnpmfileChecksum: sha256-7uRCtpq1K1HPmtvt22QkcImys7/KL7K97/eARFQeh3U=
+pnpmfileChecksum: sha256-nZQXd6dHVhi5ZbmFrOB9OefsWFyayGaOwtNohsOPLkM=
 
 patchedDependencies:
   prettier-plugin-tailwindcss@0.6.14:
@@ -4649,6 +4649,7 @@ packages:
     resolution: {integrity: sha512-/baBXDqkfW8x0UlqfYAfRCkmVWiH8qFZ4uhT6yLVBLssiypDTbe78W6lNBse7huBFv1ipR5PG9evkxEnIXDxjA==}
     peerDependencies:
       eslint: '>= 5'
+    bundledDependencies: []
 
   eslint-plugin-better-tailwindcss@3.7.8:
     resolution: {integrity: sha512-B8njRNTI89lTLaX0Usc7n51+AJwXtwYq8jmsLhafSJlmnk5U41ahKH/IsvS37evYpFpNod4kYF0AOQeOguulSQ==}

@@ -1,3 +1,5 @@
+/* eslint-disable perfectionist/sort-modules */
+
 import type { Config } from '@pnpm/config';
 import type { Log } from '@pnpm/core-loggers';
 import type { CustomFetchers } from '@pnpm/fetcher-base';

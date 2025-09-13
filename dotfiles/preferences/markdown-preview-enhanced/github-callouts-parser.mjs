@@ -1,4 +1,6 @@
 ({
+  onDidParseMarkdown: async (/** @type {string} */ html) => html,
+
   /**
    * GitHub Callouts Parser for Markdown Preview Enhanced.
    *
@@ -47,6 +49,4 @@
       );
       return resolve(newMarkdown);
     }),
-
-  onDidParseMarkdown: async (/** @type {string} */ html) => html,
 });

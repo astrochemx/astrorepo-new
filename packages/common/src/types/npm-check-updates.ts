@@ -1,34 +1,15 @@
 import type { RunOptions } from 'npm-check-updates';
 
-interface SemVer {
-  /** The full semantic version. */
-  semver?: string;
-  /** The raw version string. */
-  version?: string;
-  /** The major version. */
-  major?: string;
-  /** The minor version. */
-  minor?: string;
-  /** The patch version. */
-  patch?: string;
-  /** The release identifier (pre-release tags). */
-  release?: string;
-  /** The build metadata. */
-  build?: string;
-  /** The comparison operator (e.g., >=, <=). */
-  operator?: string;
-}
-
 /**
  * A function that selects the upgrade target for a dependency.
  *
  * @param packageName The name of the dependency.
  * @param versionRange A parsed SemVer object of the upgraded version. See:
  *   https://git.coolaj86.com/coolaj86/semver-utils.js#semverutils-parse-semverstring.
- * @returns {'latest'
- *   | 'newest'
- *   | 'greatest'
+ * @returns {'greatest'
+ *   | 'latest'
  *   | 'minor'
+ *   | 'newest'
  *   | 'patch'
  *   | 'semver'
  *   | `@${string}`}
@@ -45,7 +26,7 @@ export type NCUTargetFunction = (
   versionRange: SemVer | SemVer[],
 ) => VersionRange;
 
-type VersionRange = 'latest' | 'newest' | 'greatest' | 'minor' | 'patch' | 'semver' | `@${string}`;
+type VersionRange = 'greatest' | 'latest' | 'minor' | 'newest' | 'patch' | 'semver' | `@${string}`;
 
 /** Corrected options for `npm-check-updates`. */
 export interface NCUConfig extends Omit<RunOptions, 'pre'> {
@@ -57,5 +38,24 @@ export interface NCUConfig extends Omit<RunOptions, 'pre'> {
    *
    * @default 0
    */
-  pre: number | boolean;
+  pre: boolean | number;
+}
+
+interface SemVer {
+  /** The build metadata. */
+  build?: string;
+  /** The major version. */
+  major?: string;
+  /** The minor version. */
+  minor?: string;
+  /** The comparison operator (e.g., >=, <=). */
+  operator?: string;
+  /** The patch version. */
+  patch?: string;
+  /** The release identifier (pre-release tags). */
+  release?: string;
+  /** The full semantic version. */
+  semver?: string;
+  /** The raw version string. */
+  version?: string;
 }

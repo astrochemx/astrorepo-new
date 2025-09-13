@@ -1,8 +1,10 @@
 import path from 'node:path';
+
+import type { FlatConfigItem } from '../types';
+
 import { hasTypeScript } from '../env';
 import { GLOB_ASTRO, GLOB_SRC_JS, GLOB_SRC_TS } from '../globs';
-import { globals, parserAstro, parserTS, pluginAstro, pluginJSxAlly } from '../modules';
-import type { FlatConfigItem } from '../types';
+import { globals, parserAstro, parserTS, pluginAstro, pluginJsxAlly } from '../modules';
 import { extractRules } from '../utils';
 
 const astroRecommendedRules = extractRules(pluginAstro.configs['flat/recommended']);
@@ -20,7 +22,7 @@ export async function astro(): Promise<FlatConfigItem[]> {
       files: [...files, ...filesJS, ...filesTS],
       plugins: {
         'astro': pluginAstro,
-        'jsx-a11y': pluginJSxAlly,
+        'jsx-a11y': pluginJsxAlly,
       },
     },
     {

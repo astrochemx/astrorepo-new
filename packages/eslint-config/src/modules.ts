@@ -6,7 +6,7 @@ export { default as gitignoreFlatConfig } from 'eslint-config-flat-gitignore';
 export { default as pluginAstro } from 'eslint-plugin-astro';
 export { default as pluginCommand } from 'eslint-plugin-command';
 export { default as pluginCommandConfig } from 'eslint-plugin-command/config';
-export { default as pluginJSxAlly } from 'eslint-plugin-jsx-a11y';
+export { default as pluginJsxAlly } from 'eslint-plugin-jsx-a11y';
 export { default as pluginPerfectionist } from 'eslint-plugin-perfectionist';
 export { default as globals } from 'globals';
 

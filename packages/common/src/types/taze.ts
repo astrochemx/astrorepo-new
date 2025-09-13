@@ -37,9 +37,9 @@ export interface TazeCheckOptions extends CheckOptions {
   /** Enable interactive `CLI` mode. */
   interactive?: boolean;
   /** Logging level for output. */
-  loglevel?: 'debug' | 'info' | 'warn' | 'error' | 'silent';
+  loglevel?: 'debug' | 'error' | 'info' | 'silent' | 'warn';
   /** The mode of version range resolution. */
-  mode?: 'default' | 'major' | 'minor' | 'patch' | 'latest' | 'newest' | 'next';
+  mode?: 'default' | 'latest' | 'major' | 'minor' | 'newest' | 'next' | 'patch';
   /** Show package compatibility with the current `Node.js` version. */
   nodecompat?: boolean;
   /** Override version bumping mode for individual packages. */
@@ -51,7 +51,7 @@ export interface TazeCheckOptions extends CheckOptions {
   /** Suppress all non-essential output. */
   silent?: boolean;
   /** Sorting order for outdated dependencies. */
-  sort?: 'time-asc' | 'time-desc' | 'diff-asc' | 'diff-desc' | 'name-asc' | 'name-desc';
+  sort?: 'diff-asc' | 'diff-desc' | 'name-asc' | 'name-desc' | 'time-asc' | 'time-desc';
   /** Show time difference between the current and updated version. */
   timediff?: boolean;
   /** Update packages immediately after bumping. */

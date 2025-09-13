@@ -4,9 +4,9 @@
   },
 
   mathjaxConfig: {
-    tex: {},
-    options: {},
     loader: {},
+    options: {},
+    tex: {},
   },
 
   mermaidConfig: {

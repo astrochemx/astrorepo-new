@@ -14,9 +14,9 @@ export const rules: Partial<RulesConfig> = {
     'never',
     ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
   ],
+  'subject-emoji': [RuleConfigSeverity.Warning, 'always'],
   'subject-empty': [RuleConfigSeverity.Warning, 'never'],
   'subject-full-stop': [RuleConfigSeverity.Warning, 'never', '.'],
-  'subject-emoji': [RuleConfigSeverity.Warning, 'always'],
   'type-case': [RuleConfigSeverity.Warning, 'always', 'lower-case'],
   'type-empty': [RuleConfigSeverity.Warning, 'never'],
   'type-enum': [

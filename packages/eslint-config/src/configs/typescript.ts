@@ -1,19 +1,20 @@
 import path from 'node:path';
+
+import type { FlatConfigItem } from '../types';
+
 import { hasTypeScript } from '../env';
 import { GLOB_SRC_JS, GLOB_SRC_JTS } from '../globs';
 import { globals, parserTS, pluginTS, tsESLint } from '../modules';
-import type { FlatConfigItem } from '../types';
 import { extractRules } from '../utils';
 
 // @ts-expect-error: types
 const tsESLintRecommendedRules = extractRules(tsESLint.configs?.recommended ?? {});
-// @ts-expect-error: types
-const tsESLintStylisticRules = extractRules(tsESLint.configs?.stylistic ?? {});
-
 const tsESLintRecommendedTypeCheckedRules = extractRules(
   // @ts-expect-error: types
   tsESLint.configs?.recommendedTypeChecked ?? {},
 );
+// @ts-expect-error: types
+const tsESLintStylisticRules = extractRules(tsESLint.configs?.stylistic ?? {});
 const tsESLintStylisticTypeCheckedRules = extractRules(
   // @ts-expect-error: types
   tsESLint.configs?.stylisticTypeChecked ?? {},

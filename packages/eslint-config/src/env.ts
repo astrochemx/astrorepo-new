@@ -1,5 +1,5 @@
-import process from 'node:process';
 import { isPackageExists } from 'local-pkg';
+import process from 'node:process';
 
 export const hasAstro = (): boolean =>
   isPackageExists('astro') || isPackageExists('@astrojs/starlight');

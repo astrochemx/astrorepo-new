@@ -1,6 +1,10 @@
+/* eslint-disable perfectionist/sort-switch-case */
+/* eslint-disable perfectionist/sort-modules */
+
+import type { OutgoingHttpHeaders } from 'node:http2';
+
 import fs from 'node:fs';
 import { writeFile } from 'node:fs/promises';
-import type { OutgoingHttpHeaders } from 'node:http2';
 import { normalize } from 'node:path';
 import { Readable } from 'node:stream';
 
@@ -23,11 +27,11 @@ const PLATFORMS = [
   { label: 'Windows x86 (32-bit x86)', value: 'win32-ia32' },
 ] as const;
 
-type ExtensionPlatform = (typeof PLATFORMS)[number]['value'] | '';
+type ExtensionPlatform = '' | (typeof PLATFORMS)[number]['value'];
 
 type SemVerRelease = `${number}.${number}.${number}`;
 type SemVerPreRelease = `${number}.${number}.${number}-${string}`;
-type SemVer = SemVerRelease | SemVerPreRelease;
+type SemVer = SemVerPreRelease | SemVerRelease;
 
 interface ExtensionInfo extends Extension {
   marketplaceLink?: URL;
@@ -199,7 +203,7 @@ export interface Version {
   version: SemVer;
 }
 
-export type Flags = 'validated' | 'none' | '';
+export type Flags = '' | 'none' | 'validated';
 
 export interface File {
   assetType: ValueOf<typeof AssetType>;
@@ -256,6 +260,7 @@ export interface MetadataItem {
   name: string;
 }
 
+/* eslint-disable perfectionist/sort-objects */
 const ExtensionQueryFilterType = {
   tag: 1,
   displayName: 2,
@@ -282,7 +287,9 @@ const ExtensionQueryFilterType = {
   targetPlatform: 23,
   extensionName: 24,
 } as const;
+/* eslint-enable perfectionist/sort-objects */
 
+/* eslint-disable perfectionist/sort-objects */
 const ExtensionQueryFlags = {
   none: 0,
   includeVersions: 1,
@@ -303,10 +310,11 @@ const ExtensionQueryFlags = {
   includeNameConflictInfo: 32_768,
   allAttributes: 16_863,
 } as const;
+/* eslint-enable perfectionist/sort-objects */
 
 const getExtensionInfo = async (
   id: string,
-  version?: 'release' | 'prerelease' | SemVer,
+  version?: 'prerelease' | 'release' | SemVer,
 ): Promise<ExtensionInfo | undefined> => {
   const [publisher, name] = id.trim().split('.');
   const marketplaceLink = new URL(`https://marketplace.visualstudio.com/items?itemName=${id}`);
@@ -333,9 +341,9 @@ const getExtensionInfo = async (
   } satisfies MarketRequestBody);
 
   const request = new Request(INFO_URL, {
-    method: 'POST',
-    headers: { ...API_HEADERS, 'content-length': String(body.length) },
     body: body,
+    headers: { ...API_HEADERS, 'content-length': String(body.length) },
+    method: 'POST',
   });
 
   const response = await fetch(request);
@@ -361,7 +369,7 @@ const getExtensionInfo = async (
 
 const getVersion = (
   extension: Extension,
-  version: 'release' | 'prerelease' | SemVer = 'release',
+  version: 'prerelease' | 'release' | SemVer = 'release',
 ): Version[] | undefined => {
   if (!extension?.versions) {
     return;
@@ -396,7 +404,7 @@ const getVersion = (
 const downloadExtensions = async (
   id: string,
   platform?: ExtensionPlatform | ExtensionPlatform[],
-  version: 'release' | 'prerelease' | SemVer = 'release',
+  version: 'prerelease' | 'release' | SemVer = 'release',
 ) => {
   const extensionInfo = await getExtensionInfo(id, version);
 
@@ -437,7 +445,7 @@ const downloadExtensions = async (
   }
 
   for (const url of downloadUrls) {
-    const response = await fetch(url, { method: 'GET', headers: API_HEADERS });
+    const response = await fetch(url, { headers: API_HEADERS, method: 'GET' });
 
     if (!response.ok) {
       console.log('ERROR');

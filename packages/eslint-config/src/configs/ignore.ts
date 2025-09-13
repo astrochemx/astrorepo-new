@@ -1,9 +1,10 @@
+import type { FlatConfigItem, OptionsFiles } from '../types';
+
 import { GLOB_IGNORES } from '../ignores';
 import { gitignoreFlatConfig } from '../modules';
-import type { FlatConfigItem, OptionsIgnores } from '../types';
 
-export async function ignore(options: OptionsIgnores = {}): Promise<FlatConfigItem[]> {
-  const { ignores = [] } = options;
+export async function ignore(options: OptionsFiles = {}): Promise<FlatConfigItem[]> {
+  const { files = [] } = options;
 
   return [
     {
@@ -16,7 +17,7 @@ export async function ignore(options: OptionsIgnores = {}): Promise<FlatConfigIt
     },
     {
       name: 'ignores/user',
-      ignores: [...ignores],
+      ignores: [...files],
     },
   ] satisfies FlatConfigItem[];
 }

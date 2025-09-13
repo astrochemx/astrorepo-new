@@ -1,26 +1,14 @@
 /** biome-ignore-all lint/suspicious/noTemplateCurlyInString: noTemplateCurly */
 
+import { type CSpellSettings, defineConfig } from 'cspell';
 import { createRequire } from 'node:module';
 import path from 'node:path';
-import { type CSpellSettings, defineConfig } from 'cspell';
+
 import { ignores } from './ignores';
 
 const require = createRequire(import.meta.dirname);
 
 export const cspellConfig: CSpellSettings = defineConfig({
-  version: '0.2',
-  dictionaryDefinitions: [
-    {
-      name: 'prebuilt-words',
-      path: path.resolve(import.meta.dirname, '..', 'words.txt'),
-      addWords: false,
-    },
-    {
-      name: 'spelling',
-      path: '${cwd}/spelling.txt',
-      addWords: true,
-    },
-  ],
   dictionaries: [
     'en-gb',
     'medical terms',
@@ -30,10 +18,23 @@ export const cspellConfig: CSpellSettings = defineConfig({
     'spelling',
     'uk-ua',
   ],
+  dictionaryDefinitions: [
+    {
+      name: 'prebuilt-words',
+      addWords: false,
+      path: path.resolve(import.meta.dirname, '..', 'words.txt'),
+    },
+    {
+      name: 'spelling',
+      addWords: true,
+      path: '${cwd}/spelling.txt',
+    },
+  ],
   enabledFileTypes: {
     '*': true,
   },
   enabledLanguageIds: ['*'],
+  ignorePaths: [...ignores, '${cwd}/spelling.txt'],
   import: [
     require.resolve('@cspell/dict-en-gb/cspell-ext.json'),
     require.resolve('@cspell/dict-medicalterms/cspell-ext.json'),
@@ -42,5 +43,5 @@ export const cspellConfig: CSpellSettings = defineConfig({
     require.resolve('@cspell/dict-uk-ua/cspell-ext.json'),
   ],
   language: 'en, en-US, en-GB, uk',
-  ignorePaths: [...ignores, '${cwd}/spelling.txt'],
+  version: '0.2',
 } as const satisfies CSpellSettings);

@@ -6,7 +6,7 @@ import pluginJsEslint from '@eslint/js';
 
 import type { FlatConfigItem } from './types';
 
-/** Combine array and non-array ESLint flat configs into a single array. */
+/** Combine array and non-array ESLint Flat Configs into a single array. */
 export async function combine(
   ...configs: Awaitable<FlatConfigItem | FlatConfigItem[]>[]
 ): Promise<FlatConfigItem[]> {
@@ -14,8 +14,16 @@ export async function combine(
   return resolved.flat();
 }
 
-/** Extract rules from a ESLint flat configs. */
-export async function extractRules(
+/** Extract rules from a ESLint Flat Configs. */
+export function extractRules(
+  ...configs: (FlatConfigItem | FlatConfigItem[])[]
+): FlatConfigItem['rules'] {
+  const flat = configs.flat();
+  return Object.assign({}, ...flat.map((cfg) => cfg.rules ?? {}));
+}
+
+/** Extract rules from a ESLint Flat Configs. */
+export async function extractRulesAsync(
   ...configs: Awaitable<FlatConfigItem | FlatConfigItem[]>[]
 ): Promise<FlatConfigItem['rules']> {
   const resolved = await Promise.all(configs);

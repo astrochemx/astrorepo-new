@@ -24,12 +24,24 @@ const today = [...new Date().toISOString().slice(0, 16).replace('T', ' '), ' UTC
   --------------------
 */
 
-/** @param {Iterable<any>} items */
-function stringify(items) {
-  return [...new Set(items)]
-    .sort()
-    .filter((item) => item && item !== '')
-    .join(', ');
+/**
+ * Add `lowercase` variants of key/values to an array.
+ *
+ * @param {string[]} arr
+ */
+function addLowerCaseVariants(arr) {
+  const lowerCaseArr = arr.map((elm) => elm.toLowerCase());
+  return [...arr, ...lowerCaseArr];
+}
+
+/**
+ * Add `Title Case` variants of key/values to an array.
+ *
+ * @param {string[]} arr
+ */
+function addTitleCaseVariants(arr) {
+  const upperCaseArr = arr.map((elm) => toTitleCase(elm));
+  return [...arr, ...upperCaseArr];
 }
 
 /** @param {{ [x: string]: string | string[] }} obj */
@@ -45,8 +57,16 @@ function sortObject(
     }, {});
 }
 
+/** @param {Iterable<any>} items */
+function stringify(items) {
+  return [...new Set(items)]
+    .sort()
+    .filter((item) => item && item !== '')
+    .join(', ');
+}
+
 /**
- * Convert string to Title Case
+ * Convert string to `Title Case`.
  *
  * @param {string} str
  */
@@ -58,26 +78,6 @@ function toTitleCase(str) {
       (/** @type {string} */ _, /** @type {string} */ a, /** @type {string} */ b) =>
         `${a}${b.toUpperCase()}`,
     );
-}
-
-/**
- * Add title case variants of key/values to the array
- *
- * @param {string[]} arr
- */
-function addTitleCaseVariants(arr) {
-  const upperCaseArr = arr.map((elm) => toTitleCase(elm));
-  return [...arr, ...upperCaseArr];
-}
-
-/**
- * Add lowercase variants of key/values to the array
- *
- * @param {string[]} arr
- */
-function addLowerCaseVariants(arr) {
-  const lowerCaseArr = arr.map((elm) => elm.toLowerCase());
-  return [...arr, ...lowerCaseArr];
 }
 
 /*
@@ -1357,13 +1357,9 @@ const esprojFiles = [
   --------------------
 */
 
-// @keep-sorted
+// @keep-sorted-disabled
 /** @type {{ [key: string]: string[] }} */
 const basePatterns = {
-  '.clang-tidy': dotClangTidy,
-  '.env': dotEnv,
-  '.gitignore': dotGitignore,
-  '.project': dotProject,
   '*.asax': asaxFiles,
   '*.ascx': ascxFiles,
   '*.ashx': ashxFiles,
@@ -1420,6 +1416,10 @@ const basePatterns = {
   '*.xaml': xamlFiles,
   '+layout.svelte': layoutSVELTE,
   '+page.svelte': pageSVELTE,
+  '.clang-tidy': dotClangTidy,
+  '.env': dotEnv,
+  '.gitignore': dotGitignore,
+  '.project': dotProject,
   'AGENTS.md': agents,
   'ansible.cfg': ansibleCFG,
   'app.tsx': appTSX,
@@ -1508,29 +1508,6 @@ for (const [key, value] of Object.entries(fullObj)) {
   --------------------
 */
 
-export function updateSettingsJson(path = './.vscode/settings.json') {
-  try {
-    const fileContent = fs.readFileSync(path, 'utf8');
-
-    const replaceRegEx =
-      /^(\s*\/\/.*?update.*\n)?(\s*\/\/.*?http.*\n)?(\s*)([<"]explorer\.fileNesting\.patterns[">]): \{[\s\S]*?\},$/m;
-
-    const patterns = JSON.stringify(fullObj, undefined, 2)
-      .split('\n')
-      .map((l) => `  ${l}`)
-      .join('\n')
-      .trimStart();
-
-    const replaceContent = `$3// updated at: ${today}\n$3$4: ${patterns},`.trim();
-
-    const newContent = fileContent.replace(replaceRegEx, replaceContent);
-
-    fs.writeFileSync(path, newContent, 'utf8');
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 export function updateReadme(path = './README.md') {
   try {
     const fileContent = fs.readFileSync(path, 'utf8');
@@ -1550,6 +1527,29 @@ export function updateReadme(path = './README.md') {
   // updated at: ${today}
   "explorer.fileNesting.patterns": ${patterns.trimStart()},
 \`\`\``.trim();
+
+    const newContent = fileContent.replace(replaceRegEx, replaceContent);
+
+    fs.writeFileSync(path, newContent, 'utf8');
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function updateSettingsJson(path = './.vscode/settings.json') {
+  try {
+    const fileContent = fs.readFileSync(path, 'utf8');
+
+    const replaceRegEx =
+      /^(\s*\/\/.*?update.*\n)?(\s*\/\/.*?http.*\n)?(\s*)([<"]explorer\.fileNesting\.patterns[">]): \{[\s\S]*?\},$/m;
+
+    const patterns = JSON.stringify(fullObj, undefined, 2)
+      .split('\n')
+      .map((l) => `  ${l}`)
+      .join('\n')
+      .trimStart();
+
+    const replaceContent = `$3// updated at: ${today}\n$3$4: ${patterns},`.trim();
 
     const newContent = fileContent.replace(replaceRegEx, replaceContent);
 

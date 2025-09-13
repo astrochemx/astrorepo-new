@@ -1,6 +1,11 @@
 import type { KnipConfig } from 'knip';
 
 export default {
+  // https://github.com/webpro-nl/knip/issues/1008#issuecomment-2756572278
+  compilers: {
+    css: (text: string) =>
+      [...text.replace('plugin', 'import').matchAll(/(?<=@)(?:import|plugin)[^;]+/g)].join('\n'),
+  },
   ignoreExportsUsedInFile: {
     interface: true,
     type: true,
@@ -69,10 +74,5 @@ export default {
       // @keep-sorted
       ignoreDependencies: [],
     },
-  },
-  // https://github.com/webpro-nl/knip/issues/1008#issuecomment-2756572278
-  compilers: {
-    css: (text: string) =>
-      [...text.replace('plugin', 'import').matchAll(/(?<=@)(?:import|plugin)[^;]+/g)].join('\n'),
   },
 } as const satisfies KnipConfig;

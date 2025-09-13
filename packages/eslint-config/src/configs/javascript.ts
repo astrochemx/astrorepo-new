@@ -1,6 +1,7 @@
+import type { FlatConfigItem } from '../types';
+
 import { GLOB_SRC_JS } from '../globs';
 import { globals, pluginJS } from '../modules';
-import type { FlatConfigItem } from '../types';
 
 export async function javascript(): Promise<FlatConfigItem[]> {
   const files = [GLOB_SRC_JS];

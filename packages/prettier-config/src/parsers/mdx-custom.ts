@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-modules */
 /**
  * (c) Clerk (Brad Cornes)
  * https://github.com/clerk/clerk-docs/blob/main/prettier-mdx.mjs
@@ -16,10 +17,10 @@ const processor = remark()
   .data('settings', {
     bullet: '-',
     bulletOther: '*',
-    rule: '-',
     emphasis: '_',
-    quote: "'",
     incrementListMarker: false,
+    quote: "'",
+    rule: '-',
   })
   .use(remarkFrontmatter)
   .use(remarkGfm, { tablePipeAlign: false })
@@ -30,9 +31,9 @@ async function formatAnnotation(annotation: any, prettierOptions: any) {
 
   const formatted = await prettier.format(`${prefix}${annotation}`, {
     ...prettierOptions,
-    trailingComma: 'none',
-    printWidth: 99999,
     parser: 'babel',
+    printWidth: 99999,
+    trailingComma: 'none',
   });
   // prettier-ignore
   return `${formatted
@@ -112,18 +113,18 @@ function remarkFormatCodeBlocks(prettierOptions: any) {
 
     const markReLoose = {
       anyMark: /^\s*[-+=]( |$)/m,
-      markOrIndent: /^\s*[-+= ]( |$)/,
       del: /^\s*-( |$)/,
       ins: /^\s*\+( |$)/,
       mark: /^\s*=( |$)/,
+      markOrIndent: /^\s*[-+= ]( |$)/,
     };
 
     const markReStrict = {
       anyMark: /^[-+=]( |$)/m,
-      markOrIndent: /^[-+= ]( |$)/,
       del: /^-( |$)/,
       ins: /^\+( |$)/,
       mark: /^=( |$)/,
+      markOrIndent: /^[-+= ]( |$)/,
     };
 
     visit(tree, 'code', (node) => {
@@ -141,7 +142,7 @@ function remarkFormatCodeBlocks(prettierOptions: any) {
 
           // Exclude Markdown files because `-` is used for lists
           const hasMarks =
-            markRe.anyMark.test(code) && !['md', 'markdown', 'mdx'].includes(node.lang);
+            markRe.anyMark.test(code) && !['markdown', 'md', 'mdx'].includes(node.lang);
           const del: any[] = [];
           const ins: any[] = [];
           const mark: any[] = [];
@@ -272,14 +273,14 @@ function replaceCalloutMarkers(text: any) {
 export const parsers = {
   'mdx-custom': {
     astFormat: 'mdx-custom',
-    parse(text: any): Record<string, any> {
-      return { text: text };
+    locEnd(_node: any) {
+      return 0;
     },
     locStart(_node: any) {
       return 0;
     },
-    locEnd(_node: any) {
-      return 0;
+    parse(text: any): Record<string, any> {
+      return { text: text };
     },
   },
 };
@@ -306,20 +307,28 @@ export const printers = {
 
 export const options = {
   mdxFormatCodeBlocks: {
-    type: 'boolean',
     category: 'Global',
     default: true,
     description: 'Format the code within fenced code blocks.',
+    type: 'boolean',
   },
 };
 
 export const mdxCustom: {
+  options: {
+    mdxFormatCodeBlocks: {
+      category: string;
+      default: boolean;
+      description: string;
+      type: string;
+    };
+  };
   parsers: {
     'mdx-custom': {
       astFormat: string;
-      parse(text: any): Record<string, any>;
-      locStart(node: any): number;
       locEnd(node: any): number;
+      locStart(node: any): number;
+      parse(text: any): Record<string, any>;
     };
   };
   printers: {
@@ -327,16 +336,8 @@ export const mdxCustom: {
       print(ast: any, prettierOptions: any): Promise<any>;
     };
   };
-  options: {
-    mdxFormatCodeBlocks: {
-      type: string;
-      category: string;
-      default: boolean;
-      description: string;
-    };
-  };
 } = {
+  options: options,
   parsers: parsers,
   printers: printers,
-  options: options,
 };

@@ -1,9 +1,11 @@
-import { dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
 import type { Linter } from 'eslint';
 import type { ConfigArray } from 'typescript-eslint';
+
+import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import type { Awaitable, FlatConfigItem } from './types';
 
 /** @see https://github.com/toss/es-toolkit/blob/main/src/predicate/isPlainObject.ts */
@@ -32,7 +34,7 @@ export function isUnsafeProperty(key: PropertyKey): boolean {
 export function mergeDeep<T extends Record<PropertyKey, any>, S extends Record<PropertyKey, any>>(
   target: T,
   source: S,
-): T & S {
+): S & T {
   const sourceKeys = Object.keys(source) as (keyof S)[];
   for (const sourceKey of sourceKeys) {
     const key = sourceKey;
@@ -63,21 +65,6 @@ export function mergeDeep<T extends Record<PropertyKey, any>, S extends Record<P
 /** Check if the object is an array. */
 export const isArray = (value: unknown): value is unknown[] => Array.isArray(value);
 
-/**
- * Mimic `CommonJS` `__dirname` and `__filename` variables in `ES Modules`.
- * Provides `__filename` and `__dirname` by consuming `import.meta.url`.
- *
- * @param {string | import('url').URL} importMetaUrl
- */
-export function getNames(importMetaUrl: string | import('url').URL): {
-  __filename: string;
-  __dirname: string;
-} {
-  const __filename = fileURLToPath(importMetaUrl);
-  const __dirname = dirname(__filename);
-  return { __filename, __dirname };
-}
-
 /** Extract rules from ESLint flat config. */
 export function extractRules(
   config: FlatConfigItem | FlatConfigItem[],
@@ -85,6 +72,40 @@ export function extractRules(
   return Array.isArray(config)
     ? Object.assign({}, ...config.map((cfg) => cfg.rules ?? {}))
     : (config.rules ?? {});
+}
+
+/**
+ * `FlatCompat` compatibility class for working with ESLint `extend`'ed configs.
+ *
+ * @param {string | import('url').URL} importMetaUrl
+ */
+export function flatCompat(
+  importMetaUrl: import('url').URL | string,
+  resolvePluginsRelativeTo?: string,
+): FlatCompat {
+  return new FlatCompat({
+    baseDirectory: getNames(importMetaUrl).__dirname, // process.cwd()
+    ...(resolvePluginsRelativeTo !== undefined && {
+      resolvePluginsRelativeTo: resolvePluginsRelativeTo,
+    }),
+    allConfig: js.configs.all,
+    recommendedConfig: js.configs.recommended,
+  });
+}
+
+/**
+ * Mimic `CommonJS` `__dirname` and `__filename` variables in `ES Modules`.
+ * Provides `__filename` and `__dirname` by consuming `import.meta.url`.
+ *
+ * @param {string | import('url').URL} importMetaUrl
+ */
+export function getNames(importMetaUrl: import('url').URL | string): {
+  __dirname: string;
+  __filename: string;
+} {
+  const __filename = fileURLToPath(importMetaUrl);
+  const __dirname = dirname(__filename);
+  return { __dirname, __filename };
 }
 
 /**
@@ -102,31 +123,12 @@ export function extractRules(
  * @see https://github.com/microsoft/TypeScript/issues/42873#issuecomment-2041368364
  */
 export function mapOptionsToConfigs(
-  options: Linter.Config | ConfigArray[number],
-  config: Linter.Config[] | ConfigArray | Linter.Config | ConfigArray[number],
-): Linter.Config[] | ConfigArray | Linter.Config | ConfigArray[number] {
+  options: ConfigArray[number] | Linter.Config,
+  config: ConfigArray | ConfigArray[number] | Linter.Config | Linter.Config[],
+): ConfigArray | ConfigArray[number] | Linter.Config | Linter.Config[] {
   return isArray(config)
     ? config.map((cfg) => mergeDeep(cfg, options))
     : mergeDeep(config, options);
-}
-
-/**
- * `FlatCompat` compatibility class for working with ESLint `extend`'ed configs.
- *
- * @param {string | import('url').URL} importMetaUrl
- */
-export function flatCompat(
-  importMetaUrl: string | import('url').URL,
-  resolvePluginsRelativeTo?: string,
-): FlatCompat {
-  return new FlatCompat({
-    baseDirectory: getNames(importMetaUrl).__dirname, // process.cwd()
-    ...(resolvePluginsRelativeTo !== undefined && {
-      resolvePluginsRelativeTo: resolvePluginsRelativeTo,
-    }),
-    allConfig: js.configs.all,
-    recommendedConfig: js.configs.recommended,
-  });
 }
 
 /**
@@ -175,6 +177,9 @@ export const parserPlain = {
   }),
 };
 
+/** Extract module type with interoperability for CJS `module.exports`. */
+export type InteropModuleDefault<T> = T extends { default: infer U } ? U : T;
+
 /** Combine array and non-array configs into a single array. */
 export async function combine(
   ...configs: Awaitable<FlatConfigItem | FlatConfigItem[]>[]
@@ -183,39 +188,25 @@ export async function combine(
   return resolved.flat();
 }
 
-/**
- * Rename plugin prefixes in a rule object. Accepts a map of prefixes to rename.
- *
- * @example
- *   ```ts
- *   import { renameRules } from '@antfu/eslint-config';
- *
- *   export default [
- *     {
- *       rules: renameRules(
- *         {
- *           '@typescript-eslint/indent': 'error',
- *         },
- *         { '@typescript-eslint': 'ts' },
- *       ),
- *     },
- *   ];
- *   ```;
- */
-export function renameRules(
-  rules: Record<string, any>,
-  map: Record<string, string>,
-): Record<string, any> {
-  return Object.fromEntries(
-    Object.entries(rules).map(([key, value]) => {
-      for (const [from, to] of Object.entries(map)) {
-        if (key.startsWith(`${from}/`)) {
-          return [to + key.slice(from.length), value];
-        }
-      }
-      return [key, value];
-    }),
-  );
+export async function getTypeScriptParser(): Promise<
+  (typeof import('typescript-eslint'))['parser']
+> {
+  const ts = await loadPlugin<typeof import('typescript-eslint')>('typescript-eslint');
+  return ts.parser;
+}
+
+/** Get package's default export. */
+export async function interopDefault<T>(mod: Awaitable<T>): Promise<InteropModuleDefault<T>> {
+  const resolved = await mod;
+  return (resolved as any).default || resolved;
+}
+
+export async function loadPlugin<T = unknown>(name: string): Promise<T> {
+  const mod = await import(name).catch((error) => {
+    console.error(error);
+    throw new Error(`Failed to load ESLint plugin '${name}'. Please install it!`);
+  });
+  return interopDefault(mod) as Promise<T>;
 }
 
 /**
@@ -255,26 +246,37 @@ export function renamePluginInConfigs(
   });
 }
 
-/** Extract module type with interoperability for CJS `module.exports`. */
-export type InteropModuleDefault<T> = T extends { default: infer U } ? U : T;
-
-/** Get package's default export. */
-export async function interopDefault<T>(mod: Awaitable<T>): Promise<InteropModuleDefault<T>> {
-  const resolved = await mod;
-  return (resolved as any).default || resolved;
-}
-
-export async function loadPlugin<T = unknown>(name: string): Promise<T> {
-  const mod = await import(name).catch((error) => {
-    console.error(error);
-    throw new Error(`Failed to load ESLint plugin '${name}'. Please install it!`);
-  });
-  return interopDefault(mod) as Promise<T>;
-}
-
-export async function getTypeScriptParser(): Promise<
-  (typeof import('typescript-eslint'))['parser']
-> {
-  const ts = await loadPlugin<typeof import('typescript-eslint')>('typescript-eslint');
-  return ts.parser;
+/**
+ * Rename plugin prefixes in a rule object. Accepts a map of prefixes to rename.
+ *
+ * @example
+ *   ```ts
+ *   import { renameRules } from '@antfu/eslint-config';
+ *
+ *   export default [
+ *     {
+ *       rules: renameRules(
+ *         {
+ *           '@typescript-eslint/indent': 'error',
+ *         },
+ *         { '@typescript-eslint': 'ts' },
+ *       ),
+ *     },
+ *   ];
+ *   ```;
+ */
+export function renameRules(
+  rules: Record<string, any>,
+  map: Record<string, string>,
+): Record<string, any> {
+  return Object.fromEntries(
+    Object.entries(rules).map(([key, value]) => {
+      for (const [from, to] of Object.entries(map)) {
+        if (key.startsWith(`${from}/`)) {
+          return [to + key.slice(from.length), value];
+        }
+      }
+      return [key, value];
+    }),
+  );
 }

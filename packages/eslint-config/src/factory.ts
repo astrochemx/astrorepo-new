@@ -1,16 +1,16 @@
 import type { Linter } from 'eslint';
 
-import { type Arrayable, type Awaitable, FlatConfigComposer } from 'eslint-flat-config-utils';
+import { FlatConfigComposer } from 'eslint-flat-config-utils';
 
 import type { TSConfig } from './modules';
-import type { ConfigNames, FlatConfigItem, Options } from './types';
+import type { Arrayable, Awaitable, ConfigNames, FlatConfigItem, OptionsFactory } from './types';
 
 import { astro, command, common, ignore, javascript, typescript } from './configs';
 import { perfectionist } from './configs/perfectionist';
 import { hasAstro, hasTypeScript } from './env';
 
 export async function defineConfig(
-  options: Options = {},
+  options: OptionsFactory = {},
   ...userConfigs: Awaitable<
     | Arrayable<FlatConfigItem>
     | Arrayable<Linter.Config>
@@ -24,9 +24,9 @@ export async function defineConfig(
     ignores: userIgnores = [],
     perfectionist: enablePerfectionist = true,
     typescript: enableTypeScript = hasTypeScript(),
-    warnings: onlyWarnings = true,
+    warnings: useOnlyWarnings = true,
   } = options;
-  if (onlyWarnings) {
+  if (useOnlyWarnings) {
     // @ts-expect-error: types
     await import('eslint-plugin-only-warn');
   }
@@ -49,7 +49,7 @@ export async function defineConfig(
     configs.push(command());
   }
 
-  configs.push(ignore({ ignores: userIgnores }));
+  configs.push(ignore({ files: userIgnores }));
 
   const composer = new FlatConfigComposer<FlatConfigItem, ConfigNames>(
     ...configs,

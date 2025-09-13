@@ -7,6 +7,8 @@ const process = require('node:process');
 const { pathToFileURL } = require('node:url');
 const yaml = require('yaml');
 
+const dirName = __dirname;
+
 /**
  * Caution! Adds old and deprecated type definitions, that are no longer needed!
  *
@@ -57,7 +59,7 @@ function banDeps(pkg) {
 /** @type {() => PnpmSettings['overrides']} */
 function getOverrides() {
   try {
-    const filePath = path.resolve('./pnpm-workspace.yaml');
+    const filePath = path.resolve(dirName, './pnpm-workspace.yaml');
     const fileContent = readFileSync(filePath, { encoding: 'utf8' });
     /** @type {PnpmSettings} */
     const pnpmWorkspaceYaml = yaml.parse(fileContent);
@@ -152,7 +154,7 @@ function _setTrustedDeps(cfg) {
  */
 function loadESM(cfg) {
   // Resolve paths and convert to proper file URLs
-  const loaderPath = path.resolve(__dirname, 'scripts/esm-loader.mjs');
+  const loaderPath = path.resolve(dirName, 'scripts/esm-loader.mjs');
   const loaderUrl = pathToFileURL(loaderPath).href;
   const baseUrl = pathToFileURL(path.resolve('./')).href;
 

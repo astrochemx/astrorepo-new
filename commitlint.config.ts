@@ -1,4 +1,4 @@
-import { type CommitlintConfig, commitlintConfig } from '@astrochemx/commitlint-config';
+import { commitlintConfig, type CommitlintConfig } from '@astrochemx/commitlint-config';
 
 export default {
   ...commitlintConfig,

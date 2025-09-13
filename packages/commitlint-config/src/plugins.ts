@@ -3,8 +3,8 @@ import type { Plugin } from '@commitlint/types';
 import {
   emojiCodeStr,
   emojiUnicodeStr,
-  gitmojiCodeStr,
   gitmojiCodes,
+  gitmojiCodeStr,
   gitmojiUnicode,
   gitmojiUnicodeStr,
 } from './emojis';

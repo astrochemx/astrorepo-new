@@ -32,14 +32,14 @@ declare module '@next/eslint-plugin-next' {
   import type { ESLint, Linter } from 'eslint';
   const plugin: {
     configs: {
-      'recommended': Record<string, Linter.LegacyConfig>;
       'core-web-vitals': Record<string, Linter.LegacyConfig>;
+      'recommended': Record<string, Linter.LegacyConfig>;
     };
     rules: ESLint.Plugin['rules'];
   };
   const flatConfig: {
-    recommended: Record<string, Linter.Config>;
     coreWebVitals: Record<string, Linter.Config>;
+    recommended: Record<string, Linter.Config>;
   };
   export = { ...plugin, flatConfig };
 }
@@ -47,25 +47,25 @@ declare module '@next/eslint-plugin-next' {
 declare module 'eslint-plugin-promise' {
   import type { Linter } from 'eslint';
   const configs: {
-    'recommended': Linter.BaseConfig;
     'flat/recommended': Linter.Config;
+    'recommended': Linter.BaseConfig;
   };
   export = { configs };
 }
 
 declare module 'eslint-plugin-react-perf' {
-  import type { Linter, ESLint } from 'eslint';
+  import type { ESLint, Linter } from 'eslint';
   const meta: ESLint.Plugin['meta'];
   const rules: ESLint.Plugin['rules'];
   const configs: {
-    recommended: Linter.BaseConfig;
     all: Linter.BaseConfig;
     flat: {
-      recommended: Linter.Config;
       all: Linter.Config;
+      recommended: Linter.Config;
     };
+    recommended: Linter.BaseConfig;
   };
-  export = { meta, rules, configs } satisfies ESLint.Plugin;
+  export = { configs, meta, rules } satisfies ESLint.Plugin;
 }
 
 declare module 'eslint-plugin-vue-composable' {
@@ -73,10 +73,10 @@ declare module 'eslint-plugin-vue-composable' {
   const meta: ESLint.Plugin['meta'];
   const rules: ESLint.Plugin['rules'];
   const configs: {
-    'recommended': Linter.BaseConfig;
     'flat/recommended': Linter.Config[];
+    'recommended': Linter.BaseConfig;
   };
-  export = { meta, rules, configs };
+  export = { configs, meta, rules };
 }
 
 declare module 'eslint-plugin-no-only-tests' {
