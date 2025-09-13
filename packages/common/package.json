@@ -49,16 +49,16 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "@pnpm/config": "1004.2.1",
-    "@pnpm/core-loggers": "1001.0.2",
-    "@pnpm/fetcher-base": "1001.0.0",
-    "@pnpm/hooks.types": "1001.0.10",
-    "@pnpm/lockfile.types": "1002.0.0",
+    "@pnpm/config": "1004.3.0",
+    "@pnpm/core-loggers": "1001.0.3",
+    "@pnpm/fetcher-base": "1001.0.1",
+    "@pnpm/hooks.types": "1001.0.11",
+    "@pnpm/lockfile.types": "1002.0.1",
     "@pnpm/patching.types": "1000.1.0",
-    "@pnpm/pnpmfile": "1002.0.2",
-    "@pnpm/store-controller-types": "1004.0.1",
-    "@pnpm/types": "1000.7.0",
-    "npm-check-updates": "18.1.0",
+    "@pnpm/pnpmfile": "1002.1.0",
+    "@pnpm/store-controller-types": "1004.0.2",
+    "@pnpm/types": "1000.8.0",
+    "npm-check-updates": "18.1.1",
     "taze": "19.6.0"
   },
   "devDependencies": {
@@ -66,7 +66,7 @@
     "@astrochemx/tsdown-config": "workspace:*",
     "@astrochemx/typescript-config": "workspace:*",
     "publint": "0.3.12",
-    "tsdown": "0.15.0",
+    "tsdown": "0.15.1",
     "tslib": "2.8.1",
     "typescript": "5.9.2",
     "unplugin-unused": "0.5.3"

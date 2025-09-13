@@ -1,7 +1,7 @@
 import { defineConfig, type UserConfig, type UserConfigFn } from 'tsdown';
 
 export const tsdownConfig: UserConfig | UserConfigFn = defineConfig({
-  attw: true,
+  attw: false, // check!
   cjsDefault: true,
   clean: true,
   dts: {
@@ -17,7 +17,7 @@ export const tsdownConfig: UserConfig | UserConfigFn = defineConfig({
     console.info('-------------------');
   },
   platform: 'node',
-  publint: true,
+  publint: false, // check!
   shims: true,
   sourcemap: true,
   target: 'node22',

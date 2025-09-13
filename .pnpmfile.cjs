@@ -1,9 +1,11 @@
 // @ts-check
-/** @import {Config, HooksRecord, ReadPackageHook, UpdateConfigHook} from './packages/common/src/types/pnpm' */
+/** @import {Config, HookContext, HooksRecord, Pkg, PnpmSettings, ReadPackageHook, UpdateConfigHook} from './packages/common/src/types/pnpm' */
 
+const { readFileSync } = require('node:fs');
 const path = require('node:path');
 const process = require('node:process');
 const { pathToFileURL } = require('node:url');
+const yaml = require('yaml');
 
 /**
  * Caution! Adds old and deprecated type definitions, that are no longer needed!
@@ -52,12 +54,48 @@ function banDeps(pkg) {
   return pkg;
 }
 
+/** @type {() => PnpmSettings['overrides']} */
+function getOverrides() {
+  try {
+    const filePath = path.resolve('./pnpm-workspace.yaml');
+    const fileContent = readFileSync(filePath, { encoding: 'utf8' });
+    /** @type {PnpmSettings} */
+    const pnpmWorkspaceYaml = yaml.parse(fileContent);
+    return pnpmWorkspaceYaml.overrides;
+  } catch (error) {
+    if (
+      typeof error === 'object' &&
+      error !== null &&
+      'message' in error &&
+      typeof error.message === 'string'
+    ) {
+      console.error(error.message);
+    }
+    return {};
+  }
+}
+
+/** @type {PnpmSettings['overrides']} */
+const overrides = getOverrides();
+
+/** @type {ReadPackageHook} */
+function overridePeerDependencies(pkg) {
+  if (pkg.peerDependencies && overrides) {
+    for (const dep in pkg.peerDependencies) {
+      if (overrides[dep]) {
+        pkg.peerDependencies[dep] = overrides[dep];
+      }
+    }
+  }
+  return pkg;
+}
+
 /**
- * @type {ReadPackageHook}
+ * @type {(pkg: Pkg, context?: HookContext) => Promise<Pkg>}
  * @see [hooks.readPackage(pkg, context): pkg | Promise<pkg>](https://pnpm.io/pnpmfile#hooksreadpackagepkg-context-pkg--promisepkg)
  */
-function readPackage(pkg) {
-  return banDeps(pkg);
+async function readPackage(pkg) {
+  return await banDeps(await overridePeerDependencies(pkg));
 }
 
 /** @type {Partial<Config>} */

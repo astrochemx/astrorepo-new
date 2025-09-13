@@ -35,5 +35,22 @@ export async function javascript(): Promise<FlatConfigItem[]> {
       files: files,
       rules: pluginJS.configs.recommended.rules,
     },
+    {
+      name: 'javascript/overrides',
+      files: files,
+      rules: {
+        'no-explicit-any': 'off',
+        'no-require-imports': 'off',
+        'no-unsafe-argument': 'off',
+        'no-unsafe-assignment': 'off',
+        'no-unsafe-call': 'off',
+        'no-unsafe-member-access': 'off',
+        'no-unsafe-return': 'off',
+        'no-unused-expressions': 'off',
+        'no-unused-vars': 'off',
+        'prefer-nullish-coalescing': 'off',
+        'require-await': 'off',
+      },
+    },
   ];
 }

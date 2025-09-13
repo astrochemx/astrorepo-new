@@ -1,7 +1,8 @@
+import type { CommitlintConfig } from './types';
+
 import { parser } from './parser';
 import { subjectEmoji } from './plugins';
 import { rules } from './rules';
-import type { CommitlintConfig } from './types';
 
 export const commitlintConfig: CommitlintConfig = {
   extends: [],

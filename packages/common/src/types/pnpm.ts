@@ -5,7 +5,7 @@ import type { PreResolutionHookContext } from '@pnpm/hooks.types';
 import type { LockfileObject } from '@pnpm/lockfile.types';
 import type { HookContext } from '@pnpm/pnpmfile';
 import type { ImportIndexedPackageAsync } from '@pnpm/store-controller-types';
-import type { BaseManifest } from '@pnpm/types';
+import type { BaseManifest, PnpmSettings, ProjectManifest } from '@pnpm/types';
 
 export type * from '@pnpm/patching.types';
 
@@ -49,8 +49,10 @@ export type {
   LockfileObject,
   Log,
   Pkg,
+  PnpmSettings,
   PreResolutionHook,
   PreResolutionHookContext,
+  ProjectManifest,
   ReadPackageHook,
   UpdateConfigHook,
 };

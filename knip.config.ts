@@ -19,43 +19,13 @@ export default {
         'taze.config.ts',
       ],
       // @keep-sorted
-      ignoreDependencies: [
-        '@arethetypeswrong/core',
-        '@astrochemx/cspell-config',
-        '@turbo/gen',
-        '@types/vscode',
-        '@vitest/coverage-v8',
-        'bumpp',
-        'concurrently',
-        'markdownlint-cli2',
-        'npm-run-all2',
-        'pnpm',
-        'rollup-plugin-visualizer',
-        'simple-git-hooks',
-        'tailwindcss',
-        'trash-cli',
-        'tsx',
-        'vercel',
-      ],
+      ignoreDependencies: ['@astrochemx/cspell-config'],
     },
-    'apps/docs': {
+    'packages/commitlint-config': {
       // @keep-sorted
-      ignore: [
-        'db/config.ts',
-        'db/seed.ts',
-        'ec.config.mjs',
-        'scripts/get-local-ip.mjs',
-        'scripts/pagefind-fix.mjs',
-        'src/astro-jsx.d.ts',
-        'src/content/nav/uk.ts',
-        'src/env.d.ts',
-        'src/plugins/rehype/external-link-caret.ts',
-        'src/routeData.ts',
-        'src/styles/fonts.css',
-        'src/styles/global.css',
-      ],
+      ignore: [],
       // @keep-sorted
-      ignoreDependencies: [/^.*$/],
+      ignoreDependencies: [],
     },
     'packages/common': {
       // @keep-sorted
@@ -63,21 +33,15 @@ export default {
       // @keep-sorted
       ignoreDependencies: [],
     },
-    'packages/commitlint-config': {
-      // @keep-sorted
-      ignore: [],
-      // @keep-sorted
-      ignoreDependencies: ['@commitlint/format', '@commitlint/types'],
-    },
     'packages/cspell-config': {
       // @keep-sorted
       ignore: [],
       // @keep-sorted
-      ignoreDependencies: ['cspell'],
+      ignoreDependencies: [],
     },
     'packages/eslint-config': {
       // @keep-sorted
-      ignore: ['eslint.modules.d.ts'],
+      ignore: ['eslint.modules.d.ts', 'src/utils.old.ts'],
       // @keep-sorted
       ignoreDependencies: [/^.*$/],
     },
@@ -85,25 +49,25 @@ export default {
       // @keep-sorted
       ignore: [],
       // @keep-sorted
-      ignoreDependencies: ['prettier'],
+      ignoreDependencies: [],
     },
     'packages/stylelint-config': {
       // @keep-sorted
       ignore: [],
       // @keep-sorted
-      ignoreDependencies: ['stylelint'],
+      ignoreDependencies: [],
     },
     'packages/tsdown-config': {
       // @keep-sorted
       ignore: [],
       // @keep-sorted
-      ignoreDependencies: ['tsdown'],
+      ignoreDependencies: [],
     },
     'packages/typescript-config': {
       // @keep-sorted
       ignore: [],
       // @keep-sorted
-      ignoreDependencies: ['@astrojs/ts-plugin', 'react'],
+      ignoreDependencies: [],
     },
   },
   // https://github.com/webpro-nl/knip/issues/1008#issuecomment-2756572278

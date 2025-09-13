@@ -20,15 +20,19 @@ onlyBuiltDependencies:
   - simple-git-hooks
   - unrs-resolver
 
-### Patched Dependencies
+### Patching Dependencies
 patchedDependencies:
   prettier-plugin-tailwindcss@0.6.14: patches/prettier-plugin-tailwindcss@0.6.14.patch
-  rehype-pretty-code@0.14.1: apps/docs/patches/rehype-pretty-code@0.14.1.patch
+  # rehype-pretty-code@0.14.1: apps/docs/patches/rehype-pretty-code@0.14.1.patch
+  # rehype-pretty-code@0.14.1: apps/web/patches/rehype-pretty-code@0.14.1.patch
+  # rehype-pretty-code@0.14.1: patches/rehype-pretty-code@0.14.1.patch
 
 ### Dependency Resolution
 overrides:
   '@astrojs/starlight': 0.35.2
+  '@types/eslint': 'npm:eslint@9.35.0'
   'puppeteer': 24.20.0
+minimumReleaseAge: 0
 
 ### ----------------------------------------------------------------------------
 
@@ -61,6 +65,12 @@ preferFrozenLockfile: true
 ### Peer Dependency Settings
 autoInstallPeers: true
 dedupePeerDependents: true
+peerDependencyRules:
+  allowedVersions:
+    eslint: '9'
+    react: '19'
+  ignoreMissing:
+    - '@types/eslint'
 resolvePeersFromWorkspaceRoot: true
 strictPeerDependencies: false
 
@@ -110,8 +120,12 @@ cleanupUnusedCatalogs: false
 dedupeDirectDeps: false
 deployAllFiles: false
 enablePrePostScripts: false
+extendNodePath: true
 ignoreCompatibilityDb: false
 optimisticRepeatInstall: false
+registrySupportsTimeField: false
 resolutionMode: highest
 savePrefix: '^'
 shellEmulator: true
+updateNotifier: true
+useStderr: false

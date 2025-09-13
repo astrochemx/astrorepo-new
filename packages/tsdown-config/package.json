@@ -52,17 +52,17 @@
     "@arethetypeswrong/core": "0.18.2",
     "@astrochemx/typescript-config": "workspace:*",
     "publint": "0.3.12",
-    "tsdown": "0.15.0",
+    "tsdown": "0.15.1",
     "tslib": "2.8.1",
     "typescript": "5.9.2",
     "unplugin-unused": "0.5.3"
   },
   "peerDependencies": {
-    "tsdown": "0.15.0"
+    "tsdown": "0.15.1"
   },
   "peerDependenciesMeta": {
     "tsdown": {
-      "optional": true
+      "optional": false
     }
   },
   "engines": {
