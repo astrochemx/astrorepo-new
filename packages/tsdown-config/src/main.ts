@@ -10,6 +10,11 @@ export const tsdownConfig: UserConfig | UserConfigFn = defineConfig({
   entry: ['./src/index.{cjs,cts,js,jsx,mjs,mts,ts,tsx}'],
   external: ['vscode'],
   format: ['cjs', 'esm'],
+  inputOptions: {
+    experimental: {
+      resolveNewUrlToAsset: false,
+    },
+  },
   onSuccess: () => {
     console.info('');
     console.info('-------------------');

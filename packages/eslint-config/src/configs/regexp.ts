@@ -1,0 +1,21 @@
+import type { FlatConfigItem } from '../types';
+
+import { GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE } from '../globs';
+import { pluginRegExp } from '../modules';
+
+export async function regexp(): Promise<FlatConfigItem[]> {
+  const files = [...GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE];
+
+  return [
+    {
+      name: 'regexp/plugin',
+      files: files,
+      plugins: { regexp: pluginRegExp },
+    },
+    {
+      ...pluginRegExp.configs['flat/recommended'],
+      name: 'regexp/config',
+      files: files,
+    },
+  ] satisfies FlatConfigItem[];
+}

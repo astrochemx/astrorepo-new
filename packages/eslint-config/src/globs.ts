@@ -6,13 +6,17 @@ export const GLOB_COMMON_JS = '**/*.c[jt]s?(x)' as const;
 export const GLOB_COMMON_TS = '**/*.c[jt]s?(x)' as const;
 export const GLOB_COMMON_JTS = '**/*.c[jt]s?(x)' as const;
 
-export const GLOB_MODULE_JS = '**/*.m[jt]s?(x)' as const;
-export const GLOB_MODULE_TS = '**/*.m[jt]s?(x)' as const;
+export const GLOB_MODULE_JS = '**/*.mjs?(x)' as const;
+export const GLOB_MODULE_TS = '**/*.mts?(x)' as const;
 export const GLOB_MODULE_JTS = '**/*.m[jt]s?(x)' as const;
 
-export const GLOB_JSX = '**/*.?([cm])jsx' as const;
-export const GLOB_TSX = '**/*.?([cm])tsx' as const;
-export const GLOB_JTSX = '**/*.?([cm])[jt]sx' as const;
+export const GLOB_VARIANT_JS = '**/*.js?(x)' as const;
+export const GLOB_VARIANT_TS = '**/*.ts?(x)' as const;
+export const GLOB_VARIANT_JTS = '**/*.[jt]s?(x)' as const;
+
+export const GLOB_CMJSX = '**/*.?([cm])jsx' as const;
+export const GLOB_CMTSX = '**/*.?([cm])tsx' as const;
+export const GLOB_CMJTSX = '**/*.?([cm])[jt]sx' as const;
 
 export const GLOB_ASTRO = '**/*.astro' as const;
 export const GLOB_ASTRO_JS = '**/*.astro/**/*.js' as const;
@@ -124,6 +128,10 @@ export const GLOB_TESTS_TYPE: string[] = [
 ] as const;
 
 export const GLOB_PKG_JSON = '**/package.json' as const;
+export const GLOB_PKG_JSON5 = '**/package.json5' as const;
+export const GLOB_PKG_JSONC = '**/package.jsonc' as const;
+export const GLOB_PKG_JSON_ALL = '**/package.json?([5c])' as const;
+
 export const GLOB_PNPM_YAML = '**/pnpm-workspace.yaml' as const;
 
 export const GLOB_DIST = '**/dist' as const;

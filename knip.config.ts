@@ -46,9 +46,9 @@ export default {
     },
     'packages/eslint-config': {
       // @keep-sorted
-      ignore: ['eslint.modules.d.ts', 'src/utils.old.ts'],
+      ignore: [],
       // @keep-sorted
-      ignoreDependencies: [/^.*$/],
+      ignoreDependencies: [],
     },
     'packages/prettier-config': {
       // @keep-sorted

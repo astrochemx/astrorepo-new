@@ -1,9 +1,3 @@
-declare module 'eslint-plugin-html' {
-  import type { ESLint } from 'eslint';
-  const pluginReference: ESLint.Plugin;
-  export = pluginReference;
-}
-
 declare module '@eslint-community/eslint-plugin-eslint-comments' {
   import type { ESLint, Linter } from 'eslint';
   const exports: {
@@ -44,6 +38,40 @@ declare module '@next/eslint-plugin-next' {
   export = { ...plugin, flatConfig };
 }
 
+declare module 'eslint-config-biome' {
+  import type { ESLint } from 'eslint';
+  const rules: ESLint.Plugin['rules'];
+  export = { rules };
+}
+
+declare module 'eslint-plugin-barrel-files' {
+  import type { ESLint, Linter } from 'eslint';
+  const plugin: {
+    configs: {
+      recommended: {
+        plugins: Linter.Config['plugins'];
+        rules: Linter.Config['rules'];
+      };
+    };
+    meta: ESLint.Plugin['meta'];
+    processors: ESLint.Plugin['processors'];
+    rules: ESLint.Plugin['rules'];
+  };
+  export = plugin;
+}
+
+declare module 'eslint-plugin-html' {
+  import type { ESLint } from 'eslint';
+  const plugin: ESLint.Plugin;
+  export = plugin;
+}
+
+declare module 'eslint-plugin-no-only-tests' {
+  import type { ESLint } from 'eslint';
+  const rules: ESLint.Plugin['rules'];
+  export = { rules };
+}
+
 declare module 'eslint-plugin-promise' {
   import type { Linter } from 'eslint';
   const configs: {
@@ -77,10 +105,4 @@ declare module 'eslint-plugin-vue-composable' {
     'recommended': Linter.BaseConfig;
   };
   export = { configs, meta, rules };
-}
-
-declare module 'eslint-plugin-no-only-tests' {
-  import type { ESLint } from 'eslint';
-  const rules: ESLint.Plugin['rules'];
-  export = { rules };
 }

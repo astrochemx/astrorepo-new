@@ -32,9 +32,11 @@ export async function perfectionist(): Promise<FlatConfigItem[]> {
     {
       files: files,
       name: 'perfectionist/plugin',
-      plugins: {
-        perfectionist: pluginPerfectionist,
-      },
+      plugins: { perfectionist: pluginPerfectionist },
+    },
+    {
+      files: files,
+      name: 'perfectionist/config',
       rules: {
         'perfectionist/sort-array-includes': [
           'warn',
@@ -56,7 +58,7 @@ export async function perfectionist(): Promise<FlatConfigItem[]> {
         'perfectionist/sort-heritage-clauses': ['warn', { type: 'natural', order: 'asc' }],
         'perfectionist/sort-imports': [
           'warn',
-          { type: 'natural', order: 'asc', newlinesBetween: 1 },
+          { type: 'natural', order: 'asc', newlinesBetween: 1, sortSideEffects: true },
         ],
         'perfectionist/sort-interfaces': [
           'warn',
@@ -98,6 +100,7 @@ export async function perfectionist(): Promise<FlatConfigItem[]> {
             type: 'natural',
             order: 'asc',
             groups: [
+              'unknown',
               'declare-enum',
               'export-enum',
               'enum',
@@ -143,7 +146,7 @@ export async function perfectionist(): Promise<FlatConfigItem[]> {
                 selector: 'property',
               },
               {
-                elementNamePattern: '^(?:files)$',
+                elementNamePattern: '^(?:files|ignores)$',
                 groupName: 'top2',
                 selector: 'property',
               },

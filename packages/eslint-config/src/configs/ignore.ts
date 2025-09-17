@@ -1,14 +1,14 @@
 import type { FlatConfigItem, OptionsFiles } from '../types';
 
 import { GLOB_IGNORES } from '../ignores';
-import { gitignoreFlatConfig } from '../modules';
+import { configFlatGitignore } from '../modules';
 
 export async function ignore(options: OptionsFiles = {}): Promise<FlatConfigItem[]> {
   const { files = [] } = options;
 
   return [
     {
-      ...gitignoreFlatConfig({ strict: false }),
+      ...configFlatGitignore({ strict: false }),
       name: 'ignores/git',
     },
     {

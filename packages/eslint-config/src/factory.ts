@@ -2,7 +2,6 @@ import type { Linter } from 'eslint';
 
 import { FlatConfigComposer } from 'eslint-flat-config-utils';
 
-import type { TSConfig } from './modules';
 import type { Arrayable, Awaitable, ConfigNames, FlatConfigItem, OptionsFactory } from './types';
 
 import { astro, command, common, ignore, javascript, typescript } from './configs';
@@ -12,10 +11,7 @@ import { hasAstro, hasTypeScript } from './env';
 export async function defineConfig(
   options: OptionsFactory = {},
   ...userConfigs: Awaitable<
-    | Arrayable<FlatConfigItem>
-    | Arrayable<Linter.Config>
-    | Arrayable<TSConfig[number]>
-    | FlatConfigComposer<any, any>
+    Arrayable<FlatConfigItem> | Arrayable<Linter.Config> | FlatConfigComposer<any, any>
   >[]
 ): Promise<FlatConfigComposer<FlatConfigItem, ConfigNames>> {
   const {

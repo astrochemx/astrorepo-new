@@ -2,7 +2,6 @@
 
 import type { Linter } from 'eslint';
 
-import type { TSConfig } from './modules';
 import type { ConfigNames, RuleOptions } from './typegen';
 
 /** A type that can be an array or a single item. */
@@ -16,7 +15,7 @@ export type Awaitable<T> = Promise<T> | T;
  *
  * @see [Configure ESLint](https://eslint.org/docs/latest/use/configure)
  */
-export type FlatConfigItem = Omit<Linter.Config | TSConfig[number], 'plugins' | 'rules'> & {
+export type FlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
   /**
    * An object containing a name-value mapping of plugin names to plugin
    * objects.

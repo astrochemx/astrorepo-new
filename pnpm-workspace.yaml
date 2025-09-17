@@ -27,18 +27,18 @@ patchedDependencies:
   # rehype-pretty-code@0.14.1: apps/web/patches/rehype-pretty-code@0.14.1.patch
   # rehype-pretty-code@0.14.1: patches/rehype-pretty-code@0.14.1.patch
 
-### Dependency Resolution
+  ### Dependency Resolution
 overrides:
-  '@astrojs/starlight': 0.35.2
+  '@astrojs/starlight': 0.35.3
   '@types/eslint': 'npm:eslint@9.35.0'
-  'puppeteer': 24.20.0
+  'puppeteer': 24.22.0
 minimumReleaseAge: 0
 
 ### ----------------------------------------------------------------------------
 
 ### Dependency Hoisting Settings
 hoist: true
-hoistPattern: ['*']
+hoistPattern: [ '*' ]
 hoistWorkspacePackages: true
 publicHoistPattern: []
 shamefullyHoist: false

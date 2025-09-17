@@ -93,3 +93,22 @@ export const parserPlain = {
     },
   }),
 };
+
+export type InteropModuleDefault<T> = T extends { default: infer U } ? U : T;
+
+export async function interopDefault<T>(mod: Awaitable<T>): Promise<InteropModuleDefault<T>> {
+  const resolved = await mod;
+  return (resolved as any).default || resolved;
+}
+
+export async function loadPlugin<T = unknown>(name: string): Promise<T> {
+  const mod = await import(name).catch((error) => {
+    console.error(error.message ?? error);
+    throw new Error(`Failed to load ESLint Plugin '${name}'. Please, install it!`);
+  });
+  return interopDefault(mod) as Promise<T>;
+}
+
+export function toArray<T>(value: T | T[]): T[] {
+  return Array.isArray(value) ? value : [value];
+}
