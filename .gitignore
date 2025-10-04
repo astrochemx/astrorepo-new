@@ -1,4 +1,16 @@
 ##############################
+### User Defined
+##############################
+
+### dotfiles
+!**/.vscode/data/tmp
+!**/vscode/data/tmp
+
+### playground
+# **/playground
+# **/sandbox
+
+##############################
 ### IDEs
 ##############################
 
@@ -246,7 +258,7 @@ web_modules
 .grunt
 
 ### husky
-_
+**/_
 **/.husky/_
 
 ### keys
@@ -428,15 +440,21 @@ storybook-static
 .vinxi*
 
 ### vite
+.vite_*
+.vite-*
 .vite*
 
 ### vitepress
 .vitepress*
 
 ### vitest
+.vitest_*
+.vitest-*
 .vitest*
 
 ### webpack
+.webpack_*
+.webpack-*
 .webpack*
 
 ### wrangler
@@ -694,15 +712,3 @@ nosetests.xml
 ### translations
 *.mo
 *.pot
-
-##############################
-### User Defined
-##############################
-
-### dotfiles
-!**/.vscode/data/tmp
-!**/vscode/data/tmp
-
-### playground
-# **/playground
-# **/sandbox

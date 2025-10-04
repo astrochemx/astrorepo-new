@@ -30,7 +30,7 @@ const importOrderPluginOptions = {
   importOrderCaseSensitive: false,
   importOrderParserPlugins: ['typescript', 'jsx'],
   importOrderSafeSideEffects: ['^.*$'],
-  importOrderTypeScriptVersion: '5.9.2',
+  importOrderTypeScriptVersion: '5.9.3',
 } as const satisfies SortImportsOptions;
 
 const overrides = [

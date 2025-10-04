@@ -4,19 +4,20 @@ import type { Awaitable } from 'eslint-flat-config-utils';
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginJsEslint from '@eslint/js';
 
-import type { FlatConfigItem } from './types';
+import type { Arrayable, FlatConfigItem } from './types';
 
 /** Combine array and non-array ESLint Flat Configs into a single array. */
 export async function combine(
   ...configs: Awaitable<FlatConfigItem | FlatConfigItem[]>[]
 ): Promise<FlatConfigItem[]> {
-  const resolved = await Promise.all(configs);
+  const promises = configs.map((c) => Promise.resolve(c));
+  const resolved = await Promise.all(promises);
   return resolved.flat();
 }
 
 /** Extract rules from a ESLint Flat Configs. */
 export function extractRules(
-  ...configs: (FlatConfigItem | FlatConfigItem[])[]
+  ...configs: Arrayable<{ [key: string | number | symbol]: any; rules?: FlatConfigItem['rules'] }>[]
 ): FlatConfigItem['rules'] {
   const flat = configs.flat();
   return Object.assign({}, ...flat.map((cfg) => cfg.rules ?? {}));
@@ -26,12 +27,13 @@ export function extractRules(
 export async function extractRulesAsync(
   ...configs: Awaitable<FlatConfigItem | FlatConfigItem[]>[]
 ): Promise<FlatConfigItem['rules']> {
-  const resolved = await Promise.all(configs);
+  const promises = configs.map((c) => Promise.resolve(c));
+  const resolved = await Promise.all(promises);
   const flat = resolved.flat();
   return Object.assign({}, ...flat.map((cfg) => cfg.rules ?? {}));
 }
 
-/** A compatibility class for working with ESLint configs. */
+/** Create compatibility class for working with ESLint configs. */
 export function flatCompat(
   baseDirectory: string,
   resolvePluginsRelativeTo?: string,
@@ -101,12 +103,12 @@ export async function interopDefault<T>(mod: Awaitable<T>): Promise<InteropModul
   return (resolved as any).default || resolved;
 }
 
-export async function loadPlugin<T = unknown>(name: string): Promise<T> {
+export async function loadPlugin<T = unknown>(name: string): Promise<InteropModuleDefault<T>> {
   const mod = await import(name).catch((error) => {
     console.error(error.message ?? error);
     throw new Error(`Failed to load ESLint Plugin '${name}'. Please, install it!`);
   });
-  return interopDefault(mod) as Promise<T>;
+  return interopDefault(mod);
 }
 
 export function toArray<T>(value: T | T[]): T[] {

@@ -1,7 +1,10 @@
 import type { FlatConfigItem } from '../types';
 
 import { GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE } from '../globs';
-import { pluginUnicorn } from '../modules';
+import { loadPlugin } from '../utils';
+
+const pluginUnicorn =
+  await loadPlugin<typeof import('eslint-plugin-unicorn')>('eslint-plugin-unicorn');
 
 export async function unicorn(): Promise<FlatConfigItem[]> {
   const files = [...GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE];

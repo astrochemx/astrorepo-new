@@ -9,7 +9,7 @@ import type { HookContext } from '@pnpm/pnpmfile';
 import type { ImportIndexedPackageAsync } from '@pnpm/store-controller-types';
 import type { BaseManifest, PnpmSettings, ProjectManifest } from '@pnpm/types';
 
-export type * from '@pnpm/patching.types';
+export type * as PnpmPatchingTypes from '@pnpm/patching.types';
 
 type Pkg = BaseManifest;
 

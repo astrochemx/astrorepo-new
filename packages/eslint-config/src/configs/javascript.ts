@@ -1,7 +1,9 @@
+import pluginJS from '@eslint/js';
+import globals from 'globals';
+
 import type { FlatConfigItem } from '../types';
 
 import { GLOB_SRC_JS } from '../globs';
-import { globals, pluginJS } from '../modules';
 
 export async function javascript(): Promise<FlatConfigItem[]> {
   const files = [GLOB_SRC_JS];

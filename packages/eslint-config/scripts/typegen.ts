@@ -5,7 +5,18 @@ import { flatConfigsToRulesDTS } from 'eslint-typegen/core';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
 import { writeFile } from 'node:fs/promises';
 
-import { astro, command, javascript, typescript } from '../src/configs';
+import {
+  astro,
+  command,
+  javascript,
+  jsdoc,
+  packageJSON,
+  perfectionist,
+  regexp,
+  typescript,
+  unicorn,
+  vue,
+} from '../src/configs';
 import { combine } from '../src/utils';
 
 const configs = await combine(
@@ -19,7 +30,13 @@ const configs = await combine(
   astro(),
   command(),
   javascript(),
+  jsdoc(),
+  packageJSON(),
+  perfectionist(),
+  regexp(),
   typescript(),
+  unicorn(),
+  vue(),
 );
 
 const configNames = configs.map((i) => i.name).filter(Boolean) as string[];
@@ -37,6 +54,6 @@ dts += `\n
 export type ConfigNames = ${configNames.map((i) => `'${i}'`).join(' | ')}
 `;
 
-await writeFile('src/typegen.d.ts', dts);
+await writeFile('gen/typegen.d.ts', dts);
 
 console.log(green('Type definitions are generated!'));

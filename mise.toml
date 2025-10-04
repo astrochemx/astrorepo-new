@@ -1,4 +1,4 @@
-min_version = "2025.9.12"
+min_version = "2025.10.2"
 
 [env]
 _.path = ["{{config_root}}/node_modules/.bin"]
@@ -15,9 +15,9 @@ idiomatic_version_file_enable_tools = ["node"]
 windows_shim_mode = "symlink"
 
 [tools]
-"node" = "{{ env['NODE_VERSION'] | default(value='latest') }}"
-# "npm" = "{{ env['NPM_VERSION'] | default(value='latest') }}"
-# "pnpm" = "{{ env['PNPM_VERSION'] | default(value='latest') }}"
+node = "{{ env['NODE_VERSION'] | default(value='latest') }}"
+# npm = "{{ env['NPM_VERSION'] | default(value='latest') }}"
+# pnpm = "{{ env['PNPM_VERSION'] | default(value='latest') }}"
 
 [tasks.install]
 alias = "i"

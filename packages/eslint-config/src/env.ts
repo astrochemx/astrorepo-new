@@ -1,10 +1,38 @@
+import type { ProjectManifest } from '@astrochemx/common';
+
 import { isPackageExists } from 'local-pkg';
+import fs from 'node:fs';
+import path from 'node:path';
 import process from 'node:process';
+
+const cwd = process.cwd();
+
+const pkgJsonFilePath = path.resolve(cwd, './package.json');
+const pkgJsonFileContent = fs.readFileSync(pkgJsonFilePath, { encoding: 'utf8' });
+const pkgJson = JSON.parse(pkgJsonFileContent) as ProjectManifest;
+
+function pathExists(p: string) {
+  try {
+    fs.accessSync(path.resolve(cwd, p));
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 export const hasAstro = (): boolean =>
   isPackageExists('astro') || isPackageExists('@astrojs/starlight');
 
 export const hasNext = (): boolean => isPackageExists('next');
+
+export const hasPnpm = (): boolean =>
+  isPackageExists('pnpm') ||
+  pathExists('.pnpmfile.cjs') ||
+  pathExists('pnpm-lock.yaml') ||
+  pathExists('pnpm-workspace.yaml') ||
+  pathExists('pnpmfile.cjs') ||
+  (pkgJson?.packageManager?.includes('pnpm') ?? false) ||
+  !!pkgJson?.pnpm;
 
 export const hasReact = (): boolean =>
   isPackageExists('react') || isPackageExists('react-dom') || isPackageExists('@astrojs/react');

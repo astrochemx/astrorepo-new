@@ -1,7 +1,16 @@
 import type { FlatConfigItem } from '../types';
 
 import { GLOB_VUE } from '../globs';
-import { pluginVue, pluginVueAlly, pluginVueI18n, pluginVueScopedCSS } from '../modules';
+import { loadPlugin } from '../utils';
+
+const [pluginVue, pluginVueAlly, pluginVueI18n, pluginVueScopedCSS] = await Promise.all([
+  loadPlugin<typeof import('eslint-plugin-vue')>('eslint-plugin-vue'),
+  loadPlugin<typeof import('eslint-plugin-vuejs-accessibility')>(
+    'eslint-plugin-vuejs-accessibility',
+  ),
+  loadPlugin<typeof import('@intlify/eslint-plugin-vue-i18n')>('@intlify/eslint-plugin-vue-i18n'),
+  loadPlugin<typeof import('eslint-plugin-vue-scoped-css')>('eslint-plugin-vue-scoped-css'),
+] as const);
 
 export async function vue(): Promise<FlatConfigItem[]> {
   const files = [GLOB_VUE];

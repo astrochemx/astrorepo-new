@@ -1,24 +1,27 @@
 import path from 'node:path';
 
+import globals from 'globals';
+
 import type { FlatConfigItem } from '../types';
 
 import { hasTypeScript } from '../env';
 import { GLOB_SRC_JS, GLOB_SRC_JTS } from '../globs';
-import { globals, parserTS, pluginTS, tsESLint } from '../modules';
-import { extractRules } from '../utils';
+import { extractRules, loadPlugin } from '../utils';
+
+const {
+  configs: configsTS,
+  parser: parserTS,
+  plugin: pluginTS,
+} = await loadPlugin<typeof import('typescript-eslint')>('typescript-eslint');
 
 // @ts-expect-error: types
-const tsESLintRecommendedRules = extractRules(tsESLint.configs?.recommended ?? {});
-const tsESLintRecommendedTypeCheckedRules = extractRules(
-  // @ts-expect-error: types
-  tsESLint.configs?.recommendedTypeChecked ?? {},
-);
+const tsESLintRecommendedRules = extractRules(configsTS.recommended ?? {});
 // @ts-expect-error: types
-const tsESLintStylisticRules = extractRules(tsESLint.configs?.stylistic ?? {});
-const tsESLintStylisticTypeCheckedRules = extractRules(
-  // @ts-expect-error: types
-  tsESLint.configs?.stylisticTypeChecked ?? {},
-);
+const tsESLintRecommendedTypeCheckedRules = extractRules(configsTS.recommendedTypeChecked ?? {});
+// @ts-expect-error: types
+const tsESLintStylisticRules = extractRules(configsTS.stylistic ?? {});
+// @ts-expect-error: types
+const tsESLintStylisticTypeCheckedRules = extractRules(configsTS.stylisticTypeChecked ?? {});
 
 export async function typescript(): Promise<FlatConfigItem[]> {
   const files = [GLOB_SRC_JTS];

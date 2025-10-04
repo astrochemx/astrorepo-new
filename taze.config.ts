@@ -5,6 +5,7 @@ export const baseConfig = {
   concurrency: 10,
   cwd: '.',
   depFields: {
+    'bun-workspace': true,
     'dependencies': true,
     'devDependencies': true,
     'optionalDependencies': true,

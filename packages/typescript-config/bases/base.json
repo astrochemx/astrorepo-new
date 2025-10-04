@@ -59,6 +59,8 @@
     "${configDir}/.husky*",
     "${configDir}/.next*",
     "${configDir}/.nuxt*",
+    "${configDir}/.qwik*",
+    "${configDir}/.solid*",
     "${configDir}/.svelte*",
     "${configDir}/.turbo*",
     "${configDir}/.vercel*",

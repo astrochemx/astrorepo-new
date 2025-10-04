@@ -1,4 +1,4 @@
-import type { RunOptions } from 'npm-check-updates';
+import type { RcOptions } from 'npm-check-updates';
 
 /**
  * A function that selects the upgrade target for a dependency.
@@ -29,7 +29,7 @@ export type NCUTargetFunction = (
 type VersionRange = 'greatest' | 'latest' | 'minor' | 'newest' | 'patch' | 'semver' | `@${string}`;
 
 /** Corrected options for `npm-check-updates`. */
-export interface NCUConfig extends Omit<RunOptions, 'pre'> {
+export interface NCUConfig extends Omit<RcOptions, 'pre'> {
   /**
    * Include pre-release versions (e.g. `-alpha.0`, `-beta.5`, `-rc.2`).
    *

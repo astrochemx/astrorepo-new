@@ -11,7 +11,10 @@ import {
   GLOB_SVELTE_TS,
   GLOB_VUE,
 } from '../globs';
-import { pluginJSDoc } from '../modules';
+
+import { loadPlugin } from '../utils';
+
+const pluginJSDoc = await loadPlugin<typeof import('eslint-plugin-jsdoc')>('eslint-plugin-jsdoc');
 
 export async function jsdoc(): Promise<FlatConfigItem[]> {
   const filesJS = [GLOB_ASTRO_JS, GLOB_SRC_JS, GLOB_SVELTE_JS];

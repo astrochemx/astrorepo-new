@@ -1,25 +1,45 @@
 ##############################
-### MDX
+### User Defined
 ##############################
 
-### Prettier supports MDX 1, but MDX 2 and 3 are not officially supported yet.
+### dotfiles
+# !**/.vscode/data/tmp
+# !**/vscode/data/tmp
+
+### mdx
+### prettier supports MDX 1, but MDX 2 and 3 are not officially supported yet.
 **/*.mdx
 
 ##############################
-### VSCode
+### IDEs
 ##############################
 
+### jetbrains
+.idea
+
+### visualstudio
+.bin
+**/bin/Debug/**/*
+**/bin/Release/**/*
+int
+obj
+out
+
+### vscode
 .history
 .ionide
 
+### vscode
 .vs
 .vscode_*
 .vscode-*
 .vscode-test
 
+### vscode
 **/.vscode/**/*
 **/.vscode/mise-tools
 
+### vscode
 !**/.vscode/*.code-snippets
 !**/.vscode/extensions*.json*
 !**/.vscode/keybindings*.json*
@@ -183,6 +203,9 @@ tmp*
 *.prettier*cache
 *.stylelint*cache
 
+### changesets
+# .changeset
+
 ### content-collections
 .content-collections
 
@@ -197,6 +220,10 @@ tmp*
 *.lcov
 coverage
 lib-cov
+
+### cypress
+# .cypress
+# cypress
 
 ### dependencies
 bower_components
@@ -224,11 +251,14 @@ web_modules
 ### fusebox
 .fusebox
 
+### gradle
+.gradle
+
 ### grunt
 .grunt
 
 ### husky
-_
+**/_
 **/.husky/_
 
 ### keys
@@ -269,11 +299,24 @@ yarn.lock
 ### logs
 .*-debug.log*
 .*-error.log*
+.pnpm-debug.log*
+.pnpm-error.log*
 *-debug.log*
 *-error.log*
 *.log
+lerna-debug.log*
+lerna-error.log*
 logs
-report.*.json
+npm-debug.log*
+npm-error.log*
+pnpm-debug.log*
+pnpm-error.log*
+yarn-debug.log*
+yarn-error.log*
+
+### maps
+*.map
+*.map.*
 
 ### microbundle
 .rpt2_*
@@ -283,14 +326,24 @@ report.*.json
 .rts2_cache_es
 .rts2_cache_umd
 
+### minimized
+*.min
+*.min.*
+
 ### next
 .next
 .next_*
 .next-*
 next-env.d.ts
 
+### nitro
+.nitro*
+
 ### node
 .node_repl_history
+
+### node-waf
+.lock-wscript
 
 ### npm
 *.tgz
@@ -304,7 +357,7 @@ next-env.d.ts
 ### output
 .*out
 .*output
-.bin
+.bin*
 *_dist
 *-dist
 build
@@ -320,17 +373,31 @@ out
 output
 
 ### playwright
+.dev_profile*
+.local-browsers*
+.test_cache*
 blob-report
+coverage-report
 playwright-report
 test-results
 
 ### pnpm
+# .pnp*
 .pnpm
 .pnpm_*
 .pnpm-*
 
 ### profilers
 *.cpuprofile
+
+### public
+# public
+
+### qwik
+.qwik*
+
+### reports
+report.*.json
 
 ### runtime
 pids
@@ -341,7 +408,11 @@ pids
 ### serverless
 .serverless
 
+### solid
+.solid*
+
 ### storybook
+# .storybook
 storybook-static
 
 ### svelte
@@ -349,6 +420,12 @@ storybook-static
 .svelte-kit
 .svelte_*
 .svelte-*
+
+### tern-port
+.tern-port
+
+### traces
+*.trace
 
 ### turbo
 .turbo
@@ -359,17 +436,30 @@ storybook-static
 ### vercel
 .vercel
 
+### vinxi
+.vinxi*
+
 ### vite
-.vite
+.vite_*
+.vite-*
+.vite*
 
 ### vitepress
-.vitepress
+.vitepress*
 
 ### vitest
-.vitest
+.vitest_*
+.vitest-*
+.vitest*
 
 ### webpack
-.webpack
+.webpack_*
+.webpack-*
+.webpack*
+
+### wrangler
+.dev.vars
+.wrangler
 
 ### yarn
 .pnp
@@ -473,6 +563,9 @@ __pycache__
 ### celery
 celerybeat-schedule
 celerybeat.pid
+
+### compiled
+*.pyc
 
 ### cython
 cython_debug
@@ -619,11 +712,3 @@ nosetests.xml
 ### translations
 *.mo
 *.pot
-
-##############################
-### User Defined
-##############################
-
-### dotfiles
-# !**/.vscode/data/tmp
-# !**/vscode/data/tmp

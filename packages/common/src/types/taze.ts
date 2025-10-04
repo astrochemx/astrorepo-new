@@ -10,8 +10,10 @@ export interface TazeCheckOptions extends CheckOptions {
   /** Specify the current working directory. */
   cwd?: string;
   /**
-   * Fields in package.json to be checked. Example: `{ dependencies: true,
-   * devDependencies: true, peerDependencies: false }`.
+   * Fields in package.json to be checked.
+   *
+   * @example
+   *   { dependencies: true, devDependencies: true, peerDependencies: false };
    */
   depFields?: DepFieldOptions;
   /** Exclude dependencies to be checked. This overrides the `include` options. */
@@ -38,6 +40,12 @@ export interface TazeCheckOptions extends CheckOptions {
   interactive?: boolean;
   /** Logging level for output. */
   loglevel?: 'debug' | 'error' | 'info' | 'silent' | 'warn';
+  /**
+   * Wait period in days before upgrading to newly released packages.
+   *
+   * @default 0 (no waiting period)
+   */
+  maturityPeriod?: number;
   /** The mode of version range resolution. */
   mode?: 'default' | 'latest' | 'major' | 'minor' | 'newest' | 'next' | 'patch';
   /** Show package compatibility with the current `Node.js` version. */

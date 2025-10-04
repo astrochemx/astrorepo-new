@@ -21,9 +21,13 @@
         ] */
 
 import type { FlatConfigItem } from '../types';
+import { loadPlugin } from '../utils';
 
 import { GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE } from '../globs';
-import { pluginPerfectionist } from '../modules';
+
+const pluginPerfectionist = await loadPlugin<typeof import('eslint-plugin-perfectionist')>(
+  'eslint-plugin-perfectionist',
+);
 
 export async function perfectionist(): Promise<FlatConfigItem[]> {
   const files = [...GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE];

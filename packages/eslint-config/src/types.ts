@@ -2,7 +2,9 @@
 
 import type { Linter } from 'eslint';
 
-import type { ConfigNames, RuleOptions } from './typegen';
+import type { RuleOptions } from '../gen/typegen';
+
+export type { ConfigNames } from '../gen/typegen';
 
 /** A type that can be an array or a single item. */
 export type Arrayable<T> = T | T[];
@@ -34,17 +36,20 @@ export type FlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
   rules?: Rules;
 };
 
-export type { ConfigNames };
-
 export type Rules = Record<string, Linter.RuleEntry<any> | undefined> & RuleOptions;
 
 export interface OptionsFactory {
   astro?: boolean;
   command?: boolean;
   ignores?: string[];
+  jsdoc?: boolean;
+  packageJSON?: boolean;
   perfectionist?: boolean;
+  regexp?: boolean;
   typescript?: boolean;
   warnings?: boolean;
+  unicorn?: boolean;
+  vue?: boolean;
 }
 
 export interface OptionsFiles {

@@ -1,11 +1,20 @@
 import path from 'node:path';
 
+import globals from 'globals';
+
 import type { FlatConfigItem } from '../types';
 
 import { hasTypeScript } from '../env';
 import { GLOB_ASTRO, GLOB_SRC_JS, GLOB_SRC_TS } from '../globs';
-import { globals, parserAstro, parserTS, pluginAstro, pluginJSXAlly } from '../modules';
-import { extractRules } from '../utils';
+
+import { extractRules, loadPlugin } from '../utils';
+
+const [parserAstro, pluginAstro, pluginJSXAlly, { parser: parserTS }] = await Promise.all([
+  loadPlugin<typeof import('astro-eslint-parser')>('astro-eslint-parser'),
+  loadPlugin<typeof import('eslint-plugin-astro')>('eslint-plugin-astro'),
+  loadPlugin<typeof import('eslint-plugin-jsx-a11y')>('eslint-plugin-jsx-a11y'),
+  loadPlugin<typeof import('typescript-eslint')>('typescript-eslint'),
+] as const);
 
 const astroRecommendedRules = extractRules(pluginAstro.configs['flat/recommended']);
 const astroJsxAllyRecommendedRules = extractRules(pluginAstro.configs['flat/jsx-a11y-recommended']);

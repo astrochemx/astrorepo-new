@@ -2,17 +2,21 @@ export const GLOB_SRC_JS = '**/*.?([cm])js?(x)' as const;
 export const GLOB_SRC_TS = '**/*.?([cm])ts?(x)' as const;
 export const GLOB_SRC_JTS = '**/*.?([cm])[jt]s?(x)' as const;
 
-export const GLOB_COMMON_JS = '**/*.c[jt]s?(x)' as const;
-export const GLOB_COMMON_TS = '**/*.c[jt]s?(x)' as const;
-export const GLOB_COMMON_JTS = '**/*.c[jt]s?(x)' as const;
+export const GLOB_JS = '**/*.js?(x)' as const;
+export const GLOB_TS = '**/*.ts?(x)' as const;
+export const GLOB_JTS = '**/*.[jt]s?(x)' as const;
 
-export const GLOB_MODULE_JS = '**/*.mjs?(x)' as const;
-export const GLOB_MODULE_TS = '**/*.mts?(x)' as const;
-export const GLOB_MODULE_JTS = '**/*.m[jt]s?(x)' as const;
+export const GLOB_CJS = '**/*.cjs?(x)' as const;
+export const GLOB_CTS = '**/*.cts?(x)' as const;
+export const GLOB_CJTS = '**/*.c[jt]s?(x)' as const;
 
-export const GLOB_VARIANT_JS = '**/*.js?(x)' as const;
-export const GLOB_VARIANT_TS = '**/*.ts?(x)' as const;
-export const GLOB_VARIANT_JTS = '**/*.[jt]s?(x)' as const;
+export const GLOB_MJS = '**/*.mjs?(x)' as const;
+export const GLOB_MTS = '**/*.mts?(x)' as const;
+export const GLOB_MJTS = '**/*.m[jt]s?(x)' as const;
+
+export const GLOB_CMJS = '**/*.?([cm])js' as const;
+export const GLOB_CMTS = '**/*.?([cm])ts' as const;
+export const GLOB_CMJTS = '**/*.?([cm])[jt]s' as const;
 
 export const GLOB_CMJSX = '**/*.?([cm])jsx' as const;
 export const GLOB_CMTSX = '**/*.?([cm])tsx' as const;

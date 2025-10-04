@@ -37,6 +37,10 @@ export const GLOB_IGNORES: string[] = [
   '**/*.prettier*cache',
   '**/*.stylelint*cache',
   '**/*cache',
+  /* changesets */
+  // '**/.changeset',
+  /* content-collections */
+  '**/.content-collections',
   /* contentlayer */
   '**/.contentlayer',
   /* coverage */
@@ -73,6 +77,8 @@ export const GLOB_IGNORES: string[] = [
   '**/.fusebox',
   /* git */
   '**/.git',
+  /* gradle */
+  '**/.gradle',
   /* grunt */
   '**/.grunt',
   /* history */
@@ -80,8 +86,10 @@ export const GLOB_IGNORES: string[] = [
   '**/*.*history*.*',
   '**/*history',
   /* husky */
-  '_',
+  '**/_',
   '**/.husky/_',
+  /* jetbrains */
+  '**/.idea',
   /* keys */
   '**/*.ca',
   '**/*.cert',
@@ -121,10 +129,13 @@ export const GLOB_IGNORES: string[] = [
   '**/*-error.log*',
   '**/*.log',
   '**/logs',
-  '**/report.*.json',
   /* macOS */
   '**/__MACOSX',
   '**/.DS_Store',
+  '**/*.icloud',
+  /* maps */
+  '**/*.map',
+  '**/*.map.*',
   /* microbundle */
   '**/.rpt2_*',
   '**/.rpt2_cache',
@@ -132,13 +143,20 @@ export const GLOB_IGNORES: string[] = [
   '**/.rts2_cache_cjs',
   '**/.rts2_cache_es',
   '**/.rts2_cache_umd',
+  /* minimized */
+  '**/*.min',
+  '**/*.min.*',
   /* next */
   '**/.next',
   '**/.next_*',
   '**/.next-*',
   '**/next-env.d.ts',
+  /* nitro */
+  '**/.nitro*',
   /* node */
   '**/.node_repl_history',
+  /* node-waf */
+  '**/.lock-wscript',
   /* npm */
   '**/*.tgz',
   '**/.npm',
@@ -164,7 +182,11 @@ export const GLOB_IGNORES: string[] = [
   '**/out',
   '**/output',
   /* playwright */
+  '**/.dev_profile*',
+  '**/.local-browsers*',
+  '**/.test_cache*',
   '**/blob-report',
+  '**/coverage-report',
   '**/playwright-report',
   '**/test-results',
   /* pnpm */
@@ -173,6 +195,12 @@ export const GLOB_IGNORES: string[] = [
   '**/.pnpm-*',
   /* profilers */
   '**/*.cpuprofile',
+  /* public */
+  // '**/public',
+  /* qwik */
+  '**/.qwik*',
+  /* reports */
+  '**/report.*.json',
   /* runtime */
   '**/pids',
   '**/*.pid',
@@ -180,7 +208,10 @@ export const GLOB_IGNORES: string[] = [
   '**/*.pid.lock',
   /* serverless */
   '**/.serverless',
+  /* solid */
+  '**/.solid*',
   /* storybook */
+  // '**/.storybook',
   '**/storybook-static',
   /* svelte */
   '**/.svelte',
@@ -197,26 +228,49 @@ export const GLOB_IGNORES: string[] = [
   '**/*temp',
   '**/*tmp',
   '**/tmp*',
+  /* tern-port */
+  '**/.tern-port',
+  /* traces */
+  '**/*.trace',
   /* turbo */
   '**/.turbo',
   /* typescript */
   '**/*.tsbuildinfo',
   /* vercel */
   '**/.vercel',
+  /* vinxi */
+  '**/.vinxi*',
+  /* visualstudio */
+  '**/.bin',
+  '**/bin/Debug/**/*',
+  '**/bin/Release/**/*',
+  '**/int',
+  '**/obj',
+  '**/out',
   /* vite */
-  '**/.vite',
+  '**/.vite_*',
+  '**/.vite-*',
+  '**/.vite*',
   /* vitepress */
-  '**/.vitepress',
+  '**/.vitepress*',
   /* vitest */
-  '**/.vitest',
+  '**/.vitest_*',
+  '**/.vitest-*',
+  '**/.vitest*',
   /* vscode */
   '**/.history',
   '**/.ionide',
   '**/.vs',
   '**/.vscode_*',
   '**/.vscode-*',
+  '**/.vscode/mise-tools',
   /* webpack */
-  '**/.webpack',
+  '**/.webpack_*',
+  '**/.webpack-*',
+  '**/.webpack*',
+  /* wrangler */
+  '**/.dev.vars',
+  '**/.wrangler',
   /* yarn */
   '**/.pnp',
   '**/.pnp.*',
