@@ -49,18 +49,21 @@ function sortObject(
   obj,
   fn = (/** @type {string} */ a, /** @type {string} */ b) => a.localeCompare(b),
 ) {
-  return Object.keys(obj)
-    .sort(fn)
-    .reduce((/** @type {{ [key: string] }} */ acc, key) => {
-      acc[key] = obj[key];
-      return acc;
-    }, {});
+  return (
+    Object.keys(obj)
+      .toSorted(fn)
+      // eslint-disable-next-line unicorn/no-array-reduce
+      .reduce((/** @type {{ [key: string] }} */ acc, key) => {
+        acc[key] = obj[key];
+        return acc;
+      }, {})
+  );
 }
 
 /** @param {Iterable<any>} items */
 function stringify(items) {
   return [...new Set(items)]
-    .sort()
+    .toSorted()
     .filter((item) => item && item !== '')
     .join(', ');
 }

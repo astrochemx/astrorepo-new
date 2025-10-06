@@ -25,7 +25,7 @@ export type FlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
    * When `files` is specified, these plugins are only available to the matching
    * files.
    */
-  plugins?: Record<string, any>;
+  plugins?: Record<string, any> | undefined;
 
   /**
    * An object containing the configured rules.
@@ -33,7 +33,7 @@ export type FlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
    * When `files` or `ignores` are specified, these rule configurations are only
    * available to the matching files.
    */
-  rules?: Rules;
+  rules?: Rules | undefined;
 };
 
 export type Rules = Record<string, Linter.RuleEntry<any> | undefined> & RuleOptions;
@@ -41,15 +41,35 @@ export type Rules = Record<string, Linter.RuleEntry<any> | undefined> & RuleOpti
 export interface OptionsFactory {
   astro?: boolean;
   command?: boolean;
+  comments?: boolean;
+  compat?: boolean;
+  cspell?: boolean;
+  css?: boolean;
+  deMorgan?: boolean;
   ignores?: string[];
+  imports?: boolean;
   jsdoc?: boolean;
+  json?: boolean;
+  jsonSchemaValidator?: boolean;
+  markdown?: boolean;
+  math?: boolean;
+  mdx?: boolean;
+  node?: boolean;
   packageJSON?: boolean;
   perfectionist?: boolean;
+  prettier?: boolean;
+  promise?: boolean;
+  react?: boolean;
   regexp?: boolean;
+  security?: boolean;
+  toml?: boolean;
   typescript?: boolean;
-  warnings?: boolean;
   unicorn?: boolean;
+  unocss?: boolean;
+  unusedImports?: boolean;
   vue?: boolean;
+  warnings?: boolean;
+  yaml?: boolean;
 }
 
 export interface OptionsFiles {

@@ -1,6 +1,6 @@
 import type { FlatConfigItem } from '../types';
 
-import { GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE } from '../globs';
+import { GLOB_SRC } from '../globs';
 import { loadPlugin } from '../utils';
 
 const [pluginCommand, pluginCommandConfig] = await Promise.all([
@@ -9,7 +9,7 @@ const [pluginCommand, pluginCommandConfig] = await Promise.all([
 ] as const);
 
 export async function command(): Promise<FlatConfigItem[]> {
-  const files = [...GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE];
+  const files = GLOB_SRC;
 
   return [
     {
@@ -21,9 +21,6 @@ export async function command(): Promise<FlatConfigItem[]> {
       ...pluginCommandConfig(),
       name: 'command/config',
       files: files,
-      rules: {
-        ...pluginCommandConfig().rules,
-      },
     },
   ] satisfies FlatConfigItem[];
 }

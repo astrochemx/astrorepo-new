@@ -5,7 +5,7 @@ import type { OutgoingHttpHeaders } from 'node:http2';
 
 import fs from 'node:fs';
 import { writeFile } from 'node:fs/promises';
-import { normalize } from 'node:path';
+import path from 'node:path';
 import { Readable } from 'node:stream';
 
 type ValueOf<T> = T[keyof T];
@@ -431,15 +431,15 @@ const downloadExtensions = async (
 
   if (extVersion?.[0]?.targetPlatform || (extVersion?.[0]?.targetPlatform && platform)) {
     downloadUrls = platform
-      ? typeof platform === 'string'
+      ? (typeof platform === 'string'
         ? [`${downloadUrls[0]}?targetPlatform=${platform}`]
-        : platform.map((p) => `${downloadUrls[0]}?targetPlatform=${p}`)
+        : platform.map((p) => `${downloadUrls[0]}?targetPlatform=${p}`))
       : extVersion.map((v) => `${downloadUrls[0]}?targetPlatform=${v.targetPlatform}`);
   }
 
   console.dir(`Download Urls:\n${downloadUrls.join('\n')}`);
 
-  const dir = normalize(`${import.meta.dirname}/vsix/`);
+  const dir = path.normalize(`${import.meta.dirname}/vsix/`);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }

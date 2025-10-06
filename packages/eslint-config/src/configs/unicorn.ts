@@ -19,6 +19,7 @@ export async function unicorn(): Promise<FlatConfigItem[]> {
       ...pluginUnicorn.configs.unopinionated,
       name: 'unicorn/config',
       files: files,
+      plugins: {},
     },
     {
       name: 'unicorn/overrides',
@@ -28,9 +29,10 @@ export async function unicorn(): Promise<FlatConfigItem[]> {
         'unicorn/no-array-reduce': 'warn',
         'unicorn/no-empty-file': 'warn',
         'unicorn/no-nested-ternary': 'warn',
+        'unicorn/no-process-exit': 'off',
         'unicorn/prefer-regexp-test': 'warn',
         'unicorn/prefer-string-raw': 'warn',
-        'unicorn/prevent-abbreviations': 'warn',
+        'unicorn/prevent-abbreviations': 'off',
       },
     },
   ] satisfies FlatConfigItem[];

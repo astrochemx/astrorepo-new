@@ -1,6 +1,7 @@
 Arrayable
 astrojs
 Atrules
+attributify
 attw
 axaml
 buckconfig
@@ -24,6 +25,7 @@ fumadocs
 gitmodules
 gitmoji
 gitmojis
+intlify
 ionide
 Kochan
 lektorproject

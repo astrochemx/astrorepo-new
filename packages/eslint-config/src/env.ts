@@ -1,15 +1,17 @@
 import type { ProjectManifest } from '@astrochemx/common';
 
-import { isPackageExists } from 'local-pkg';
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import { isPackageExists } from 'local-pkg';
 
 const cwd = process.cwd();
 
 const pkgJsonFilePath = path.resolve(cwd, './package.json');
 const pkgJsonFileContent = fs.readFileSync(pkgJsonFilePath, { encoding: 'utf8' });
-const pkgJson = JSON.parse(pkgJsonFileContent) as ProjectManifest;
+const pkgJson = JSON.parse(pkgJsonFileContent) as ProjectManifest & {
+  prettier?: Record<string, any>;
+};
 
 function pathExists(p: string) {
   try {
@@ -33,6 +35,28 @@ export const hasPnpm = (): boolean =>
   pathExists('pnpmfile.cjs') ||
   (pkgJson?.packageManager?.includes('pnpm') ?? false) ||
   !!pkgJson?.pnpm;
+
+export const hasPrettier = (): boolean =>
+  isPackageExists('prettier') ||
+  pathExists('.prettierrc') ||
+  pathExists('.prettierrc.cjs') ||
+  pathExists('.prettierrc.cts') ||
+  pathExists('.prettierrc.js') ||
+  pathExists('.prettierrc.json') ||
+  pathExists('.prettierrc.json5') ||
+  pathExists('.prettierrc.mjs') ||
+  pathExists('.prettierrc.mts') ||
+  pathExists('.prettierrc.toml') ||
+  pathExists('.prettierrc.ts') ||
+  pathExists('.prettierrc.yaml') ||
+  pathExists('.prettierrc.yml') ||
+  pathExists('prettier.config.cjs') ||
+  pathExists('prettier.config.cts') ||
+  pathExists('prettier.config.js') ||
+  pathExists('prettier.config.mjs') ||
+  pathExists('prettier.config.mts') ||
+  pathExists('prettier.config.ts') ||
+  !!pkgJson?.prettier;
 
 export const hasReact = (): boolean =>
   isPackageExists('react') || isPackageExists('react-dom') || isPackageExists('@astrojs/react');

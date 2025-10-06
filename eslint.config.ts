@@ -1,9 +1,5 @@
-import { defineConfig, type FlatConfigItem } from '@astrochemx/eslint-config';
+import type { FlatConfigItem } from './packages/eslint-config/src';
 
-export default [
-  ...((await defineConfig({
-    astro: true,
-    command: true,
-    typescript: true,
-  })) satisfies FlatConfigItem[]),
-] as const satisfies FlatConfigItem[];
+import eslintConfig from './eslint.config.src.ts';
+
+export default eslintConfig satisfies FlatConfigItem[];

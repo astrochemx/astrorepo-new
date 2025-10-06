@@ -17,7 +17,7 @@ export async function combine(
 
 /** Extract rules from a ESLint Flat Configs. */
 export function extractRules(
-  ...configs: Arrayable<{ [key: string | number | symbol]: any; rules?: FlatConfigItem['rules'] }>[]
+  ...configs: Arrayable<{ [key: number | string | symbol]: any; rules?: FlatConfigItem['rules'] }>[]
 ): FlatConfigItem['rules'] {
   const flat = configs.flat();
   return Object.assign({}, ...flat.map((cfg) => cfg.rules ?? {}));

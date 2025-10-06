@@ -21,14 +21,15 @@
         ] */
 
 import type { FlatConfigItem } from '../types';
-import { loadPlugin } from '../utils';
 
 import { GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE } from '../globs';
+import { loadPlugin } from '../utils';
 
 const pluginPerfectionist = await loadPlugin<typeof import('eslint-plugin-perfectionist')>(
   'eslint-plugin-perfectionist',
 );
 
+/** @see https://perfectionist.dev */
 export async function perfectionist(): Promise<FlatConfigItem[]> {
   const files = [...GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE];
 
@@ -62,7 +63,26 @@ export async function perfectionist(): Promise<FlatConfigItem[]> {
         'perfectionist/sort-heritage-clauses': ['warn', { type: 'natural', order: 'asc' }],
         'perfectionist/sort-imports': [
           'warn',
-          { type: 'natural', order: 'asc', newlinesBetween: 1, sortSideEffects: true },
+          {
+            type: 'natural',
+            order: 'asc',
+            groups: [
+              'type-builtin',
+              { newlinesBetween: 0 },
+              ['type-external', 'type-import'],
+              'value-builtin',
+              { newlinesBetween: 0 },
+              ['value-external', 'value-import'],
+              'type-internal',
+              'value-internal',
+              ['type-parent', 'type-sibling', 'type-index'],
+              ['value-parent', 'value-sibling', 'value-index'],
+              'ts-equals-import',
+              'unknown',
+            ],
+            newlinesBetween: 1,
+            sortSideEffects: true,
+          },
         ],
         'perfectionist/sort-interfaces': [
           'warn',

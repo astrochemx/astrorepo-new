@@ -1,8 +1,10 @@
 /** biome-ignore-all lint/suspicious/noTemplateCurlyInString: noTemplateCurly */
 
-import { type CSpellSettings, defineConfig } from 'cspell';
+import type { CSpellSettings } from 'cspell';
+
 import { createRequire } from 'node:module';
 import path from 'node:path';
+import { defineConfig } from 'cspell';
 
 import { ignores } from './ignores';
 

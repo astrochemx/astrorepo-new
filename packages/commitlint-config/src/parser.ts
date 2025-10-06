@@ -15,6 +15,7 @@ export const parser: CommitlintConfig['parserPreset'] = {
     issuePrefixes: ['#'],
     noteKeywords: ['BREAKING CHANGE', 'BREAKING-CHANGE'],
     revertCorrespondence: ['header', 'hash'],
+    // eslint-disable-next-line regexp/no-super-linear-backtracking
     revertPattern: /^(?:Revert|revert:)\s'?([\s\S]+?)'?\s*This reverts commit (\w*)\./i,
   },
 } as const satisfies CommitlintConfig['parserPreset'];

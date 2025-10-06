@@ -1,12 +1,10 @@
 import path from 'node:path';
-
 import globals from 'globals';
 
 import type { FlatConfigItem } from '../types';
 
 import { hasTypeScript } from '../env';
 import { GLOB_ASTRO, GLOB_SRC_JS, GLOB_SRC_TS } from '../globs';
-
 import { extractRules, loadPlugin } from '../utils';
 
 const [parserAstro, pluginAstro, pluginJSXAlly, { parser: parserTS }] = await Promise.all([
@@ -23,12 +21,13 @@ export async function astro(): Promise<FlatConfigItem[]> {
   const files = [GLOB_ASTRO];
   const filesJS = [`${GLOB_ASTRO}/${GLOB_SRC_JS}`];
   const filesTS = [`${GLOB_ASTRO}/${GLOB_SRC_TS}`];
+  const filesAll = [...files, ...filesJS, ...filesTS];
   const useTypeScript = hasTypeScript();
 
   return [
     {
       name: 'astro/plugin',
-      files: [...files, ...filesJS, ...filesTS],
+      files: filesAll,
       plugins: {
         'astro': pluginAstro,
         'jsx-a11y': pluginJSXAlly,
@@ -118,7 +117,7 @@ export async function astro(): Promise<FlatConfigItem[]> {
       : {},
     {
       name: 'astro/rules',
-      files: [...files, ...filesJS, ...filesTS],
+      files: filesAll,
       rules: {
         ...astroRecommendedRules,
         ...astroJsxAllyRecommendedRules,

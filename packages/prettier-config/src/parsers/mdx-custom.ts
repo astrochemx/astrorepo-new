@@ -32,7 +32,7 @@ async function formatAnnotation(annotation: any, prettierOptions: any) {
   const formatted = await prettier.format(`${prefix}${annotation}`, {
     ...prettierOptions,
     parser: 'babel',
-    printWidth: 99999,
+    printWidth: 99_999,
     trailingComma: 'none',
   });
   // prettier-ignore
@@ -50,7 +50,7 @@ async function formatAnnotation(annotation: any, prettierOptions: any) {
      * - An empty string if the chars surrounding the newline are the same, e.g. `[[`, `{{`
      * - A single space otherwise, e.g. `{ a`
      */
-    .replace(/(?<=(\S))\n\s*(?=(\S))/g, (_, beforeNewline, afterNewline) =>
+    .replaceAll(/(?<=(\S))\n\s*(?=(\S))/g, (_, beforeNewline, afterNewline) =>
       beforeNewline === afterNewline ? '' : ' ',
     )
     .slice(prefix.length)
@@ -71,7 +71,7 @@ function remarkCollectAnnotations(annotations: any) {
         }
       } else if (node.type === 'code' && node.position) {
         const blockText = vfile.value.slice(node.position.start.offset, node.position.end.offset);
-        const [, prefix, annotation] = blockText.match(/^(```\S+\s+)({\s*{.*?}\s*})\n/) ?? [];
+        const [, prefix, annotation] = blockText.match(/^(```\S+\s+)(\{\s*\{.*?\}\s*\})\n/) ?? [];
         if (annotation) {
           annotations.push([
             annotation.slice(1, -1),
@@ -109,7 +109,7 @@ function remarkFormatCodeBlocks(prettierOptions: any) {
 
     // For YAML files the mark characters must appear at the very start of the line
     // (no whitespace), because the `-` character is used for lists.
-    const markStrictLangs = ['yaml'];
+    const markStrictLangs = new Set(['yaml']);
 
     const markReLoose = {
       anyMark: /^\s*[-+=]( |$)/m,
@@ -138,7 +138,7 @@ function remarkFormatCodeBlocks(prettierOptions: any) {
         if (parser) {
           let code = node.value;
 
-          const markRe = markStrictLangs.includes(node.lang) ? markReStrict : markReLoose;
+          const markRe = markStrictLangs.has(node.lang) ? markReStrict : markReLoose;
 
           // Exclude Markdown files because `-` is used for lists
           const hasMarks =
@@ -212,7 +212,7 @@ function remarkFormatCodeBlocks(prettierOptions: any) {
                   error.message = error.message.replace(
                     /\((\d+):(\d+)\)/,
                     (_, line, column) =>
-                      `(${parseInt(line, 10) + node.position.start.line}:${parseInt(column, 10) + node.position.start.column - 1})`,
+                      `(${Number.parseInt(line, 10) + node.position.start.line}:${Number.parseInt(column, 10) + node.position.start.column - 1})`,
                   );
                 }
                 throw error;
@@ -267,7 +267,7 @@ function remarkAddCalloutMarkers() {
   };
 }
 function replaceCalloutMarkers(text: any) {
-  return text.replaceAll('\\_\\_CALLOUT\\_MARKER\\_\\_', '[');
+  return text.replaceAll(String.raw`\_\_CALLOUT\_MARKER\_\_`, '[');
 }
 
 export const parsers = {

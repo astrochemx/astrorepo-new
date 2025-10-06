@@ -1,0 +1,14 @@
+[development]
+last 2 chrome version
+last 2 firefox version
+
+[production]
+last 2 chrome version
+last 2 firefox version
+
+[modern]
+last 1 chrome version
+last 1 firefox version
+
+[ssr]
+node 22

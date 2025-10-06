@@ -5,10 +5,10 @@
  */
 
 import { createRequire } from 'node:module';
-import { delimiter } from 'node:path';
+import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-const extraNodePaths = (process.env['NODE_PATH'] || '').split(delimiter).filter(Boolean);
+const extraNodePaths = (process.env['NODE_PATH'] || '').split(path.delimiter).filter(Boolean);
 
 /**
  * @param {string} specifier
@@ -19,7 +19,7 @@ export async function resolve(specifier, context, defaultResolve) {
   try {
     return await defaultResolve(specifier, context, defaultResolve);
   } catch (originalError) {
-    if (specifier.startsWith('.') || specifier.startsWith('/') || /^node:/.exec(specifier)) {
+    if (specifier.startsWith('.') || specifier.startsWith('/') || specifier.startsWith('node:')) {
       // Don't handle relative, absolute, or node: specifiers
       throw originalError;
     }

@@ -26,9 +26,9 @@
    */
   onWillParseMarkdown: async (/** @type {string} */ markdown) =>
     new Promise((resolve, _reject) => {
-      const calloutRegex = /^> ?\[!(?<type>\w+)\](?<title>.*)?\r?\n(?<content>(?:>.*\r?\n?)*)/gm;
+      const calloutRegex = /^> ?\[!(?<type>\w+)\](?<title>.*)\r?\n(?<content>(?:>.*\r?\n?)*)/gm;
 
-      const newMarkdown = markdown.replace(
+      const newMarkdown = markdown.replaceAll(
         calloutRegex,
         (
           /** @type {any} */ _match,
@@ -40,7 +40,7 @@
           const admonitionTitle = title?.trim() ? title.trim() : '';
 
           const admonitionContent = content
-            .replace(/^> ?/gm, '')
+            .replaceAll(/^> ?/gm, '')
             .split(/\r?\n/)
             .map((/** @type {string} */ line) => (line.trim() ? `    ${line}` : ''))
             .join('\n');

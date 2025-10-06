@@ -329,6 +329,9 @@
       "mode": "auto"
     }
   ],
+  "exportall.config.folderListener": [
+    "/packages/eslint-config/src/configs"
+  ],
   "markdown.validate.duplicateLinkDefinitions.enabled": "warning",
   "markdown.validate.enabled": true,
   "markdown.validate.fileLinks.enabled": "ignore",

@@ -23,7 +23,7 @@ function _addTypes(pkg) {
       !pkg.dependencies?.[devDepName] &&
       !pkg.peerDependencies?.[devDepName]
     ) {
-      const pkgName = devDepName.substring('@types/'.length);
+      const pkgName = devDepName.slice('@types/'.length);
       if (pkg.dependencies?.[pkgName]) {
         pkg.dependencies[devDepName] = devDepRange;
       } else if (pkg.peerDependencies?.[pkgName]) {

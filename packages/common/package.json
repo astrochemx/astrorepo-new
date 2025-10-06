@@ -28,7 +28,6 @@
   },
   "type": "module",
   "exports": {
-
     "import": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"

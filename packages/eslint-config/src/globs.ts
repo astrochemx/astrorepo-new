@@ -74,6 +74,14 @@ export const GLOB_BLOCKS_IN_MD: string = `${GLOB_MD}/**` as const;
 export const GLOB_BLOCKS_IN_MDX: string = `${GLOB_MDX}/**` as const;
 export const GLOB_BLOCKS_IN_MD_MDX: string = `${GLOB_MD_MDX}/**` as const;
 
+export const GLOB_SRC: string[] = [
+  ...GLOB_ASTRO_ALL,
+  GLOB_MDX,
+  GLOB_SRC_JTS,
+  GLOB_SVELTE_ALL,
+  GLOB_VUE,
+] as const;
+
 export const GLOB_SRC_ALL: string[] = [
   GLOB_ASTRO,
   GLOB_ASTRO_JTS,
@@ -131,10 +139,10 @@ export const GLOB_TESTS_TYPE: string[] = [
   `**/*.spec-d${FILE_EXT_SRC}`,
 ] as const;
 
-export const GLOB_PKG_JSON = '**/package.json' as const;
-export const GLOB_PKG_JSON5 = '**/package.json5' as const;
-export const GLOB_PKG_JSONC = '**/package.jsonc' as const;
-export const GLOB_PKG_JSON_ALL = '**/package.json?([5c])' as const;
+export const GLOB_PKG_JSON = '**/package*.json' as const;
+export const GLOB_PKG_JSON5 = '**/package*.json5' as const;
+export const GLOB_PKG_JSONC = '**/package*.jsonc' as const;
+export const GLOB_PKG_JSON_ALL = '**/package*.json?([5c])' as const;
 
 export const GLOB_PNPM_YAML = '**/pnpm-workspace.yaml' as const;
 

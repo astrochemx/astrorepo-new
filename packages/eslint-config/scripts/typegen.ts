@@ -1,21 +1,40 @@
 import type { Linter } from 'eslint';
 
+import { writeFile } from 'node:fs/promises';
 import { green } from 'ansis';
 import { flatConfigsToRulesDTS } from 'eslint-typegen/core';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
-import { writeFile } from 'node:fs/promises';
 
 import {
   astro,
   command,
+  comments,
+  compat,
+  cspell,
+  css,
+  deMorgan,
+  imports,
   javascript,
   jsdoc,
+  json,
+  jsonSchemaValidator,
+  markdown,
+  math,
+  mdx,
+  node,
   packageJSON,
   perfectionist,
+  prettier,
+  promise,
+  react,
   regexp,
+  security,
+  toml,
   typescript,
   unicorn,
+  unocss,
   vue,
+  yaml,
 } from '../src/configs';
 import { combine } from '../src/utils';
 
@@ -29,14 +48,33 @@ const configs = await combine(
   },
   astro(),
   command(),
+  comments(),
+  compat(),
+  cspell(),
+  css(),
+  deMorgan(),
+  imports(),
   javascript(),
   jsdoc(),
+  json(),
+  jsonSchemaValidator(),
+  markdown(),
+  math(),
+  mdx(),
+  node(),
   packageJSON(),
   perfectionist(),
+  prettier(),
+  promise(),
+  react(),
   regexp(),
+  security(),
+  toml(),
   typescript(),
   unicorn(),
+  unocss(),
   vue(),
+  yaml(),
 );
 
 const configNames = configs.map((i) => i.name).filter(Boolean) as string[];

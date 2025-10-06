@@ -290,6 +290,7 @@
     "**/.pnp.*",
     "**/.yarn"
   ],
+  "jsPlugins": null,
   "overrides": [
     {
       "files": ["**/*.astro", "**/*.svelte", "**/*.vue"],
@@ -356,6 +357,7 @@
     "no-unsafe-finally": "warn",
     "no-unsafe-negation": "warn",
     "no-unsafe-optional-chaining": "warn",
+    "no-unused-expressions": "off",
     "no-unused-labels": "warn",
     "no-unused-private-class-members": "warn",
     "no-unused-vars": "off",
