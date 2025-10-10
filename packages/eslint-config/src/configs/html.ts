@@ -1,8 +1,8 @@
 import type { FlatConfigItem } from '../types';
 
+import { hasPrettier } from '../env';
 import { GLOB_HTML_ALL, GLOB_SRC_JTS, GLOB_XML_ALL } from '../globs';
 import { loadPlugin } from '../utils';
-import { hasPrettier } from '../env';
 
 const [parserHTML, pluginHTML, pluginHTMLScripts] = await Promise.all([
   loadPlugin<typeof import('@html-eslint/parser')>('@html-eslint/parser'),
@@ -42,10 +42,11 @@ export async function html(): Promise<FlatConfigItem[]> {
       },
     },
     {
-      ...pluginHTML.configs['flat/recommended'],
       name: 'html/config',
       files: files,
-      plugins: {},
+      rules: {
+        ...pluginHTML.configs['flat/recommended'].rules,
+      },
     },
     {
       name: 'html/overrides',

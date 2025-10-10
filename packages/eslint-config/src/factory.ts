@@ -45,12 +45,15 @@ import {
 } from './configs';
 import {
   hasAstro,
+  hasNext,
   hasPNPM,
   hasPrettier,
   hasReact,
   hasTailwindCSS,
   hasTypeScript,
   hasUnoCSS,
+  hasVite,
+  hasVue,
 } from './env';
 
 export async function defineConfig(
@@ -255,6 +258,21 @@ export async function defineConfig(
     ...configs,
     ...normalizedUserConfigs,
   );
+
+  console.log('');
+  console.log('------------------------------------------------------------');
+  console.log('hasAstro:', hasAstro());
+  console.log('hasNext:', hasNext());
+  console.log('hasPNPM:', hasPNPM());
+  console.log('hasPrettier:', hasPrettier());
+  console.log('hasReact:', hasReact());
+  console.log('hasTailwindCSS:', hasTailwindCSS());
+  console.log('hasTypeScript:', hasTypeScript());
+  console.log('hasUnoCSS:', hasUnoCSS());
+  console.log('hasVite:', hasVite());
+  console.log('hasVue:', hasVue());
+  console.log('------------------------------------------------------------');
+  console.log('');
 
   return composer.toConfigs();
 }

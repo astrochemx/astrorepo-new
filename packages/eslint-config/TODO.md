@@ -2,7 +2,6 @@ TODO:
 
 - ~~format (eslint-plugin-format)~~
 - ~~functional (eslint-plugin-functional)~~
-- ~~html (@html-eslint/eslint-plugin)~~
 - ~~next (@next/eslint-plugin-next)~~
 - ~~solid (eslint-plugin-solid)~~
 - ~~stylistic (@stylistic/eslint-plugin)~~

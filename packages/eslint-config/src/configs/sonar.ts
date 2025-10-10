@@ -19,6 +19,7 @@ export async function sonar(): Promise<FlatConfigItem[]> {
       ...pluginSonar.configs.recommended,
       name: 'sonar/config',
       files: files,
+      plugins: {},
     },
   ] satisfies FlatConfigItem[];
 }
