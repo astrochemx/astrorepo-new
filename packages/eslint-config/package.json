@@ -64,7 +64,6 @@
     "@types/eslint-plugin-jsx-a11y": "6.10.1",
     "@types/eslint-plugin-security": "3.0.0",
     "@types/node": "24.7.1",
-    "ansis": "4.2.0",
     "eslint": "9.37.0",
     "eslint-typegen": "2.3.0",
     "find-up": "8.0.0",
