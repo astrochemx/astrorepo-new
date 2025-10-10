@@ -36,10 +36,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "package.json",
-    "LICENSE.md",
-    "README.md"
+    "dist"
   ],
   "scripts": {
     "build": "tsdown"
@@ -47,12 +44,12 @@
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.2",
     "@astrochemx/typescript-config": "workspace:*",
-    "publint": "0.3.13",
-    "rollup-plugin-postcss": "4.0.2",
+    "publint": "0.3.14",
+    "rolldown-plugin-require-cjs": "0.3.1",
     "tsdown": "0.15.6",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
-    "unplugin-unused": "0.5.3"
+    "unplugin-unused": "0.5.4"
   },
   "peerDependencies": {
     "tsdown": "0.15.6"
@@ -63,7 +60,7 @@
     }
   },
   "engines": {
-    "node": "^22.20.0 || ^23.11.1 || >= 24.9.0"
+    "node": "^22.18 || >= 24"
   },
   "publishConfig": {
     "provenance": true

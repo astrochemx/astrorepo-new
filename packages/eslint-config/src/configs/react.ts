@@ -3,7 +3,7 @@ import { defineConfig } from 'eslint/config';
 import type { FlatConfigItem } from '../types';
 
 import { hasTypeScript } from '../env';
-import { GLOB_ASTRO_ALL, GLOB_SRC_JSX } from '../globs';
+import { GLOB_SRC_JSX } from '../globs';
 import { loadPlugin } from '../utils';
 
 const [pluginReact, pluginReactCompiler, pluginReactHooks, pluginReactRefresh] = await Promise.all([
@@ -14,7 +14,8 @@ const [pluginReact, pluginReactCompiler, pluginReactHooks, pluginReactRefresh] =
 ] as const);
 
 export async function react(): Promise<FlatConfigItem[]> {
-  const files = [...GLOB_ASTRO_ALL, ...GLOB_SRC_JSX];
+  const files = [...GLOB_SRC_JSX];
+
   const useTypeScript = hasTypeScript();
 
   const pluginReactConfig = useTypeScript
@@ -43,6 +44,10 @@ export async function react(): Promise<FlatConfigItem[]> {
         '@eslint-react/naming-convention': pluginReactPlugins['@eslint-react/naming-convention'],
         '@eslint-react/web-api': pluginReactPlugins['@eslint-react/web-api'],
       },
+      settings: {
+        ...pluginReactConfig.settings,
+        react: { importSource: 'react', polymorphicPropName: 'as', version: 'detect' },
+      },
     },
     {
       name: 'react/parser',
@@ -57,10 +62,6 @@ export async function react(): Promise<FlatConfigItem[]> {
           sourceType: 'module',
         },
         sourceType: 'module',
-      },
-      settings: {
-        ...pluginReactConfig.settings,
-        react: { importSource: 'react', polymorphicPropName: 'as', version: 'detect' },
       },
     },
     {

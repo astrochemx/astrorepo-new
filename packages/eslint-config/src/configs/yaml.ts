@@ -14,6 +14,7 @@ const prettierRules = extractRules(pluginYML.configs['flat/prettier']);
 
 export async function yaml(): Promise<FlatConfigItem[]> {
   const files = [GLOB_YAML];
+
   const usePrettier = hasPrettier();
 
   return [

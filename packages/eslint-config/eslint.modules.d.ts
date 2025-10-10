@@ -1,6 +1,6 @@
 declare module '@eslint-community/eslint-plugin-eslint-comments' {
   import type { ESLint, Linter } from 'eslint';
-  const exports: {
+  const plugin: {
     configs: {
       recommended: {
         plugins: Linter.LegacyConfig['plugins'];
@@ -12,14 +12,13 @@ declare module '@eslint-community/eslint-plugin-eslint-comments' {
       patch: (ruleId = '@eslint-community/eslint-comments/no-unused-disable') => unknown;
     };
   };
-
-  export = exports;
+  export default plugin satisfies ESLint.Plugin;
 }
 
 declare module '@eslint-community/eslint-plugin-eslint-comments/configs' {
   import type { Linter } from 'eslint';
   const recommended: Linter.LegacyConfig;
-  export = { recommended };
+  export = { recommended } satisfies ESLint.Plugin;
 }
 
 declare module '@next/eslint-plugin-next' {
@@ -35,13 +34,13 @@ declare module '@next/eslint-plugin-next' {
     coreWebVitals: Record<string, Linter.Config>;
     recommended: Record<string, Linter.Config>;
   };
-  export = { ...plugin, flatConfig };
+  export = { ...plugin, flatConfig } satisfies ESLint.Plugin;
 }
 
 declare module 'eslint-config-biome' {
   import type { ESLint } from 'eslint';
   const rules: ESLint.Plugin['rules'];
-  export = { rules };
+  export = { rules } satisfies ESLint.Plugin;
 }
 
 declare module 'eslint-plugin-barrel-files' {
@@ -57,28 +56,28 @@ declare module 'eslint-plugin-barrel-files' {
     processors: ESLint.Plugin['processors'];
     rules: ESLint.Plugin['rules'];
   };
-  export = plugin;
+  export default plugin satisfies ESLint.Plugin;
 }
 
 declare module 'eslint-plugin-html' {
   import type { ESLint } from 'eslint';
   const plugin: ESLint.Plugin;
-  export = plugin;
+  export default plugin satisfies ESLint.Plugin;
 }
 
 declare module 'eslint-plugin-no-only-tests' {
   import type { ESLint } from 'eslint';
   const rules: ESLint.Plugin['rules'];
-  export = { rules };
+  export = { rules } satisfies ESLint.Plugin;
 }
 
 declare module 'eslint-plugin-promise' {
-  import type { Linter } from 'eslint';
+  import type { ESLint, Linter } from 'eslint';
   const configs: {
     'flat/recommended': Linter.Config;
     'recommended': Linter.BaseConfig;
   };
-  export = { configs };
+  export = { configs } satisfies ESLint.Plugin;
 }
 
 declare module 'eslint-plugin-react-perf' {
@@ -104,5 +103,5 @@ declare module 'eslint-plugin-vue-composable' {
     'flat/recommended': Linter.Config[];
     'recommended': Linter.BaseConfig;
   };
-  export = { configs, meta, rules };
+  export = { configs, meta, rules } satisfies ESLint.Plugin;
 }

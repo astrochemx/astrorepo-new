@@ -191,6 +191,7 @@
     "jeronimoekerdt.color-picker-universal",
     "jmkrivocapich.drawfolderstructure",
     "jock.svg",
+    "johnsoncodehk.vscode-tsconfig-helper",
     "joshbolduc.commitlint",
     "joshuapoehls.json-escaper",
     "joshx.workspace-terminals",
@@ -460,6 +461,7 @@
     "zengxingxin.sort-js-object-keys",
     "zfzackfrost.commentbars",
     "zjffun.snippetsmanager",
+    "zoma.vscode-auto-open-workspace",
     "zxh404.vscode-proto3"
   ],
   "unwantedRecommendations": [

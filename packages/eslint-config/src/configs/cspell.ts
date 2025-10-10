@@ -7,12 +7,14 @@ import type { FlatConfigItem } from '../types';
 import { GLOB_SRC_ALL } from '../globs';
 import { loadPlugin } from '../utils';
 
-const cspellConfigPath = existsSync(path.resolve(process.cwd(), './cspell.config.mjs'))
-  ? path.resolve(process.cwd(), './cspell.config.mjs')
+const cspellConfigPath = existsSync(
+  path.normalize(path.resolve(process.cwd(), './cspell.config.mjs')),
+)
+  ? path.normalize(path.resolve(process.cwd(), './cspell.config.mjs'))
   : await findUp('cspell.config.mjs');
 
-const cspellSpellingPath = existsSync(path.resolve(process.cwd(), './spelling.txt'))
-  ? path.resolve(process.cwd(), './spelling.txt')
+const cspellSpellingPath = existsSync(path.normalize(path.resolve(process.cwd(), './spelling.txt')))
+  ? path.normalize(path.resolve(process.cwd(), './spelling.txt'))
   : await findUp('spelling.txt');
 
 const [pluginCSpell, pluginCSpellConfigs] = await Promise.all([

@@ -7,7 +7,7 @@ import { hasTypeScript } from '../env';
 import { GLOB_ASTRO, GLOB_SRC_JS, GLOB_SRC_TS } from '../globs';
 import { extractRules, loadPlugin } from '../utils';
 
-const [parserAstro, pluginAstro, pluginJSXAlly, { parser: parserTS }] = await Promise.all([
+const [parserAstro, pluginAstro, pluginJSXA11y, { parser: parserTS }] = await Promise.all([
   loadPlugin<typeof import('astro-eslint-parser')>('astro-eslint-parser'),
   loadPlugin<typeof import('eslint-plugin-astro')>('eslint-plugin-astro'),
   loadPlugin<typeof import('eslint-plugin-jsx-a11y')>('eslint-plugin-jsx-a11y'),
@@ -15,13 +15,14 @@ const [parserAstro, pluginAstro, pluginJSXAlly, { parser: parserTS }] = await Pr
 ] as const);
 
 const astroRecommendedRules = extractRules(pluginAstro.configs['flat/recommended']);
-const astroJsxAllyRecommendedRules = extractRules(pluginAstro.configs['flat/jsx-a11y-recommended']);
+const astroJSXA11yRecommendedRules = extractRules(pluginAstro.configs['flat/jsx-a11y-recommended']);
 
 export async function astro(): Promise<FlatConfigItem[]> {
   const files = [GLOB_ASTRO];
   const filesJS = [`${GLOB_ASTRO}/${GLOB_SRC_JS}`];
   const filesTS = [`${GLOB_ASTRO}/${GLOB_SRC_TS}`];
   const filesAll = [...files, ...filesJS, ...filesTS];
+
   const useTypeScript = hasTypeScript();
 
   return [
@@ -30,7 +31,7 @@ export async function astro(): Promise<FlatConfigItem[]> {
       files: filesAll,
       plugins: {
         'astro': pluginAstro,
-        'jsx-a11y': pluginJSXAlly,
+        'jsx-a11y': pluginJSXA11y,
       },
     },
     {
@@ -41,6 +42,7 @@ export async function astro(): Promise<FlatConfigItem[]> {
         globals: {
           ...globals.es2026,
           ...globals.node,
+          ...globals.serviceworker,
           ...globals['shared-node-browser'],
           'astro/astro': true,
           ...pluginAstro.environments.astro.globals,
@@ -73,6 +75,7 @@ export async function astro(): Promise<FlatConfigItem[]> {
         globals: {
           ...globals.browser,
           ...globals.es2026,
+          ...globals.serviceworker,
         },
         parserOptions: {
           ecmaFeatures: {
@@ -96,6 +99,7 @@ export async function astro(): Promise<FlatConfigItem[]> {
             globals: {
               ...globals.browser,
               ...globals.es2026,
+              ...globals.serviceworker,
             },
             parser: parserTS,
             parserOptions: {
@@ -120,7 +124,7 @@ export async function astro(): Promise<FlatConfigItem[]> {
       files: filesAll,
       rules: {
         ...astroRecommendedRules,
-        ...astroJsxAllyRecommendedRules,
+        ...astroJSXA11yRecommendedRules,
       },
     },
   ] satisfies FlatConfigItem[];

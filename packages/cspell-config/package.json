@@ -37,10 +37,7 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "words.txt",
-    "package.json",
-    "LICENSE.md",
-    "README.md"
+    "words.txt"
   ],
   "scripts": {
     "build": "tsdown"
@@ -57,11 +54,12 @@
     "@astrochemx/tsdown-config": "workspace:*",
     "@astrochemx/typescript-config": "workspace:*",
     "cspell": "9.2.1",
-    "publint": "0.3.13",
+    "publint": "0.3.14",
+    "rolldown-plugin-require-cjs": "0.3.1",
     "tsdown": "0.15.6",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
-    "unplugin-unused": "0.5.3"
+    "unplugin-unused": "0.5.4"
   },
   "peerDependencies": {
     "cspell": "9.2.1"
@@ -72,7 +70,7 @@
     }
   },
   "engines": {
-    "node": "^22.20.0 || ^23.11.1 || >= 24.9.0"
+    "node": "^22.18 || >= 24"
   },
   "publishConfig": {
     "provenance": true

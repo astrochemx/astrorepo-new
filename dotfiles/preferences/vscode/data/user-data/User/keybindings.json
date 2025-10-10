@@ -23,60 +23,78 @@
     "key": "ctrl+delete",
     "command": "deleteWordPartRight"
   },
-  {
-    "key": "ctrl+down",
-    "command": "editorScroll",
-    "when": "textInputFocus",
-    "args": {
-      "to": "down",
-      "by": "line",
-      "revealCursor": false,
-      "value": 10
-    }
-  },
-  {
-    "key": "ctrl+up",
-    "command": "editorScroll",
-    "when": "textInputFocus",
-    "args": {
-      "to": "up",
-      "by": "line",
-      "revealCursor": false,
-      "value": 10
-    }
-  },
-  {
-    "key": "ctrl+shift+down",
-    "command": "editorScroll",
-    "when": "textInputFocus",
-    "args": {
-      "to": "down",
-      "by": "line",
-      "revealCursor": false,
-      "value": 1
-    }
-  },
-  {
-    "key": "ctrl+shift+up",
-    "command": "editorScroll",
-    "when": "textInputFocus",
-    "args": {
-      "to": "up",
-      "by": "line",
-      "revealCursor": false,
-      "value": 1
-    }
-  },
-  {
-    "key": "up",
-    "command": "removeSecondaryCursors",
-    "when": "editorHasMultipleSelections && textInputFocus"
-  },
-  {
-    "key": "down",
-    "command": "removeSecondaryCursors",
-    "when": "editorHasMultipleSelections && textInputFocus"
-  },
+  // {
+  //   "key": "ctrl+down",
+  //   "command": "cursorMove",
+  //   "when": "editorTextFocus",
+  //   "args": {
+  //     "to": "nextBlankLine",
+  //     "by": "wrappedLine"
+  //   }
+  // },
+  // {
+  //   "key": "ctrl+up",
+  //   "command": "cursorMove",
+  //   "when": "editorTextFocus",
+  //   "args": {
+  //     "to": "prevBlankLine",
+  //     "by": "wrappedLine"
+  //   }
+  // },
+  // {
+  //   "key": "ctrl+down",
+  //   "command": "editorScroll",
+  //   "when": "textInputFocus",
+  //   "args": {
+  //     "to": "down",
+  //     "by": "line",
+  //     "revealCursor": false,
+  //     "value": 10
+  //   }
+  // },
+  // {
+  //   "key": "ctrl+up",
+  //   "command": "editorScroll",
+  //   "when": "textInputFocus",
+  //   "args": {
+  //     "to": "up",
+  //     "by": "line",
+  //     "revealCursor": false,
+  //     "value": 10
+  //   }
+  // },
+  // {
+  //   "key": "ctrl+shift+down",
+  //   "command": "editorScroll",
+  //   "when": "textInputFocus",
+  //   "args": {
+  //     "to": "down",
+  //     "by": "line",
+  //     "revealCursor": false,
+  //     "value": 1
+  //   }
+  // },
+  // {
+  //   "key": "ctrl+shift+up",
+  //   "command": "editorScroll",
+  //   "when": "textInputFocus",
+  //   "args": {
+  //     "to": "up",
+  //     "by": "line",
+  //     "revealCursor": false,
+  //     "value": 1
+  //   }
+  // },
+  // {
+  //   "key": "up",
+  //   "command": "removeSecondaryCursors",
+  //   "when": "editorHasMultipleSelections && textInputFocus"
+  // },
+  // {
+  //   "key": "down",
+  //   "command": "removeSecondaryCursors",
+  //   "when": "editorHasMultipleSelections && textInputFocus"
+  // },
   {
     "key": "ctrl+alt+i",
     "command": "editor.action.insertSnippet",

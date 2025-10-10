@@ -1,5 +1,7 @@
-import postcss from 'rollup-plugin-postcss';
-import { defineConfig, type UserConfig, type UserConfigFn } from 'tsdown';
+import type { UserConfig, UserConfigFn } from 'tsdown';
+
+import { RequireCJS } from 'rolldown-plugin-require-cjs';
+import { defineConfig } from 'tsdown';
 
 export const tsdownConfig: UserConfig | UserConfigFn = defineConfig({
   attw: false, // check!
@@ -30,7 +32,7 @@ export const tsdownConfig: UserConfig | UserConfigFn = defineConfig({
     console.info('-------------------');
   },
   platform: 'node',
-  plugins: [postcss({ autoModules: true })],
+  plugins: [RequireCJS()],
   publint: false, // check!
   shims: true,
   skipNodeModulesBundle: true,

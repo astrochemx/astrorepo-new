@@ -36,10 +36,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "package.json",
-    "LICENSE.md",
-    "README.md"
+    "dist"
   ],
   "scripts": {
     "build": "tsdown"
@@ -56,7 +53,7 @@
     "stylelint-config-recess-order": "7.3.0",
     "stylelint-config-recommended-vue": "1.6.1",
     "stylelint-config-sass-guidelines": "12.1.0",
-    "stylelint-config-standard": "39.0.0",
+    "stylelint-config-standard": "39.0.1",
     "stylelint-config-standard-scss": "16.0.0",
     "stylelint-declaration-block-no-ignored-properties": "2.8.0",
     "stylelint-high-performance-animation": "1.11.0",
@@ -71,12 +68,13 @@
     "@astrochemx/tsdown-config": "workspace:*",
     "@astrochemx/typescript-config": "workspace:*",
     "@types/postcss-less": "4.0.6",
-    "publint": "0.3.13",
+    "publint": "0.3.14",
+    "rolldown-plugin-require-cjs": "0.3.1",
     "stylelint": "16.25.0",
     "tsdown": "0.15.6",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
-    "unplugin-unused": "0.5.3"
+    "unplugin-unused": "0.5.4"
   },
   "peerDependencies": {
     "stylelint": "16.25.0"
@@ -87,7 +85,7 @@
     }
   },
   "engines": {
-    "node": "^22.20.0 || ^23.11.1 || >= 24.9.0"
+    "node": "^22.18 || >= 24"
   },
   "publishConfig": {
     "provenance": true

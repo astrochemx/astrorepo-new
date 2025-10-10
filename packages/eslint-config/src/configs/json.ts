@@ -28,6 +28,7 @@ export async function json(): Promise<FlatConfigItem[]> {
   const filesJSON5 = [GLOB_JSON5];
   const filesJSONC = [...GLOB_JSON_AS_JSONC, GLOB_JSONC];
   const filesAll = [...files, ...filesJSON, ...filesJSONC, ...filesJSON5];
+
   const usePrettier = hasPrettier();
 
   return [

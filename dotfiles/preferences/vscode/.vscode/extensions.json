@@ -326,6 +326,7 @@
     "jeronimoekerdt.color-picker-universal",
     "jetmartin.bats",
     "jibar026.compile-time",
+    "jmfirth.vsc-space-block-jumper",
     "jmkrivocapich.drawfolderstructure",
     "jock.svg",
     "johnsoncodehk.vscode-tsconfig-helper",
@@ -416,6 +417,7 @@
     "mikestead.dotenv",
     "minko.image-manager",
     "mishkinf.goto-next-previous-member",
+    "mjmlio.vscode-mjml",
     "mkhl.direnv",
     "mkhl.shfmt",
     "mongodb.mongodb-vscode",
@@ -692,6 +694,7 @@
     "tintoy.msbuild-project-tools",
     "tldraw-org.tldraw-vscode",
     "tobermory.es6-string-html",
+    "tobias-z.vscode-harpoon",
     "tobysmith568.run-in-powershell",
     "tombi-toml.tombi",
     "tombonnike.vscode-status-bar-format-toggle",
@@ -775,6 +778,7 @@
     "zhaouv.vscode-markdown-draw",
     "zhucy.project-tree",
     "zjffun.snippetsmanager",
+    "zoma.vscode-auto-open-workspace",
     "zxh404.vscode-proto3"
   ],
   "unwantedRecommendations": [

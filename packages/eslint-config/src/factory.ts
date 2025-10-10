@@ -13,23 +13,28 @@ import {
   cspell,
   css,
   deMorgan,
+  html,
   ignore,
   imports,
   javascript,
   jsdoc,
   json,
   jsonSchemaValidator,
+  jsxA11y,
   markdown,
   math,
   mdx,
   node,
   packageJSON,
   perfectionist,
+  pnpm,
   prettier,
   promise,
   react,
   regexp,
   security,
+  sonar,
+  tailwind,
   toml,
   typescript,
   unicorn,
@@ -38,7 +43,15 @@ import {
   vue,
   yaml,
 } from './configs';
-import { hasAstro, hasTypeScript } from './env';
+import {
+  hasAstro,
+  hasPNPM,
+  hasPrettier,
+  hasReact,
+  hasTailwindCSS,
+  hasTypeScript,
+  hasUnoCSS,
+} from './env';
 
 export async function defineConfig(
   options: OptionsFactory = {},
@@ -57,25 +70,30 @@ export async function defineConfig(
     cspell: useCSpell = true,
     css: useCSS = true,
     deMorgan: useDeMorgan = true,
+    html: useHTML = true,
     imports: useImports = true,
     jsdoc: useJSDoc = true,
     json: useJSON = true,
     jsonSchemaValidator: useJSONSchemaValidator = true,
+    jsxA11y: useJSXA11y = true,
     markdown: useMarkdown = true,
     math: useMath = true,
     mdx: useMDX = true,
     node: useNode = true,
     packageJSON: usePackageJSON = true,
     perfectionist: usePerfectionist = true,
-    prettier: usePrettier = true,
+    pnpm: usePNPM = hasPNPM(),
+    prettier: usePrettier = hasPrettier(),
     promise: usePromise = true,
-    react: useReact = true,
+    react: useReact = hasReact(),
     regexp: useRegexp = true,
     security: useSecurity = true,
+    sonar: useSonar = true,
+    tailwind: useTailwind = hasTailwindCSS(),
     toml: useTOML = true,
     typescript: useTypeScript = hasTypeScript(),
     unicorn: useUnicorn = true,
-    unocss: useUnoCSS = true,
+    unocss: useUnoCSS = hasUnoCSS(),
     unusedImports: useUnusedImports = true,
     vue: useVue = true,
     warnings: useOnlyWarnings = true,
@@ -125,6 +143,10 @@ export async function defineConfig(
     configs.push(deMorgan());
   }
 
+  if (useHTML) {
+    configs.push(html());
+  }
+
   if (useImports) {
     configs.push(imports());
   }
@@ -139,6 +161,10 @@ export async function defineConfig(
 
   if (useJSONSchemaValidator) {
     configs.push(jsonSchemaValidator());
+  }
+
+  if (useJSXA11y) {
+    configs.push(jsxA11y());
   }
 
   if (useMarkdown) {
@@ -165,6 +191,10 @@ export async function defineConfig(
     configs.push(perfectionist());
   }
 
+  if (usePNPM) {
+    configs.push(pnpm());
+  }
+
   if (usePrettier) {
     configs.push(prettier());
   }
@@ -179,6 +209,14 @@ export async function defineConfig(
 
   if (useSecurity) {
     configs.push(security());
+  }
+
+  if (useSonar) {
+    configs.push(sonar());
+  }
+
+  if (useTailwind) {
+    configs.push(tailwind());
   }
 
   if (useTOML) {

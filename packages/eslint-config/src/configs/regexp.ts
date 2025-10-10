@@ -1,13 +1,13 @@
 import type { FlatConfigItem } from '../types';
 
-import { GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE } from '../globs';
+import { GLOB_SRC } from '../globs';
 import { loadPlugin } from '../utils';
 
 const pluginRegExp =
   await loadPlugin<typeof import('eslint-plugin-regexp')>('eslint-plugin-regexp');
 
 export async function regexp(): Promise<FlatConfigItem[]> {
-  const files = [...GLOB_ASTRO_ALL, GLOB_SRC_JTS, GLOB_SVELTE_ALL, GLOB_VUE];
+  const files = [...GLOB_SRC];
 
   return [
     {

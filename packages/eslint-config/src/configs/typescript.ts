@@ -13,17 +13,14 @@ const {
   plugin: pluginTS,
 } = await loadPlugin<typeof import('typescript-eslint')>('typescript-eslint');
 
-// @ts-expect-error: types
 const tsESLintRecommendedRules = extractRules(configsTS.recommended ?? {});
-// @ts-expect-error: types
 const tsESLintRecommendedTypeCheckedRules = extractRules(configsTS.recommendedTypeChecked ?? {});
-// @ts-expect-error: types
 const tsESLintStylisticRules = extractRules(configsTS.stylistic ?? {});
-// @ts-expect-error: types
 const tsESLintStylisticTypeCheckedRules = extractRules(configsTS.stylisticTypeChecked ?? {});
 
 export async function typescript(): Promise<FlatConfigItem[]> {
   const files = [GLOB_SRC_JTS];
+
   const useTypeScript = hasTypeScript();
 
   return useTypeScript
@@ -44,6 +41,7 @@ export async function typescript(): Promise<FlatConfigItem[]> {
               ...globals.browser,
               ...globals.es2026,
               ...globals.node,
+              ...globals.serviceworker,
               ...globals['shared-node-browser'],
               document: 'readonly',
               navigator: 'readonly',

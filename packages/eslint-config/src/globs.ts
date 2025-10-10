@@ -74,6 +74,21 @@ export const GLOB_BLOCKS_IN_MD: string = `${GLOB_MD}/**` as const;
 export const GLOB_BLOCKS_IN_MDX: string = `${GLOB_MDX}/**` as const;
 export const GLOB_BLOCKS_IN_MD_MDX: string = `${GLOB_MD_MDX}/**` as const;
 
+export const GLOB_HTML_ALL: string[] = [
+  GLOB_HTML,
+  '**/*.erb',
+  '**/*.handlebars',
+  '**/*.hbs',
+  '**/*.mustache',
+  '**/*.nunjucks',
+  '**/*.php',
+  '**/*.tag',
+  '**/*.twig',
+  '**/*.we',
+];
+
+export const GLOB_XML_ALL: string[] = [GLOB_XML, '**/*.xhtm', '**/*.xhtml'];
+
 export const GLOB_SRC: string[] = [
   ...GLOB_ASTRO_ALL,
   GLOB_MDX,
@@ -104,8 +119,7 @@ export const GLOB_SRC_JSX: string[] = [
   GLOB_ASTRO,
   GLOB_ASTRO_JTS,
   GLOB_HTML,
-  GLOB_MD_MDX,
-  GLOB_QUARTO,
+  GLOB_MDX,
   GLOB_SRC_JTS,
   GLOB_SVELTE_ALL,
   GLOB_SVG,

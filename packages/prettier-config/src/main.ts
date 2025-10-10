@@ -1,12 +1,28 @@
-import type { PluginConfig as SortImportsOptions } from '@ianvs/prettier-plugin-sort-imports';
-import type { Config as PrettierConfig } from 'prettier';
-import type { Options as JSDocOptions } from 'prettier-plugin-jsdoc';
-import type { MultilineArrayOptions } from 'prettier-plugin-multiline-arrays';
-import type { PluginOptions as TailwindCSSOptions } from 'prettier-plugin-tailwindcss';
+/**
+ * We can use one of the following methods to avoid problems like `[error]
+ * Cannot find package '@prettier/plugin-xml'` imported from
+ * <.../project/noop.js>`:
+ *
+ * ```typescript
+ * import { createRequire } from 'node:module'; // 1-2
+ * import type { Config } from 'prettier';
+ *
+ * const require = createRequire(import.meta.dirname); // 1-2
+ * const config: Config = {
+ *   plugins: [
+ *     require.resolve('@prettier/plugin-xml'), // 1, this method works with VSCode Prettier (CJS)
+ *     require('@prettier/plugin-xml'), // 2
+ *     import.meta.resolve('@prettier/plugin-xml'), // 3
+ *     await import('@prettier/plugin-xml'), // 4
+ *   ],
+ * };
+ * ```
+ */
 
 import { createRequire } from 'node:module';
 
 import * as mdxCustom from './parsers/mdx-custom.ts';
+import type { PrettierConfig, SortImportsOptions } from './types.ts';
 
 const sortImports = false;
 const sortTypesFirst = false;
@@ -204,11 +220,7 @@ const overrides = [
       plugins: [require.resolve('prettier-plugin-nginx')],
     },
   },
-] as const satisfies PrettierConfig['overrides'] &
-  {
-    options: NonNullable<PrettierConfig['overrides']>[number]['options'] &
-      Partial<JSDocOptions & MultilineArrayOptions & TailwindCSSOptions>;
-  }[];
+] as const satisfies PrettierConfig['overrides'];
 
 const plugins = [
   require.resolve('@prettier/plugin-xml'),
@@ -239,26 +251,6 @@ export const prettierConfig: PrettierConfig = {
   objectWrap: 'preserve',
   // @ts-expect-error: types
   overrides: overrides,
-  /**
-   * We can use one of the following methods to avoid problems like `[error]
-   * Cannot find package '@prettier/plugin-xml'` imported from
-   * <.../project/noop.js>`:
-   *
-   * ```typescript
-   * import { createRequire } from 'node:module'; // 1-2
-   * import type { Config } from 'prettier';
-   *
-   * const require = createRequire(import.meta.dirname); // 1-2
-   * const config: Config = {
-   *   plugins: [
-   *     require.resolve('@prettier/plugin-xml'), // 1, this method works with VSCode Prettier (CJS)
-   *     require('@prettier/plugin-xml'), // 2
-   *     import.meta.resolve('@prettier/plugin-xml'), // 3
-   *     await import('@prettier/plugin-xml'), // 4
-   *   ],
-   * };
-   * ```
-   */
   plugins: plugins,
   printWidth: 100,
   proseWrap: 'preserve',

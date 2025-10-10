@@ -5,9 +5,9 @@ import path from 'node:path';
 import process from 'node:process';
 import { isPackageExists } from 'local-pkg';
 
-const cwd = process.cwd();
+const cwd = path.normalize(process.cwd());
 
-const pkgJsonFilePath = path.resolve(cwd, './package.json');
+const pkgJsonFilePath = path.normalize(path.resolve(cwd, './package.json'));
 const pkgJsonFileContent = fs.readFileSync(pkgJsonFilePath, { encoding: 'utf8' });
 const pkgJson = JSON.parse(pkgJsonFileContent) as ProjectManifest & {
   prettier?: Record<string, any>;
@@ -15,7 +15,7 @@ const pkgJson = JSON.parse(pkgJsonFileContent) as ProjectManifest & {
 
 function pathExists(p: string) {
   try {
-    fs.accessSync(path.resolve(cwd, p));
+    fs.accessSync(path.normalize(path.resolve(cwd, p)));
     return true;
   } catch {
     return false;
@@ -27,7 +27,7 @@ export const hasAstro = (): boolean =>
 
 export const hasNext = (): boolean => isPackageExists('next');
 
-export const hasPnpm = (): boolean =>
+export const hasPNPM = (): boolean =>
   isPackageExists('pnpm') ||
   pathExists('.pnpmfile.cjs') ||
   pathExists('pnpm-lock.yaml') ||
@@ -76,14 +76,14 @@ export const hasRemix = (): boolean =>
 export const hasSvelte = (): boolean =>
   isPackageExists('svelte') || isPackageExists('@sveltejs/kit');
 
-export const hasTailwindcss = (): boolean =>
+export const hasTailwindCSS = (): boolean =>
   isPackageExists('tailwindcss') ||
   isPackageExists('@tailwindcss/postcss') ||
   isPackageExists('@tailwindcss/vite');
 
 export const hasTypeScript = (): boolean => isPackageExists('typescript');
 
-export const hasUnoCss = (): boolean =>
+export const hasUnoCSS = (): boolean =>
   isPackageExists('unocss') ||
   isPackageExists('@unocss/astro') ||
   isPackageExists('@unocss/nuxt') ||

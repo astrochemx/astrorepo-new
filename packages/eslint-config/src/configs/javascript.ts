@@ -18,6 +18,7 @@ export async function javascript(): Promise<FlatConfigItem[]> {
           ...globals.browser,
           ...globals.es2026,
           ...globals.node,
+          ...globals.serviceworker,
           ...globals['shared-node-browser'],
           document: 'readonly',
           navigator: 'readonly',
