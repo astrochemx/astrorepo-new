@@ -43,7 +43,7 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "@cspell/dict-en-gb": "5.0.14",
+    "@cspell/dict-en-gb": "5.0.15",
     "@cspell/dict-medicalterms": "4.1.7",
     "@cspell/dict-scientific-terms-gb": "1.0.6",
     "@cspell/dict-scientific-terms-us": "3.0.8",
@@ -56,7 +56,7 @@
     "cspell": "9.2.1",
     "publint": "0.3.14",
     "rolldown-plugin-require-cjs": "0.3.1",
-    "tsdown": "0.15.6",
+    "tsdown": "0.15.8",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
     "unplugin-unused": "0.5.4"

@@ -19,19 +19,19 @@ onlyBuiltDependencies:
   - sharp
   - simple-git-hooks
   - unrs-resolver
-
-### Patching Dependencies
-patchedDependencies:
-  prettier-plugin-tailwindcss@0.6.14: patches/prettier-plugin-tailwindcss@0.6.14.patch
+  ### Patching Dependencies
+  # patchedDependencies:
+  # prettier-plugin-tailwindcss@0.7.0: patches/prettier-plugin-tailwindcss@0.7.0.patch
+  # prettier-plugin-tailwindcss@0.6.14: patches/prettier-plugin-tailwindcss@0.6.14.patch
   # rehype-pretty-code@0.14.1: apps/docs/patches/rehype-pretty-code@0.14.1.patch
   # rehype-pretty-code@0.14.1: apps/web/patches/rehype-pretty-code@0.14.1.patch
   # rehype-pretty-code@0.14.1: patches/rehype-pretty-code@0.14.1.patch
 
   ### Dependency Resolution
 overrides:
-  '@astrojs/starlight': 0.36.0
-  '@types/eslint': 'npm:eslint@9.37.0'
-  'puppeteer': 24.24.0
+  '@astrojs/starlight': 0.36.1
+  '@types/eslint': 'npm:eslint@9.38.0'
+  'puppeteer': 24.25.0
 minimumReleaseAge: 0
 
 ### ----------------------------------------------------------------------------

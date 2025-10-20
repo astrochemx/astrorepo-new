@@ -109,6 +109,9 @@
   "[fish]": {
     "editor.defaultFormatter": "bmalehorn.vscode-fish"
   },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
   "[glimmer-js]": {
     "editor.codeActionsOnSave": [
       // "source.formatDocument",

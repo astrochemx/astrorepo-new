@@ -16,6 +16,16 @@ export async function combine(
 }
 
 /** Extract rules from a ESLint Flat Configs. */
+export async function configArraysToObject(
+  ...configs: Awaitable<FlatConfigItem | FlatConfigItem[]>[]
+): Promise<FlatConfigItem['rules']> {
+  const promises = configs.map((c) => Promise.resolve(c));
+  const resolved = await Promise.all(promises);
+  const flat = resolved.flat();
+  return Object.assign({}, ...flat.map((cfg) => cfg.rules ?? {}));
+}
+
+/** Extract rules from a ESLint Flat Configs. */
 export function extractRules(
   ...configs: Arrayable<{ [key: number | string | symbol]: any; rules?: FlatConfigItem['rules'] }>[]
 ): FlatConfigItem['rules'] {

@@ -1,46 +1,62 @@
-min_version = "2025.10.6"
+#:schema https://raw.githubusercontent.com/jdx/mise/refs/heads/main/schema/mise.json
+
+experimental_monorepo_root = true
+min_version = { hard = "2025.0.0", soft = "2025.0.0" }
 
 [env]
-_.path = ["{{config_root}}/node_modules/.bin"]
+_.path = ["{{ config_root }}/node_modules/.bin"]
 BIN_PATH = "{{ config_root }}/node_modules/.bin"
 NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
 PROJECT_NAME = "{{ config_root | basename }}"
 
 [hooks]
-postinstall = "npx corepack enable pnpm"
+postinstall = "mise reshim --force"
 
 [settings]
+env_file = ".env"
 experimental = true
-idiomatic_version_file_enable_tools = ["node"]
+idiomatic_version_file_enable_tools = ["go", "node", "python"]
+lockfile = false
+pipx_uvx = true
+verbose = false
+windows_default_inline_shell_args = "powershell -NoProfile -Command"
 windows_shim_mode = "symlink"
 
 [tools]
-node = "{{ env['NODE_VERSION'] | default(value='latest') }}"
-# npm = "{{ env['NPM_VERSION'] | default(value='latest') }}"
-# pnpm = "{{ env['PNPM_VERSION'] | default(value='latest') }}"
+gh = "{{ env['GH_VERSION'] | default(value='latest') }}"
+node = [
+  { version = "{{ env['NODE_VERSION'] | default(value='latest') }}", postinstall = "mise reshim --force && npm install -g pnpm@latest" }
+]
 
 [tasks.install]
 alias = "i"
-description = "Install Dependencies"
+description = "Install the Dependencies"
 outputs = ["node_modules/.pnpm/lock.yaml"]
 run = "pnpm install"
 sources = ["package.json", "pnpm-lock.yaml", "mise.toml"]
 
 [tasks.dev]
-alias = "d"
+alias = "start"
 depends = ["install"]
 description = "Develop the Project"
 run = "pnpm run dev"
 
 [tasks.build]
-alias = "b"
+alias = "compile"
 depends = ["install"]
 description = "Build the Project"
 run = "pnpm run build"
 
 [tasks.info]
-description = "Print Information"
+description = "Print the Information"
 run = '''
+#!/usr/bin/env bash
 echo "PROJECT:  $PROJECT_NAME"
 echo "NODE_ENV: $NODE_ENV"
+echo "BIN_PATH: $BIN_PATH"
+'''
+run_windows = '''
+Write-Host "PROJECT:  $Env:PROJECT_NAME"
+Write-Host "NODE_ENV: $Env:NODE_ENV"
+Write-Host "BIN_PATH: $Env:BIN_PATH"
 '''

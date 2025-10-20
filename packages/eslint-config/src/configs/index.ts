@@ -27,7 +27,7 @@ export * from './react';
 export * from './regexp';
 export * from './security';
 export * from './sonar';
-export * from './tailwind';
+export * from './tailwindcss';
 export * from './toml';
 export * from './typescript';
 export * from './unicorn';

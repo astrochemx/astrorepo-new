@@ -444,5 +444,7 @@
     "plaintext": "html"
   },
   "tailwindCSS.validate": true,
+  "typescript.experimental.expandableHover": true,
+  "typescript.experimental.useTsgo": false,
   "typescript.tsdk": "./node_modules/typescript/lib"
 }

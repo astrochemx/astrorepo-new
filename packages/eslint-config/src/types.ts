@@ -3,6 +3,7 @@
 import type { Linter } from 'eslint';
 
 import type { RuleOptions } from '../gen/typegen';
+import type { TailwindOptions } from './configs';
 
 export type { ConfigNames } from '../gen/typegen';
 
@@ -79,7 +80,7 @@ export interface OptionsFactory {
   regexp?: boolean;
   security?: boolean;
   sonar?: boolean;
-  tailwind?: boolean;
+  tailwind?: TailwindOptions | false;
   toml?: boolean;
   typescript?: boolean;
   unicorn?: boolean;

@@ -1,5 +1,3 @@
-import { defineConfig } from 'eslint/config';
-
 import type { FlatConfigItem } from '../types';
 
 import { hasTypeScript } from '../env';
@@ -19,34 +17,34 @@ export async function react(): Promise<FlatConfigItem[]> {
   const useTypeScript = hasTypeScript();
 
   const pluginReactConfig = useTypeScript
-    ? pluginReact.configs['recommended-typescript']
-    : pluginReact.configs.recommended;
-  const pluginReactPlugins = pluginReact.configs.all.plugins;
+    ? (pluginReact.configs['recommended-typescript'] as FlatConfigItem)
+    : (pluginReact.configs.recommended as FlatConfigItem);
+
+  const pluginReactPlugins = (pluginReact.configs.all as FlatConfigItem).plugins ?? {};
+
+  const pluginReactSettings = {
+    importSource: 'react',
+    polymorphicPropName: 'as',
+    version: 'detect',
+  };
 
   return [
-    ...defineConfig({
-      name: 'react-hooks/plugin-&-config',
-      files: files,
-      extends: ['react-hooks/recommended'],
-      plugins: {
-        'react-hooks': pluginReactHooks,
-      },
-    }),
     {
       name: 'react/plugin',
       files: files,
       plugins: {
         ...pluginReactConfig.plugins,
         '@eslint-react': pluginReactPlugins['@eslint-react'],
-        '@eslint-react/debug': pluginReactPlugins['@eslint-react/debug'],
         '@eslint-react/dom': pluginReactPlugins['@eslint-react/dom'],
         '@eslint-react/hooks-extra': pluginReactPlugins['@eslint-react/hooks-extra'],
         '@eslint-react/naming-convention': pluginReactPlugins['@eslint-react/naming-convention'],
         '@eslint-react/web-api': pluginReactPlugins['@eslint-react/web-api'],
       },
       settings: {
+        ...pluginReact.configs.all.settings,
         ...pluginReactConfig.settings,
-        react: { importSource: 'react', polymorphicPropName: 'as', version: 'detect' },
+        'react': pluginReactSettings,
+        'react-x': pluginReactSettings,
       },
     },
     {
@@ -80,6 +78,20 @@ export async function react(): Promise<FlatConfigItem[]> {
     {
       ...pluginReactCompiler.configs.recommended,
       name: 'react-compiler/config',
+      files: files,
+      plugins: {},
+    },
+    {
+      name: 'react-hooks/plugin',
+      files: files,
+      plugins: {
+        ...pluginReactHooks.configs.flat['recommended-latest']?.plugins,
+        'react-hooks': pluginReactHooks,
+      },
+    },
+    {
+      ...pluginReactHooks.configs.flat['recommended-latest'],
+      name: 'react-hooks/config',
       files: files,
       plugins: {},
     },

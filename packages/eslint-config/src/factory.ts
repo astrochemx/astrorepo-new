@@ -92,7 +92,7 @@ export async function defineConfig(
     regexp: useRegexp = true,
     security: useSecurity = true,
     sonar: useSonar = true,
-    tailwind: useTailwind = hasTailwindCSS(),
+    tailwind: useTailwind = false,
     toml: useTOML = true,
     typescript: useTypeScript = hasTypeScript(),
     unicorn: useUnicorn = true,
@@ -218,7 +218,7 @@ export async function defineConfig(
     configs.push(sonar());
   }
 
-  if (useTailwind) {
+  if (hasTailwindCSS() && useTailwind) {
     configs.push(tailwind());
   }
 

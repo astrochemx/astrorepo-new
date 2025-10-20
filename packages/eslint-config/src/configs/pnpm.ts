@@ -54,8 +54,8 @@ export async function pnpm(): Promise<FlatConfigItem[]> {
       ...(pluginPNPM.configs?.['json'] ?? {
         rules: {
           'pnpm/json-enforce-catalog': 'warn',
-          'pnpm/json-valid-catalog': 'warn',
           'pnpm/json-prefer-workspace-settings': 'warn',
+          'pnpm/json-valid-catalog': 'warn',
         },
       }),
       name: 'pnpm/config/json',
@@ -64,8 +64,8 @@ export async function pnpm(): Promise<FlatConfigItem[]> {
     {
       ...(pluginPNPM.configs?.['yaml'] ?? {
         rules: {
-          'pnpm/yaml-no-unused-catalog-item': 'warn',
           'pnpm/yaml-no-duplicate-catalog-item': 'warn',
+          'pnpm/yaml-no-unused-catalog-item': 'warn',
         },
       }),
       name: 'pnpm/config/yaml',
