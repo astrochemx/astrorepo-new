@@ -1,15 +1,295 @@
-### Workspaces
 packages:
-  - apps/*
   - packages/*
-  - playground/*
 
-### Build Settings
+allowUnusedPatches: false
+
+autoInstallPeers: true
+
+catalog:
+  '@arethetypeswrong/cli': 0.18.2
+  '@arethetypeswrong/core': 0.18.2
+  '@biomejs/biome': 2.2.6
+  '@carlosjeurissen/stylelint-csstree-validator': 3.2.1
+  '@changesets/changelog-github': 0.5.1
+  '@changesets/cli': 2.29.7
+  '@commitlint/cli': 20.1.0
+  '@commitlint/format': 19.0.0
+  '@commitlint/types': 20.0.0
+  '@cspell/dict-en-gb': 5.0.15
+  '@cspell/dict-medicalterms': 4.1.7
+  '@cspell/dict-scientific-terms-gb': 1.0.6
+  '@cspell/dict-scientific-terms-us': 3.0.8
+  '@cspell/dict-uk-ua': 4.0.6
+  '@cspell/eslint-plugin': 9.2.1
+  '@eslint-community/eslint-plugin-eslint-comments': 4.5.0
+  '@eslint-react/eslint-plugin': 2.2.2
+  '@eslint/compat': 1.4.0
+  '@eslint/config-inspector': 1.3.0
+  '@eslint/css': 0.13.0
+  '@eslint/css-tree': 3.6.6
+  '@eslint/eslintrc': 3.3.1
+  '@eslint/js': 9.38.0
+  '@eslint/json': 0.13.2
+  '@eslint/markdown': 7.4.1
+  '@graphql-eslint/eslint-plugin': 4.4.0
+  '@html-eslint/eslint-plugin': 0.47.0
+  '@html-eslint/parser': 0.47.0
+  '@html-eslint/template-parser': 0.47.0
+  '@ianvs/prettier-plugin-sort-imports': 4.7.0
+  '@intlify/eslint-plugin-vue-i18n': 4.1.0
+  '@next/eslint-plugin-next': 15.5.6
+  '@pnpm/config': 1004.4.1
+  '@pnpm/core-loggers': 1001.0.3
+  '@pnpm/fetcher-base': 1001.0.1
+  '@pnpm/hooks.types': 1001.0.11
+  '@pnpm/lockfile.types': 1002.0.1
+  '@pnpm/patching.types': 1000.1.0
+  '@pnpm/pnpmfile': 1002.1.2
+  '@pnpm/store-controller-types': 1004.0.2
+  '@pnpm/types': 1000.8.0
+  '@prettier/plugin-xml': 3.4.2
+  '@stylistic/eslint-plugin': 5.5.0
+  '@stylistic/stylelint-plugin': 4.0.0
+  '@types/eslint-plugin-jsx-a11y': 6.10.1
+  '@types/eslint-plugin-security': 3.0.0
+  '@types/node': 24.9.0
+  '@types/postcss-less': 4.0.6
+  '@types/ramda': 0.31.1
+  '@unocss/eslint-plugin': 66.5.4
+  '@vitest/browser': 3.2.4
+  '@vitest/eslint-plugin': 1.3.23
+  '@vitest/ui': 3.2.4
+  all-contributors-cli: 6.26.1
+  astro-eslint-parser: 1.2.2
+  cspell: 9.2.1
+  cspell-cli: 9.2.0
+  czg: 1.12.0
+  del-cli: 7.0.0
+  emoji-regex: 10.6.0
+  es-toolkit: 1.40.0
+  eslint: 9.38.0
+  eslint-config-biome: 2.1.3
+  eslint-config-flat-gitignore: 2.1.0
+  eslint-config-prettier: 10.1.8
+  eslint-flat-config-utils: 2.1.4
+  eslint-import-resolver-typescript: 4.4.4
+  eslint-mdx: 3.6.2
+  eslint-merge-processors: 2.0.0
+  eslint-plugin-antfu: 3.1.1
+  eslint-plugin-astro: 1.3.1
+  eslint-plugin-barrel-files: 3.0.1
+  eslint-plugin-better-tailwindcss: 3.7.10
+  eslint-plugin-command: 3.3.1
+  eslint-plugin-compat: 6.0.2
+  eslint-plugin-css: 0.11.1
+  eslint-plugin-de-morgan: 2.0.0
+  eslint-plugin-format: 1.0.2
+  eslint-plugin-functional: 9.0.2
+  eslint-plugin-html: 8.1.3
+  eslint-plugin-import-lite: 0.3.0
+  eslint-plugin-import-x: 4.16.1
+  eslint-plugin-jsdoc: 61.1.5
+  eslint-plugin-json-schema-validator: 5.4.1
+  eslint-plugin-jsonc: 2.21.0
+  eslint-plugin-jsx-a11y: 6.10.2
+  eslint-plugin-markdown-links: 0.6.1
+  eslint-plugin-markdown-preferences: 0.36.2
+  eslint-plugin-math: 0.13.0
+  eslint-plugin-mdx: 3.6.2
+  eslint-plugin-module-interop: 0.3.1
+  eslint-plugin-n: 17.23.1
+  eslint-plugin-no-only-tests: 3.3.0
+  eslint-plugin-node-dependencies: 1.2.0
+  eslint-plugin-only-warn: 1.1.0
+  eslint-plugin-oxlint: 1.23.0
+  eslint-plugin-package-json: 0.57.0
+  eslint-plugin-perfectionist: 4.15.1
+  eslint-plugin-pnpm: 1.3.0
+  eslint-plugin-prettier: 5.5.4
+  eslint-plugin-promise: 7.2.1
+  eslint-plugin-react: 7.37.5
+  eslint-plugin-react-compiler: 19.1.0-rc.2
+  eslint-plugin-react-hooks: 7.0.0
+  eslint-plugin-react-perf: 3.3.3
+  eslint-plugin-react-refresh: 0.4.24
+  eslint-plugin-regexp: 2.10.0
+  eslint-plugin-security: 3.0.1
+  eslint-plugin-simple-import-sort: 12.1.1
+  eslint-plugin-solid: 0.14.5
+  eslint-plugin-sonarjs: 3.0.5
+  eslint-plugin-svelte: 3.12.5
+  eslint-plugin-testing-library: 7.13.3
+  eslint-plugin-toml: 0.12.0
+  eslint-plugin-turbo: 2.5.8
+  eslint-plugin-unicorn: 61.0.2
+  eslint-plugin-unused-imports: 4.3.0
+  eslint-plugin-vue: 10.5.1
+  eslint-plugin-vue-composable: 1.0.0
+  eslint-plugin-vue-scoped-css: 2.12.0
+  eslint-plugin-vuejs-accessibility: 2.4.1
+  eslint-plugin-yml: 1.19.0
+  eslint-processor-vue-blocks: 2.0.0
+  eslint-typegen: 2.3.0
+  find-up: 8.0.0
+  gitmojis: 3.15.0
+  globals: 16.4.0
+  husky: 9.1.7
+  jiti: 2.6.1
+  jsonc-eslint-parser: 2.4.1
+  knip: 5.66.1
+  linguist-languages: 9.0.0
+  lint-staged: 16.2.4
+  local-pkg: 1.1.2
+  markdownlint: 0.39.0
+  markdownlint-cli: 0.45.0
+  markdownlint-cli2: 0.18.1
+  node-modules-inspector: 1.1.3
+  npm-check-updates: 19.1.1
+  oxlint: 1.23.0
+  oxlint-tsgolint: 0.2.0
+  postcss-html: 1.8.0
+  postcss-less: 6.0.0
+  postcss-markdown: 1.3.0
+  postcss-scss: 4.0.9
+  postcss-styl: 0.12.3
+  postcss-styled-syntax: 0.7.1
+  prettier: 3.6.2
+  prettier-plugin-astro: 0.14.1
+  prettier-plugin-ini: 1.3.0
+  prettier-plugin-jsdoc: 1.3.3
+  prettier-plugin-multiline-arrays: 4.0.3
+  prettier-plugin-nginx: 1.0.3
+  prettier-plugin-packagejson: 2.5.19
+  prettier-plugin-sh: 0.18.0
+  prettier-plugin-slidev: 1.0.5
+  prettier-plugin-sql: 0.19.2
+  prettier-plugin-svelte: 3.4.0
+  prettier-plugin-tailwindcss: 0.7.1
+  prettier-plugin-toml: 2.0.6
+  publint: 0.3.15
+  radash: 12.1.1
+  radashi: 12.7.0
+  rambda: 10.3.2
+  rambdax: 11.3.1
+  ramda: 0.32.0
+  remark: 15.0.1
+  remark-frontmatter: 5.0.0
+  remark-gfm: 4.0.1
+  remark-mdx: 3.1.1
+  remeda: 2.32.0
+  rolldown-plugin-require-cjs: 0.3.1
+  sort-package-json: 3.4.0
+  stylelint: 16.25.0
+  stylelint-config-recess-order: 7.4.0
+  stylelint-config-recommended-vue: 1.6.1
+  stylelint-config-sass-guidelines: 12.1.0
+  stylelint-config-standard: 39.0.1
+  stylelint-config-standard-scss: 16.0.0
+  stylelint-declaration-block-no-ignored-properties: 2.8.0
+  stylelint-high-performance-animation: 1.11.0
+  stylelint-less: 3.0.1
+  stylelint-no-unsupported-browser-features: 8.0.5
+  stylelint-order: 7.0.0
+  stylelint-prettier: 5.0.3
+  stylelint-scss: 6.12.1
+  svelte-eslint-parser: 1.4.0
+  tailwind-csstree: 0.1.4
+  taze: 19.8.1
+  toml-eslint-parser: 0.10.0
+  ts-essentials: 10.1.1
+  tsdown: 0.15.9
+  tslib: 2.8.1
+  tsx: 4.20.6
+  turbo: 2.5.8
+  type-fest: 5.1.0
+  typescript: 5.9.3
+  typescript-eslint: 8.46.1
+  unist-util-visit: 5.0.0
+  unplugin-unused: 0.5.4
+  utility-types: 3.11.0
+  vitest: 3.2.4
+  vue-eslint-parser: 10.2.0
+  yaml: 2.8.1
+  yaml-eslint-parser: 1.3.0
+
+catalogMode: prefer
+
+childConcurrency: 5
+
+cleanupUnusedCatalogs: false
+
+color: auto
+
+dedupeDirectDeps: false
+
+dedupeInjectedDeps: true
+
+dedupePeerDependents: true
+
+deployAllFiles: false
+
+disallowWorkspaceCycles: false
+
+dlxCacheMaxAge: 1440
+
+enableGlobalVirtualStore: false
+
+enableModulesDir: true
+
+enablePrePostScripts: false
+
+engineStrict: false
+
+extendNodePath: true
+
+gitBranchLockfile: false
+
+hoist: true
+
+hoistPattern:
+  - '*'
+
+hoistWorkspacePackages: true
+
+ignoreCompatibilityDb: false
+
+ignoreDepScripts: false
+
+ignorePatchFailures: false
+
+ignorePnpmfile: false
+
+ignoreScripts: false
+
+ignoreWorkspaceCycles: false
+
+ignoreWorkspaceRootCheck: true
+
 ignoredBuiltDependencies:
   - core-js
   - core-js-pure
 
-### Build Settings
+includeWorkspaceRoot: false
+
+injectWorkspacePackages: false
+
+linkWorkspacePackages: false
+
+lockfile: true
+
+loglevel: info
+
+managePackageManagerVersions: true
+
+minimumReleaseAge: 0
+
+modulesCacheMaxAge: 10080
+
+nodeLinker: isolated
+
+nodeOptions: ${NODE_OPTIONS:- } --experimental-strip-types
+  --experimental-transform-types --experimental-vm-modules
+
 onlyBuiltDependencies:
   - '@swc/core'
   - '@tailwindcss/oxide'
@@ -19,114 +299,73 @@ onlyBuiltDependencies:
   - sharp
   - simple-git-hooks
   - unrs-resolver
-  ### Patching Dependencies
-  # patchedDependencies:
-  # prettier-plugin-tailwindcss@0.7.0: patches/prettier-plugin-tailwindcss@0.7.0.patch
-  # prettier-plugin-tailwindcss@0.6.14: patches/prettier-plugin-tailwindcss@0.6.14.patch
-  # rehype-pretty-code@0.14.1: apps/docs/patches/rehype-pretty-code@0.14.1.patch
-  # rehype-pretty-code@0.14.1: apps/web/patches/rehype-pretty-code@0.14.1.patch
-  # rehype-pretty-code@0.14.1: patches/rehype-pretty-code@0.14.1.patch
 
-  ### Dependency Resolution
+optimisticRepeatInstall: false
+
 overrides:
-  '@astrojs/starlight': 0.36.1
-  '@types/eslint': 'npm:eslint@9.38.0'
-  'puppeteer': 24.25.0
-minimumReleaseAge: 0
+  '@astrojs/starlight': latest
+  '@types/eslint': npm:eslint@latest
+  puppeteer: latest
 
-### ----------------------------------------------------------------------------
-
-### Dependency Hoisting Settings
-hoist: true
-hoistPattern: [ '*' ]
-hoistWorkspacePackages: true
-publicHoistPattern: []
-shamefullyHoist: false
-
-### Node-Modules Settings
-dlxCacheMaxAge: 1440
-enableGlobalVirtualStore: false
-enableModulesDir: true
-modulesCacheMaxAge: 10080
-nodeLinker: isolated
 packageImportMethod: auto
-symlink: true
-virtualStoreDirMaxLength: 60
 
-### Store Settings
-strictStorePkgContentCheck: true
-verifyStoreIntegrity: true
+packageManagerStrict: true
 
-### Lockfile Settings
-gitBranchLockfile: false
-lockfile: true
-preferFrozenLockfile: true
+packageManagerStrictVersion: false
 
-### Peer Dependency Settings
-autoInstallPeers: true
-dedupePeerDependents: true
 peerDependencyRules:
   allowedVersions:
     eslint: '9'
     react: '19'
   ignoreMissing:
     - '@types/eslint'
-resolvePeersFromWorkspaceRoot: true
-strictPeerDependencies: false
 
-### CLI Settings
-color: auto
-engineStrict: false
-loglevel: info
-managePackageManagerVersions: true
-packageManagerStrict: true
-packageManagerStrictVersion: false
-recursiveInstall: true
-useBetaCli: false
-
-### Build Settings
-childConcurrency: 5
-ignoreDepScripts: false
-ignoreScripts: false
-nodeOptions: '${NODE_OPTIONS:- } --experimental-strip-types
-  --experimental-transform-types --experimental-vm-modules'
-sideEffectsCache: false
-sideEffectsCacheReadonly: false
-strictDepBuilds: false
-verifyDepsBeforeRun: warn
-
-### Workspace Settings
-dedupeInjectedDeps: true
-disallowWorkspaceCycles: false
-ignoreWorkspaceCycles: false
-ignoreWorkspaceRootCheck: true
-includeWorkspaceRoot: false
-injectWorkspacePackages: false
-linkWorkspacePackages: false
-preferWorkspacePackages: false
-saveWorkspaceProtocol: rolling
-sharedWorkspaceLockfile: true
-
-### Patching Dependencies
-allowUnusedPatches: false
-ignorePatchFailures: false
-
-### Pnpmfile
-ignorePnpmfile: false
 pnpmfile: .pnpmfile.cjs
 
-### Other Settings
-catalogMode: manual
-cleanupUnusedCatalogs: false
-dedupeDirectDeps: false
-deployAllFiles: false
-enablePrePostScripts: false
-extendNodePath: true
-ignoreCompatibilityDb: false
-optimisticRepeatInstall: false
+preferFrozenLockfile: true
+
+preferWorkspacePackages: false
+
+publicHoistPattern: []
+
+recursiveInstall: true
+
 registrySupportsTimeField: false
+
 resolutionMode: highest
-savePrefix: '^'
+
+resolvePeersFromWorkspaceRoot: true
+
+savePrefix: ^
+
+saveWorkspaceProtocol: rolling
+
+shamefullyHoist: false
+
+sharedWorkspaceLockfile: true
+
 shellEmulator: true
+
+sideEffectsCache: false
+
+sideEffectsCacheReadonly: false
+
+strictDepBuilds: false
+
+strictPeerDependencies: false
+
+strictStorePkgContentCheck: true
+
+symlink: true
+
 updateNotifier: true
+
+useBetaCli: false
+
 useStderr: false
+
+verifyDepsBeforeRun: warn
+
+verifyStoreIntegrity: true
+
+virtualStoreDirMaxLength: 60

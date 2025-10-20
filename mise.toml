@@ -1,7 +1,10 @@
 #:schema https://raw.githubusercontent.com/jdx/mise/refs/heads/main/schema/mise.json
+# https://github.com/jdx/mise
+# https://mise.jdx.dev
+
+min_version = { hard = "2025.0.0", soft = "2025.0.0" }
 
 experimental_monorepo_root = true
-min_version = { hard = "2025.0.0", soft = "2025.0.0" }
 
 [env]
 _.path = ["{{ config_root }}/node_modules/.bin"]
@@ -10,23 +13,40 @@ NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
 PROJECT_NAME = "{{ config_root | basename }}"
 
 [hooks]
-postinstall = "mise reshim --force"
+preinstall = "echo 'MISE is about to install tools...'"
+postinstall = "echo 'MISE just installed tools!"
 
 [settings]
-env_file = ".env"
+always_keep_download = true
+always_keep_install = false
+env_file = ".env.dev"
 experimental = true
 idiomatic_version_file_enable_tools = ["go", "node", "python"]
 lockfile = false
 pipx_uvx = true
 verbose = false
-windows_default_inline_shell_args = "powershell -NoProfile -Command"
+windows_default_file_shell_args = "cmd /c"
+# windows_default_file_shell_args = "pwsh -NoProfile -ExecutionPolicy Bypass -File"
+windows_default_inline_shell_args = "cmd /c"
+# windows_default_inline_shell_args = "pwsh -NoProfile -ExecutionPolicy Bypass -Command"
+windows_executable_extensions = ["bat", "cmd", "com", "exe", "ps1", "vbs"]
 windows_shim_mode = "symlink"
 
 [tools]
+bun = "{{ env['BUN_VERSION'] | default(value='latest') }}"
+deno = "{{ env['DENO_VERSION'] | default(value='latest') }}"
+docker-compose = "{{ env['DOCKER_COMPOSE_VERSION'] | default(value='latest') }}"
+dprint = "{{ env['DPRINT_VERSION'] | default(value='latest') }}"
 gh = "{{ env['GH_VERSION'] | default(value='latest') }}"
+go = "{{ env['GO_VERSION'] | default(value='latest') }}"
 node = [
-  { version = "{{ env['NODE_VERSION'] | default(value='latest') }}", postinstall = "mise reshim --force && npm install -g pnpm@latest" }
+  { version = "{{ env['NODE_VERSION'] | default(value='latest') }}", postinstall = "mise exec -- npm install -g pnpm@latest" },
 ]
+python = "{{ env['PYTHON_VERSION'] | default(value='latest') }}"
+ruff = "{{ env['RUFF_VERSION'] | default(value='latest') }}"
+rust = "{{ env['RUST_VERSION'] | default(value='latest') }}"
+uv = "{{ env['UV_VERSION'] | default(value='latest') }}"
+yt-dlp = "{{ env['YT_DLP_VERSION'] | default(value='latest') }}"
 
 [tasks.install]
 alias = "i"

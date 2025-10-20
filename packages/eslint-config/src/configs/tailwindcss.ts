@@ -7,6 +7,24 @@ const pluginBetterTailwindCSS = await loadPlugin<typeof import('eslint-plugin-be
   'eslint-plugin-better-tailwindcss',
 );
 
+export interface CSSEntryOptions {
+  /**
+   * The path to the entry file of the css based Tailwind v4 config (eg:
+   * `src/global.css`).
+   */
+  entry: string;
+  /**
+   * An array of glob patterns indicating the files that the configuration
+   * object should apply to. If not specified, the configuration object applies
+   * to all files.
+   */
+  files: (string | string[])[];
+}
+
+export interface TailwindOptions {
+  entryPoints?: CSSEntryOptions[];
+}
+
 export async function tailwind(options: TailwindOptions = {}): Promise<FlatConfigItem[]> {
   const { entryPoints: cssEntryPoints = [] } = options;
 
@@ -38,27 +56,9 @@ export async function tailwind(options: TailwindOptions = {}): Promise<FlatConfi
       files: ep.files,
       settings: {
         'better-tailwindcss': {
-          entryPoint: ep.entryPoint,
+          entryPoint: ep.entry,
         },
       },
     })),
   ] satisfies FlatConfigItem[];
-}
-
-export interface TailwindOptions {
-  entryPoints?: CSSEntrypointsOptions[];
-}
-
-export interface CSSEntrypointsOptions {
-  /**
-   * An array of glob patterns indicating the files that the configuration
-   * object should apply to. If not specified, the configuration object applies
-   * to all files.
-   */
-  files: Array<string | string[]>;
-  /**
-   * The path to the entry file of the css based Tailwind v4 config (eg:
-   * `src/global.css`).
-   */
-  entryPoint: string;
 }

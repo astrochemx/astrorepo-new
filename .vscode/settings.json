@@ -393,7 +393,7 @@
     "**/*.zsh"
   ],
   "prettier.enable": true,
-  "python.defaultInterpreterPath": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\python\\3.13.7\\python.exe",
+  "python.defaultInterpreterPath": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\python\\3.14.0\\python.exe",
   "ruff.interpreter": [
     "c:\\users\\vs\\appdata\\local\\mise\\shims\\python.exe"
   ],

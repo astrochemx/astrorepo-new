@@ -82,7 +82,7 @@ export async function packageJSON(): Promise<FlatConfigItem[]> {
         'strict': 'off',
         ...prettierRules,
         ...pluginPackageJSON.configs.recommended.rules,
-        'package-json/order-properties': 'off',
+        'package-json/order-properties': 'warn',
       },
     },
   ] satisfies FlatConfigItem[];

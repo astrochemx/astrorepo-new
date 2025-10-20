@@ -1,5 +1,5 @@
 import type { FlatConfigItem } from './packages/eslint-config/src';
 
-import { defineConfig } from './packages/eslint-config/src';
+import eslintConfig from './packages/eslint-config/eslint.config';
 
-export default [...(await defineConfig())] as const satisfies FlatConfigItem[];
+export default (await eslintConfig) satisfies FlatConfigItem[];

@@ -1,6 +1,7 @@
 import type { Linter } from 'eslint';
 import type { Awaitable } from 'eslint-flat-config-utils';
 
+import { rambdax } from '@astrochemx/common';
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginJsEslint from '@eslint/js';
 
@@ -13,16 +14,6 @@ export async function combine(
   const promises = configs.map((c) => Promise.resolve(c));
   const resolved = await Promise.all(promises);
   return resolved.flat();
-}
-
-/** Extract rules from a ESLint Flat Configs. */
-export async function configArraysToObject(
-  ...configs: Awaitable<FlatConfigItem | FlatConfigItem[]>[]
-): Promise<FlatConfigItem['rules']> {
-  const promises = configs.map((c) => Promise.resolve(c));
-  const resolved = await Promise.all(promises);
-  const flat = resolved.flat();
-  return Object.assign({}, ...flat.map((cfg) => cfg.rules ?? {}));
 }
 
 /** Extract rules from a ESLint Flat Configs. */
@@ -56,6 +47,36 @@ export function flatCompat(
     recommendedConfig,
     ...(resolvePluginsRelativeTo ? { resolvePluginsRelativeTo } : {}),
   });
+}
+
+export function getConfigObject(config: FlatConfigItem | FlatConfigItem[]): FlatConfigItem {
+  if (Array.isArray(config)) {
+    let merged: FlatConfigItem = {};
+    console.log(merged);
+    for (const cfg of config) {
+      console.log(cfg);
+      merged = rambdax.mergeDeepRight(merged, cfg);
+      console.log(merged);
+    }
+    return merged;
+  } else {
+    return config;
+  }
+}
+
+export async function getConfigObjectAsync(
+  config: Awaitable<FlatConfigItem | FlatConfigItem[]>,
+): Promise<FlatConfigItem> {
+  const resolved = await config;
+  if (Array.isArray(resolved)) {
+    let merged: FlatConfigItem = {};
+    for (const cfg of resolved) {
+      merged = rambdax.mergeDeepRight(merged, cfg);
+    }
+    return merged;
+  } else {
+    return resolved;
+  }
 }
 
 /**

@@ -26,6 +26,7 @@ export const baseConfig = {
   install: false,
   interactive: false,
   loglevel: 'debug',
+  maturityPeriod: 0,
   mode: 'latest',
   nodecompat: true,
   packageMode: {},
@@ -35,7 +36,7 @@ export const baseConfig = {
   sort: 'diff-asc',
   timediff: true,
   update: false,
-  write: true,
+  write: false,
 } as const satisfies TazeCheckOptions;
 
 export default baseConfig;

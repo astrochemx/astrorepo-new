@@ -1,20 +1,12 @@
 // @ts-check
-/** @import {NCUConfig, NCUTargetFunction} from './packages/common/src/types/npm-check-updates' */
-
-/** @type {NCUTargetFunction} */
-const targetFunction = (packageName, _versionRange) => {
-  if (packageName === 'eslint-plugin-react-hooks') {
-    return '@rc';
-  }
-  return 'latest';
-};
+/** @import {NCUConfig} from './packages/common/src/types/npm-check-updates' */
 
 // @keep-sorted
 /** @type {NCUConfig} */
 const npmCheckUpdatesConfig = {
   cacheClear: true,
   concurrency: 24,
-  deep: true,
+  // deep: true,
   dep: ['dev', 'optional', 'packageManager', 'peer', 'prod'],
   format: ['group', 'ownerChanged', 'repo', 'time', 'installedVersion'],
   global: false,
@@ -22,8 +14,10 @@ const npmCheckUpdatesConfig = {
   packageManager: 'pnpm',
   peer: false,
   pre: 1,
-  target: targetFunction,
-  upgrade: true,
+  root: true,
+  target: 'latest',
+  upgrade: false,
+  workspaces: true,
 };
 
 /** @type {NCUConfig} } */

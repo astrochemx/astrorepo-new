@@ -42,23 +42,23 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "emoji-regex": "10.6.0",
-    "gitmojis": "3.15.0"
+    "emoji-regex": "catalog:",
+    "gitmojis": "catalog:"
   },
   "devDependencies": {
-    "@arethetypeswrong/core": "0.18.2",
+    "@arethetypeswrong/core": "catalog:",
     "@astrochemx/tsdown-config": "workspace:*",
     "@astrochemx/typescript-config": "workspace:*",
-    "@commitlint/types": "20.0.0",
-    "publint": "0.3.14",
-    "rolldown-plugin-require-cjs": "0.3.1",
-    "tsdown": "0.15.8",
-    "tslib": "2.8.1",
-    "typescript": "5.9.3",
-    "unplugin-unused": "0.5.4"
+    "@commitlint/types": "catalog:",
+    "publint": "catalog:",
+    "rolldown-plugin-require-cjs": "catalog:",
+    "tsdown": "catalog:",
+    "tslib": "catalog:",
+    "typescript": "catalog:",
+    "unplugin-unused": "catalog:"
   },
   "peerDependencies": {
-    "@commitlint/format": "20.0.0"
+    "@commitlint/format": "catalog:"
   },
   "peerDependenciesMeta": {
     "@commitlint/format": {
