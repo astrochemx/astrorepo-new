@@ -332,6 +332,10 @@
   "exportall.config.folderListener": [
     "/packages/eslint-config/src/configs"
   ],
+  "go.alternateTools": {
+    "go": "c:\\users\\vs\\appdata\\local\\mise\\shims\\go"
+  },
+  "go.goroot": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\go\\1.25.3",
   "markdown.validate.duplicateLinkDefinitions.enabled": "warning",
   "markdown.validate.enabled": true,
   "markdown.validate.fileLinks.enabled": "ignore",

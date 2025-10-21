@@ -903,6 +903,35 @@
     }
   },
   "commands.commands": {
+    "Convert Extension's Paths to IDs": {
+      "icon": "note",
+      "iconColor": "editorInfo.foreground",
+      "sequence": [
+        {
+          "command": "editor.actions.findWithArgs",
+          "args": {
+            "searchString": "^.*[/\\\\](.*)-\\d+\\.\\d+\\.\\d+.*$",
+            "replaceString": "    \"$1\",",
+            "isRegex": true,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+            "preserveCase": false,
+            "findInSelection": false
+          }
+        },
+        "editor.action.replaceAll",
+        "closeFindWidget",
+        "cursorTop",
+        "editor.action.selectAll",
+        "editor.action.transformToLowercase",
+        "editor.action.sortLinesAscending",
+        "editor.action.removeDuplicateLines",
+        "editor.action.indentationToSpaces",
+        "editor.action.trimTrailingWhitespace",
+        "editor.action.insertFinalNewLine",
+        "cursorTop"
+      ]
+    },
     "Format `extensions.json`": {
       "icon": "note",
       "iconColor": "editorInfo.foreground",
