@@ -1803,6 +1803,10 @@
   "gitmoji.showEmojiCode": true,
   "gitTreeCompare.diffMode": "full",
   "gitTreeCompare.showCheckboxes": false,
+  "go.goroot": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\go\\1.25.3",
+  "go.alternateTools": {
+    "go": "c:\\users\\vs\\appdata\\local\\mise\\shims\\go"
+  },
   "hediet.vscode-drawio.resizeImages": null,
   "hexeditor.columnWidth": 16,
   "hexeditor.defaultEndianness": "little",
@@ -2268,7 +2272,7 @@
   "stylelint.reportInvalidScopeDisables": true,
   "stylelint.reportNeedlessDisables": true,
   "stylelint.reportUnscopedDisables": true,
-  "stylelint.stylelintPath": "./node_modules/stylelint",
+  // "stylelint.stylelintPath": "./node_modules/stylelint",
   "stylelint.validate": [
     "astro",
     "css",

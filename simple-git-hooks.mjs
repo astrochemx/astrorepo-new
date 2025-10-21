@@ -3,7 +3,7 @@
 
 /** @type {SGHConfig} */
 export default /** @type {const} @satisfies {Config} */ {
-  'commit-msg': 'pnpx commitlint@latest --edit "$1"',
-  'pre-commit': 'pnpx lint-staged@latest',
+  'commit-msg': 'pnpm dlx commitlint@latest --edit "$1"',
+  'pre-commit': 'pnpm dlx lint-staged@latest',
   'preserveUnused': ['pre-commit', 'commit-msg'],
 };
