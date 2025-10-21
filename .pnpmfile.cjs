@@ -5,7 +5,6 @@ const { readFileSync } = require('node:fs');
 const path = require('node:path');
 const process = require('node:process');
 const { pathToFileURL } = require('node:url');
-const yaml = require('yaml');
 
 const dirName = __dirname;
 
@@ -59,6 +58,7 @@ function banDeps(pkg) {
 /** @type {() => PnpmSettings['overrides']} */
 function getOverrides() {
   try {
+    const yaml = require('yaml');
     const filePath = path.resolve(dirName, './pnpm-workspace.yaml');
     const fileContent = readFileSync(filePath, { encoding: 'utf8' });
     /** @type {PnpmSettings} */
@@ -163,8 +163,8 @@ function loadESM(cfg) {
 
   // Create NODE_OPTIONS with properly encoded data URL
   const importFlag = `--import=data:text/javascript,${encodeURIComponent(registrationCode)}`;
-  cfg.extraEnv['NODE_OPTIONS'] =
-    `${process.env['NODE_OPTIONS'] ? `${process.env['NODE_OPTIONS']} ` : ''}${importFlag}`;
+  const nodeOptions = process.env['NODE_OPTIONS'] ? `${process.env['NODE_OPTIONS']} ` : '';
+  cfg.extraEnv['NODE_OPTIONS'] = nodeOptions + importFlag;
   return cfg;
 }
 

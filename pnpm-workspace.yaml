@@ -13,7 +13,7 @@ catalog:
   '@changesets/changelog-github': 0.5.1
   '@changesets/cli': 2.29.7
   '@commitlint/cli': 20.1.0
-  '@commitlint/format': 19.0.0
+  '@commitlint/format': 20.0.0
   '@commitlint/types': 20.0.0
   '@cspell/dict-en-gb': 5.0.15
   '@cspell/dict-medicalterms': 4.1.7
@@ -52,7 +52,7 @@ catalog:
   '@stylistic/stylelint-plugin': 4.0.0
   '@types/eslint-plugin-jsx-a11y': 6.10.1
   '@types/eslint-plugin-security': 3.0.0
-  '@types/node': 24.9.0
+  '@types/node': 24.9.1
   '@types/postcss-less': 4.0.6
   '@types/ramda': 0.31.1
   '@unocss/eslint-plugin': 66.5.4
@@ -136,9 +136,9 @@ catalog:
   husky: 9.1.7
   jiti: 2.6.1
   jsonc-eslint-parser: 2.4.1
-  knip: 5.66.1
+  knip: 5.66.2
   linguist-languages: 9.0.0
-  lint-staged: 16.2.4
+  lint-staged: 16.2.5
   local-pkg: 1.1.2
   markdownlint: 0.39.0
   markdownlint-cli: 0.45.0
@@ -167,6 +167,7 @@ catalog:
   prettier-plugin-tailwindcss: 0.7.1
   prettier-plugin-toml: 2.0.6
   publint: 0.3.15
+  puppeteer: 24.25.0
   radash: 12.1.1
   radashi: 12.7.0
   rambda: 10.3.2
@@ -203,7 +204,7 @@ catalog:
   turbo: 2.5.8
   type-fest: 5.1.0
   typescript: 5.9.3
-  typescript-eslint: 8.46.1
+  typescript-eslint: 8.46.2
   unist-util-visit: 5.0.0
   unplugin-unused: 0.5.4
   utility-types: 3.11.0
@@ -266,8 +267,19 @@ ignoreWorkspaceCycles: false
 ignoreWorkspaceRootCheck: true
 
 ignoredBuiltDependencies:
+  - '@swc/core'
+  - '@tailwindcss/oxide'
   - core-js
   - core-js-pure
+  - esbuild
+  - oxc-resolver
+  - puppeteer
+  - puppeteer-core
+  - sharp
+  - simple-git-hooks
+  - unrs-resolver
+
+ignoredOptionalDependencies: []
 
 includeWorkspaceRoot: false
 
@@ -287,18 +299,9 @@ modulesCacheMaxAge: 10080
 
 nodeLinker: isolated
 
-nodeOptions: ${NODE_OPTIONS:- } --experimental-strip-types
-  --experimental-transform-types --experimental-vm-modules
+nodeOptions: ${NODE_OPTIONS:- } --experimental-strip-types --experimental-transform-types --experimental-vm-modules
 
-onlyBuiltDependencies:
-  - '@swc/core'
-  - '@tailwindcss/oxide'
-  - esbuild
-  - oxc-resolver
-  - puppeteer
-  - sharp
-  - simple-git-hooks
-  - unrs-resolver
+onlyBuiltDependencies: []
 
 optimisticRepeatInstall: false
 
@@ -313,10 +316,15 @@ packageManagerStrict: true
 
 packageManagerStrictVersion: false
 
+patchedDependencies: {}
+
 peerDependencyRules:
   allowedVersions:
+    '@types/react': '19'
+    '@types/react-dom': '19'
     eslint: '9'
     react: '19'
+    react-dom: '19'
   ignoreMissing:
     - '@types/eslint'
 

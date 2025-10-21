@@ -2,9 +2,18 @@
 
 ## `pnpm approve-builds`
 
-[`pnpm`](https://pnpm.io) has an essential feature called [`pnpm approve-builds`](https://pnpm.io/cli/approve-builds).
+[`pnpm`](https://pnpm.io) has an essential CLI command called [`pnpm approve-builds`](https://pnpm.io/cli/approve-builds).
 It is especially useful for a Windows platform, as it is the most targeted platform for malware and malicious actors.
 Ideally, we even should manually check dependencies with scripts before updating and executing them.
+
+## `pnpm-workspace.yaml`
+
+[`pnpm`](https://pnpm.io) also has some essential fields in [`pnpm-workspace.yaml`](https://pnpm.io/settings) file:
+
+- [`onlyBuiltDependencies`](https://pnpm.io/settings#onlybuiltdependencies)
+  - This configuration option allows users to specify a JSON file that lists the only packages permitted to run installation scripts during the pnpm install process. By using this, you can enhance security or ensure that only specific dependencies execute scripts during installation.
+- [`ignoredBuiltDependencies`](https://pnpm.io/settings#ignoredbuiltdependencies)
+  - A list of package names that should not be built during installation.
 
 ## Reasoning & References
 
