@@ -910,7 +910,7 @@
         {
           "command": "editor.actions.findWithArgs",
           "args": {
-            "searchString": "(?<=\"recommendations\": \\[\n)((.*\n)*)(?=\\s*\\])",
+            "searchString": "^(?<=\"recommendations\": \\[\n)((.*\n)*?)(?=\\s*\\],?$)",
             "replaceString": "",
             "isRegex": true,
             "isCaseSensitive": false,
@@ -921,10 +921,13 @@
         },
         "editor.action.selectAllMatches",
         "editor.action.transformToLowercase",
+        "editor.action.sortLinesAscending",
         "editor.action.removeDuplicateLines",
+        "closeFindWidget",
+        "editor.action.selectAll",
+        "editor.action.indentationToSpaces",
         "editor.action.trimTrailingWhitespace",
         "editor.action.insertFinalNewLine",
-        "closeFindWidget",
         "editor.action.formatDocument",
         "cursorTop",
         "workbench.action.files.save"
