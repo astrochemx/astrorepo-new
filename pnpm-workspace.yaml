@@ -22,7 +22,7 @@ catalog:
   '@cspell/dict-uk-ua': 4.0.6
   '@cspell/eslint-plugin': 9.2.1
   '@eslint-community/eslint-plugin-eslint-comments': 4.5.0
-  '@eslint-react/eslint-plugin': 2.2.2
+  '@eslint-react/eslint-plugin': 2.2.3
   '@eslint/compat': 1.4.0
   '@eslint/config-inspector': 1.3.0
   '@eslint/css': 0.13.0
@@ -38,15 +38,15 @@ catalog:
   '@ianvs/prettier-plugin-sort-imports': 4.7.0
   '@intlify/eslint-plugin-vue-i18n': 4.1.0
   '@next/eslint-plugin-next': 15.5.6
-  '@pnpm/config': 1004.4.1
-  '@pnpm/core-loggers': 1001.0.3
-  '@pnpm/fetcher-base': 1001.0.1
-  '@pnpm/hooks.types': 1001.0.11
-  '@pnpm/lockfile.types': 1002.0.1
+  '@pnpm/config': 1004.4.2
+  '@pnpm/core-loggers': 1001.0.4
+  '@pnpm/fetcher-base': 1001.0.2
+  '@pnpm/hooks.types': 1001.0.12
+  '@pnpm/lockfile.types': 1002.0.2
   '@pnpm/patching.types': 1000.1.0
-  '@pnpm/pnpmfile': 1002.1.2
-  '@pnpm/store-controller-types': 1004.0.2
-  '@pnpm/types': 1000.8.0
+  '@pnpm/pnpmfile': 1002.1.3
+  '@pnpm/store-controller-types': 1004.1.0
+  '@pnpm/types': 1000.9.0
   '@prettier/plugin-xml': 3.4.2
   '@stylistic/eslint-plugin': 5.5.0
   '@stylistic/stylelint-plugin': 4.0.0
@@ -167,7 +167,7 @@ catalog:
   prettier-plugin-tailwindcss: 0.7.1
   prettier-plugin-toml: 2.0.6
   publint: 0.3.15
-  puppeteer: 24.25.0
+  puppeteer: 24.26.0
   radash: 12.1.1
   radashi: 12.7.0
   rambda: 10.3.2
@@ -299,7 +299,8 @@ modulesCacheMaxAge: 10080
 
 nodeLinker: isolated
 
-nodeOptions: ${NODE_OPTIONS:- } --experimental-strip-types --experimental-transform-types --experimental-vm-modules
+nodeOptions: ${NODE_OPTIONS:- } --experimental-strip-types
+  --experimental-transform-types --experimental-vm-modules
 
 onlyBuiltDependencies: []
 

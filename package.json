@@ -238,7 +238,7 @@
     "vitest": "catalog:",
     "yaml": "catalog:"
   },
-  "packageManager": "pnpm@10.18.3",
+  "packageManager": "pnpm@10.19.0",
   "engines": {
     "node": "^22.21 || >= 24.10",
     "typescript": ">= 5.9",
