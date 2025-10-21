@@ -325,7 +325,7 @@
     "editor.unicodeHighlight.includeComments": true,
     "editor.unicodeHighlight.invisibleCharacters": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120
   },
   "[mdx]": {
@@ -357,7 +357,7 @@
     "editor.unicodeHighlight.includeComments": true,
     "editor.unicodeHighlight.invisibleCharacters": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120
   },
   "[mustache]": {
@@ -375,7 +375,7 @@
     "editor.unicodeHighlight.includeComments": true,
     "editor.unicodeHighlight.invisibleCharacters": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120,
     "workbench.editor.languageDetection": false
   },
@@ -434,7 +434,7 @@
     "editor.unicodeHighlight.invisibleCharacters": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordBasedSuggestions": "off",
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120
   },
   "[r]": {
@@ -483,7 +483,7 @@
     "editor.unicodeHighlight.invisibleCharacters": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordBasedSuggestions": "off",
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120
   },
   "[ruby]": {
