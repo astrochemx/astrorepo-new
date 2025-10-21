@@ -95,6 +95,7 @@
     "dbaeumer.vscode-eslint",
     "dbankier.vscode-quick-select",
     "debens.sort-js-object",
+    "denoland.vscode-deno",
     "detachhead.basedpyright",
     "devlife4me.tree-meh",
     "dineug.vuerd-vscode",
@@ -310,6 +311,7 @@
     "oliversturm.fix-json",
     "orta.vscode-jest",
     "orta.vscode-twoslash-queries",
+    "oven.bun-vscode",
     "oxc.oxc-vscode",
     "p42ai.refactor",
     "pascalreitermann93.vscode-yaml-sort",
@@ -469,8 +471,5 @@
     "zoma.vscode-auto-open-workspace",
     "zxh404.vscode-proto3"
   ],
-  "unwantedRecommendations": [
-    "eamodio.gitlens",
-    "ms-vscode.notepadplusplus-keybindings"
-  ]
+  "unwantedRecommendations": []
 }

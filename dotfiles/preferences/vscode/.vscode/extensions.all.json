@@ -168,6 +168,7 @@
     "dcmfx.dcmfx",
     "debens.sort-js-object",
     "dejmedus.tailwind-sorter",
+    "denoland.vscode-deno",
     "detachhead.basedpyright",
     "developer2006.svg-gallery",
     "devhl.diff-arrows",
@@ -522,6 +523,7 @@
     "oliversturm.fix-json",
     "orta.vscode-jest",
     "orta.vscode-twoslash-queries",
+    "oven.bun-vscode",
     "oxc.oxc-vscode",
     "p42ai.refactor",
     "panicbit.cargo",
@@ -782,8 +784,5 @@
     "zoma.vscode-auto-open-workspace",
     "zxh404.vscode-proto3"
   ],
-  "unwantedRecommendations": [
-    "eamodio.gitlens",
-    "ms-vscode.notepadplusplus-keybindings"
-  ]
+  "unwantedRecommendations": []
 }
