@@ -72,6 +72,8 @@ function getOverrides() {
       typeof error.message === 'string'
     ) {
       console.error(error.message);
+    } else {
+      console.error(error);
     }
     return {};
   }

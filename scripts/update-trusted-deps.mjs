@@ -38,6 +38,9 @@ try {
     typeof error.message === 'string'
   ) {
     console.error(`❌  ${error.message}`);
+  } else {
+    console.error(`❌  Error:`);
+    console.error(error);
   }
   process.exitCode = 1;
 }
