@@ -904,14 +904,27 @@
   },
   "commands.commands": {
     "Format `extensions.json`": {
+      "icon": "note",
+      "iconColor": "editorInfo.foreground",
       "sequence": [
-        "editor.action.selectAll",
+        {
+          "command": "editor.actions.findWithArgs",
+          "args": {
+            "searchString": "(?<=\"recommendations\": \\[\n)((.*\n)*)(?=\\s*\\])",
+            "replaceString": "",
+            "isRegex": true,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+            "preserveCase": false,
+            "findInSelection": false
+          }
+        },
+        "editor.action.selectAllMatches",
         "editor.action.transformToLowercase",
-        "editor.action.selectAll",
-        "sort-json.ascendingSort",
-        "editor.action.selectAll",
         "editor.action.removeDuplicateLines",
+        "editor.action.trimTrailingWhitespace",
         "editor.action.insertFinalNewLine",
+        "closeFindWidget",
         "editor.action.formatDocument",
         "cursorTop",
         "workbench.action.files.save"
