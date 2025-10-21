@@ -41,10 +41,10 @@
   "scripts": {
     "build": "pnpm build:typegen:tsx && pnpm build:bundle",
     "build:bundle": "tsdown",
-    "build:inspector": "pnpm build && pnpx @eslint/config-inspector build --open false --config eslint.config.ts",
+    "build:inspector": "pnpm build && pnpm dlx @eslint/config-inspector build --open false --config eslint.config.ts",
     "build:typegen:jiti": "jiti ./scripts/typegen.ts",
     "build:typegen:tsx": "tsx ./scripts/typegen.ts",
-    "dev": "pnpx @eslint/config-inspector --open false --config eslint.config.ts",
+    "dev": "pnpm dlx @eslint/config-inspector --open false --config eslint.config.ts",
     "prepack:disabled": "pnpm build"
   },
   "dependencies": {

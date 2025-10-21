@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-pnpx lint-staged@latest
+pnpm dlx lint-staged@latest
