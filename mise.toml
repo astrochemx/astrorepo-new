@@ -2,7 +2,7 @@
 # https://github.com/jdx/mise
 # https://mise.jdx.dev
 
-min_version = { hard = "2025.0.0", soft = "2025.0.0" }
+min_version = { hard = "2025.10.0", soft = "2025.10.0" }
 
 experimental_monorepo_root = true
 
