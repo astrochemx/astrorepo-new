@@ -17,7 +17,7 @@ preinstall = "echo 'MISE is about to install tools...'"
 postinstall = "echo 'MISE just installed tools!"
 
 [settings]
-always_keep_download = true
+always_keep_download = false
 always_keep_install = false
 env_file = ".env.dev"
 experimental = true
@@ -33,20 +33,29 @@ windows_executable_extensions = ["bat", "cmd", "com", "exe", "ps1", "vbs"]
 windows_shim_mode = "symlink"
 
 [tools]
-bun = "{{ env['BUN_VERSION'] | default(value='latest') }}"
-deno = "{{ env['DENO_VERSION'] | default(value='latest') }}"
-docker-compose = "{{ env['DOCKER_COMPOSE_VERSION'] | default(value='latest') }}"
-dprint = "{{ env['DPRINT_VERSION'] | default(value='latest') }}"
-gh = "{{ env['GH_VERSION'] | default(value='latest') }}"
-go = "{{ env['GO_VERSION'] | default(value='latest') }}"
+# bun = "{{ env['BUN_VERSION'] | default(value='latest') }}"
+# deno = "{{ env['DENO_VERSION'] | default(value='latest') }}"
+# docker-compose = "{{ env['DOCKER_COMPOSE_VERSION'] | default(value='latest') }}"
+# dprint = "{{ env['DPRINT_VERSION'] | default(value='latest') }}"
+# ffmpeg = "{{ env['FFMPEG_VERSION'] | default(value='latest') }}"
+# gallery-dl = "{{ env['GALLERY_DL_VERSION'] | default(value='latest') }}"
+# gh = "{{ env['GH_VERSION'] | default(value='latest') }}"
+# go = "{{ env['GO_VERSION'] | default(value='latest') }}"
+# kompose = "{{ env['KOMPOSE_VERSION'] | default(value='latest') }}"
+# kubectl = "{{ env['KUBECTL_VERSION'] | default(value='latest') }}"
+# kubectl-convert = "{{ env['KUBECTL_CONVERT_VERSION'] | default(value='latest') }}"
+# make = "{{ env['MAKE_VERSION'] | default(value='latest') }}"
+# minikube = "{{ env['MINIKUBE_VERSION'] | default(value='latest') }}"
 node = [
   { version = "{{ env['NODE_VERSION'] | default(value='latest') }}", postinstall = "mise exec -- npm install -g pnpm@latest" },
 ]
-python = "{{ env['PYTHON_VERSION'] | default(value='latest') }}"
-ruff = "{{ env['RUFF_VERSION'] | default(value='latest') }}"
-rust = "{{ env['RUST_VERSION'] | default(value='latest') }}"
-uv = "{{ env['UV_VERSION'] | default(value='latest') }}"
-yt-dlp = "{{ env['YT_DLP_VERSION'] | default(value='latest') }}"
+# oxipng = "{{ env['OXIPNG_VERSION'] | default(value='latest') }}"
+# python = "{{ env['PYTHON_VERSION'] | default(value='latest') }}"
+# resvg = "{{ env['RESVG_VERSION'] | default(value='latest') }}"
+# ruff = "{{ env['RUFF_VERSION'] | default(value='latest') }}"
+# rust = "{{ env['RUST_VERSION'] | default(value='latest') }}"
+# uv = "{{ env['UV_VERSION'] | default(value='latest') }}"
+# yt-dlp = "{{ env['YT_DLP_VERSION'] | default(value='latest') }}"
 
 [tasks.install]
 alias = "i"
