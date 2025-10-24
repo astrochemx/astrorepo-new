@@ -910,7 +910,19 @@
         {
           "command": "editor.actions.findWithArgs",
           "args": {
-            "searchString": "^.*[/\\\\](.*)-\\d+\\.\\d+\\.\\d+.*$",
+            "searchString": "^.*[/\\\\](.+)-\\d+\\.\\d+\\.\\d+.*$",
+            "replaceString": "$1",
+            "isRegex": true,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+            "preserveCase": false,
+            "findInSelection": false
+          }
+        },
+        {
+          "command": "editor.actions.findWithArgs",
+          "args": {
+            "searchString": "^(?!\\s+\")(.+)(?<!\")$",
             "replaceString": "    \"$1\",",
             "isRegex": true,
             "isCaseSensitive": false,
@@ -953,6 +965,22 @@
         "editor.action.sortLinesAscending",
         "editor.action.removeDuplicateLines",
         "closeFindWidget",
+        "cancelSelection",
+        {
+          "command": "editor.actions.findWithArgs",
+          "args": {
+            "searchString": "^(?<=\"recommendations\": \\[\\n(?:.*\\n)*?)(.*?)(,)(?=\\s*\\],?$)",
+            "replaceString": "$1",
+            "isRegex": true,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+            "preserveCase": false,
+            "findInSelection": false
+          }
+        },
+        "editor.action.replaceAll",
+        "closeFindWidget",
+        "editor.action.removeDuplicateLines",
         "editor.action.selectAll",
         "editor.action.indentationToSpaces",
         "editor.action.trimTrailingWhitespace",
@@ -1832,10 +1860,10 @@
   "gitmoji.showEmojiCode": true,
   "gitTreeCompare.diffMode": "full",
   "gitTreeCompare.showCheckboxes": false,
-  "go.goroot": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\go\\1.25.3",
   "go.alternateTools": {
     "go": "c:\\users\\vs\\appdata\\local\\mise\\shims\\go"
   },
+  "go.goroot": "C:\\Users\\VS\\AppData\\Local\\mise\\installs\\go\\1.25.3",
   "hediet.vscode-drawio.resizeImages": null,
   "hexeditor.columnWidth": 16,
   "hexeditor.defaultEndianness": "little",
