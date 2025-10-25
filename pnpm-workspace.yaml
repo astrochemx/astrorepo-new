@@ -8,19 +8,19 @@ autoInstallPeers: true
 catalog:
   '@arethetypeswrong/cli': 0.18.2
   '@arethetypeswrong/core': 0.18.2
-  '@biomejs/biome': 2.2.6
+  '@biomejs/biome': 2.3.0
   '@carlosjeurissen/stylelint-csstree-validator': 3.2.1
   '@changesets/changelog-github': 0.5.1
   '@changesets/cli': 2.29.7
   '@commitlint/cli': 20.1.0
   '@commitlint/format': 20.0.0
   '@commitlint/types': 20.0.0
-  '@cspell/dict-en-gb': 5.0.15
+  '@cspell/dict-en-gb': 5.0.16
   '@cspell/dict-medicalterms': 4.1.7
   '@cspell/dict-scientific-terms-gb': 1.0.6
   '@cspell/dict-scientific-terms-us': 3.0.8
   '@cspell/dict-uk-ua': 4.0.6
-  '@cspell/eslint-plugin': 9.2.1
+  '@cspell/eslint-plugin': 9.2.2
   '@eslint-community/eslint-plugin-eslint-comments': 4.5.0
   '@eslint-react/eslint-plugin': 2.2.3
   '@eslint/compat': 1.4.0
@@ -30,14 +30,14 @@ catalog:
   '@eslint/eslintrc': 3.3.1
   '@eslint/js': 9.38.0
   '@eslint/json': 0.13.2
-  '@eslint/markdown': 7.4.1
+  '@eslint/markdown': 7.5.0
   '@graphql-eslint/eslint-plugin': 4.4.0
   '@html-eslint/eslint-plugin': 0.47.0
   '@html-eslint/parser': 0.47.0
   '@html-eslint/template-parser': 0.47.0
   '@ianvs/prettier-plugin-sort-imports': 4.7.0
   '@intlify/eslint-plugin-vue-i18n': 4.1.0
-  '@next/eslint-plugin-next': 15.5.6
+  '@next/eslint-plugin-next': 16.0.0
   '@pnpm/config': 1004.4.2
   '@pnpm/core-loggers': 1001.0.4
   '@pnpm/fetcher-base': 1001.0.2
@@ -53,20 +53,20 @@ catalog:
   '@types/eslint-plugin-jsx-a11y': 6.10.1
   '@types/eslint-plugin-security': 3.0.0
   '@types/node': 24.9.1
-  '@types/postcss-less': 4.0.6
+  '@types/postcss-less': 4.0.7
   '@types/ramda': 0.31.1
   '@unocss/eslint-plugin': 66.5.4
-  '@vitest/browser': 3.2.4
-  '@vitest/eslint-plugin': 1.3.23
-  '@vitest/ui': 3.2.4
+  '@vitest/browser': 4.0.3
+  '@vitest/eslint-plugin': 1.3.24
+  '@vitest/ui': 4.0.3
   all-contributors-cli: 6.26.1
   astro-eslint-parser: 1.2.2
-  cspell: 9.2.1
+  cspell: 9.2.2
   cspell-cli: 9.2.0
   czg: 1.12.0
   del-cli: 7.0.0
   emoji-regex: 10.6.0
-  es-toolkit: 1.40.0
+  es-toolkit: 1.41.0
   eslint: 9.38.0
   eslint-config-biome: 2.1.3
   eslint-config-flat-gitignore: 2.1.0
@@ -88,7 +88,7 @@ catalog:
   eslint-plugin-html: 8.1.3
   eslint-plugin-import-lite: 0.3.0
   eslint-plugin-import-x: 4.16.1
-  eslint-plugin-jsdoc: 61.1.5
+  eslint-plugin-jsdoc: 61.1.8
   eslint-plugin-json-schema-validator: 5.4.1
   eslint-plugin-jsonc: 2.21.0
   eslint-plugin-jsx-a11y: 6.10.2
@@ -101,15 +101,15 @@ catalog:
   eslint-plugin-no-only-tests: 3.3.0
   eslint-plugin-node-dependencies: 1.2.0
   eslint-plugin-only-warn: 1.1.0
-  eslint-plugin-oxlint: 1.23.0
-  eslint-plugin-package-json: 0.57.0
+  eslint-plugin-oxlint: 1.24.0
+  eslint-plugin-package-json: 0.58.0
   eslint-plugin-perfectionist: 4.15.1
   eslint-plugin-pnpm: 1.3.0
   eslint-plugin-prettier: 5.5.4
   eslint-plugin-promise: 7.2.1
   eslint-plugin-react: 7.37.5
   eslint-plugin-react-compiler: 19.1.0-rc.2
-  eslint-plugin-react-hooks: 7.0.0
+  eslint-plugin-react-hooks: 7.0.1
   eslint-plugin-react-perf: 3.3.3
   eslint-plugin-react-refresh: 0.4.24
   eslint-plugin-regexp: 2.10.0
@@ -136,17 +136,17 @@ catalog:
   husky: 9.1.7
   jiti: 2.6.1
   jsonc-eslint-parser: 2.4.1
-  knip: 5.66.2
+  knip: 5.66.3
   linguist-languages: 9.0.0
-  lint-staged: 16.2.5
+  lint-staged: 16.2.6
   local-pkg: 1.1.2
   markdownlint: 0.39.0
   markdownlint-cli: 0.45.0
   markdownlint-cli2: 0.18.1
   node-modules-inspector: 1.1.3
   npm-check-updates: 19.1.1
-  oxlint: 1.23.0
-  oxlint-tsgolint: 0.2.0
+  oxlint: 1.24.0
+  oxlint-tsgolint: 0.3.0
   postcss-html: 1.8.0
   postcss-less: 6.0.0
   postcss-markdown: 1.3.0
@@ -167,7 +167,7 @@ catalog:
   prettier-plugin-tailwindcss: 0.7.1
   prettier-plugin-toml: 2.0.6
   publint: 0.3.15
-  puppeteer: 24.26.0
+  puppeteer: 24.26.1
   radash: 12.1.1
   radashi: 12.7.0
   rambda: 10.3.2
@@ -208,7 +208,7 @@ catalog:
   unist-util-visit: 5.0.0
   unplugin-unused: 0.5.4
   utility-types: 3.11.0
-  vitest: 3.2.4
+  vitest: 4.0.3
   vue-eslint-parser: 10.2.0
   yaml: 2.8.1
   yaml-eslint-parser: 1.3.0
