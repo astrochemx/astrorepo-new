@@ -907,6 +907,7 @@
       "icon": "note",
       "iconColor": "editorInfo.foreground",
       "sequence": [
+        "cursorTop",
         {
           "command": "editor.actions.findWithArgs",
           "args": {
@@ -949,6 +950,7 @@
       "icon": "note",
       "iconColor": "editorInfo.foreground",
       "sequence": [
+        "cursorTop",
         {
           "command": "editor.actions.findWithArgs",
           "args": {
