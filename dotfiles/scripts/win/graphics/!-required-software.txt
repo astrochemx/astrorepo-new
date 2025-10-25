@@ -1,0 +1,3 @@
+https://github.com/inkscape/inkscape
+https://github.com/kornelski/pngquant
+https://github.com/oxipng/oxipng

@@ -911,6 +911,19 @@
         {
           "command": "editor.actions.findWithArgs",
           "args": {
+            "searchString": "^\\s*\"?(.*?)\"?,?\\s*$",
+            "replaceString": "$1",
+            "isRegex": true,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+            "preserveCase": false,
+            "findInSelection": false
+          }
+        },
+        "editor.action.replaceAll",
+        {
+          "command": "editor.actions.findWithArgs",
+          "args": {
             "searchString": "^.*[/\\\\](.+)-\\d+\\.\\d+\\.\\d+.*$",
             "replaceString": "$1",
             "isRegex": true,

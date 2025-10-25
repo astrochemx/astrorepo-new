@@ -35,6 +35,7 @@ windows_shim_mode = "symlink"
 [tools]
 # bun = "{{ env['BUN_VERSION'] | default(value='latest') }}"
 # deno = "{{ env['DENO_VERSION'] | default(value='latest') }}"
+# direnv = "{{ env['DIRENV_VERSION'] | default(value='latest') }}"
 # docker-compose = "{{ env['DOCKER_COMPOSE_VERSION'] | default(value='latest') }}"
 # dprint = "{{ env['DPRINT_VERSION'] | default(value='latest') }}"
 # ffmpeg = "{{ env['FFMPEG_VERSION'] | default(value='latest') }}"
@@ -54,6 +55,8 @@ node = [
 # resvg = "{{ env['RESVG_VERSION'] | default(value='latest') }}"
 # ruff = "{{ env['RUFF_VERSION'] | default(value='latest') }}"
 # rust = "{{ env['RUST_VERSION'] | default(value='latest') }}"
+# shfmt = "{{ env['SHFMT_VERSION'] | default(value='latest') }}"
+# usage = "{{ env['USAGE_VERSION'] | default(value='latest') }}"
 # uv = "{{ env['UV_VERSION'] | default(value='latest') }}"
 # yt-dlp = "{{ env['YT_DLP_VERSION'] | default(value='latest') }}"
 

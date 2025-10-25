@@ -1,0 +1,5 @@
+# https://github.com/microsoft/wslg
+# https://github.com/microsoft/wslg/issues/978#issuecomment-2671838806
+
+[system-distro-env]
+WSLG_USE_MSTSC=true

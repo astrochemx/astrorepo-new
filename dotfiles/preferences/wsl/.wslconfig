@@ -1,0 +1,32 @@
+# https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig
+
+# [wsl2]
+
+# autoProxy=false
+# debugConsole=false
+# dnsProxy=true
+# dnsTunneling=false
+# firewall=true
+# guiApplications=true
+# kernel=C:\\Kernels\\MyCustomKernel
+# kernelCommandLine=
+# localhostForwarding=true
+# memory=8GB
+# nestedVirtualization=true
+# networkingMode=NAT
+# pageReporting=true
+# processors=4
+# safeMode=false
+# swap=8GB
+# swapFile=%USERPROFILE%\AppData\Local\Temp\swap.vhdx
+# vmIdleTimeout=60000
+
+# [experimental]
+
+# autoMemoryReclaim=disabled
+# bestEffortDnsParsing=false
+# hostAddressLoopback=false
+# ignoredPorts=null
+# initialAutoProxyTimeout=1000
+# sparseVhd=false
+# useWindowsDnsCache=false
