@@ -903,7 +903,7 @@
     }
   },
   "commands.commands": {
-    "Convert Extension's Paths to IDs": {
+    "Prepare data for `extensions.json`": {
       "icon": "note",
       "iconColor": "editorInfo.foreground",
       "sequence": [
@@ -919,6 +919,7 @@
             "findInSelection": false
           }
         },
+        "editor.action.replaceAll",
         {
           "command": "editor.actions.findWithArgs",
           "args": {
@@ -948,6 +949,21 @@
       "icon": "note",
       "iconColor": "editorInfo.foreground",
       "sequence": [
+        {
+          "command": "editor.actions.findWithArgs",
+          "args": {
+            "searchString": "^(?<=\"recommendations\": \\[\\n(?:.*\\n)*?)(.*?)(\\n)(?=\\s*\\],?$)",
+            "replaceString": "$1,$2",
+            "isRegex": true,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+            "preserveCase": false,
+            "findInSelection": false
+          }
+        },
+        "editor.action.selectAllMatches",
+        "editor.action.replaceAll",
+        "cancelSelection",
         {
           "command": "editor.actions.findWithArgs",
           "args": {
